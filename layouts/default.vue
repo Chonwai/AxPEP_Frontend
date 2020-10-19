@@ -2,11 +2,11 @@
     <v-app light>
         <AppNav />
         <v-main>
-            <v-container class="h-screen">
+            <v-container>
                 <nuxt />
             </v-container>
         </v-main>
-        <v-footer :absolute="!fixed" app>
+        <v-footer>
             <span class="p-2 flex justify-center items-center font-medium"
                 >Copyright &copy; {{ new Date().getFullYear() }} University of Macau</span
             >
