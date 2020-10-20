@@ -11,12 +11,7 @@
         </v-navigation-drawer>
         <div class="p-8">
             <section id="AxPEP-Server" class="mb-8">
-                <h2 class="text-4xl">
-                    <a class="text-decoration-none text-right text-md-left" href="#AxPEP-Server"
-                        >#</a
-                    >
-                    AxPEP Server
-                </h2>
+                <h2 class="text-4xl">AxPEP Server</h2>
                 <p>
                     Antimicrobial peptides (AMPs) are promising candidates in the fight against
                     multidrug-resistant pathogens due to its broad range of activities and low
@@ -29,10 +24,12 @@
                 <ul>
                     <li><a href="#AxPEP-Server">AmPEP</a>: Predict antimicrobial activity</li>
                     <li>
-                        Deep-AmPEP30: Predict antimicrobial activity of short peptides with length
-                        <= 30 AA
+                        <a href="#Deep-AmPEP30">Deep-AmPEP30</a>: Predict antimicrobial activity of
+                        short peptides with length <= 30 AA
                     </li>
-                    <li>AcPEP: Predict anticancer activity (under development)</li>
+                    <li>
+                        <a href="#AcPEP">AcPEP</a>: Predict anticancer activity (under development)
+                    </li>
                 </ul>
                 <p>
                     Our methods and server are in constant development. How often is our server
