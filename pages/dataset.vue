@@ -16,14 +16,14 @@
                 <p>Data used for constructing the AmPEP prediction model.</p>
                 <div class="flex flex-row justify-center mb-4">
                     <DownloadCard
+                        class="flex-1"
                         title="AMP"
                         text="Unique data collected from ADP3, CAMPR3, LAMP. All non-natural amino acids were removed."
-                        downloadNumber="3268"
                     />
                     <DownloadCard
+                        class="flex-1"
                         title="Non-AMP"
                         text="Generated from Uniprot sequences without annotation of AMP, membrane, toxic, secretory, defensing, antibiotic, anticancer, antiviral and antifungal."
-                        downloadNumber="166791"
                     />
                 </div>
                 <p>
@@ -47,14 +47,14 @@
                 </p>
                 <div class="flex flex-row justify-center mb-4">
                     <DownloadCard
+                        class="flex-1"
                         title="Train Dataset"
                         text="1529 positives and 1529 negatives"
-                        downloadNumber="3268"
                     />
                     <DownloadCard
+                        class="flex-1"
                         title="Test Dataset (Benchmark)"
                         text="94 positives and 94 negatives"
-                        downloadNumber="166791"
                     />
                 </div>
                 <ReferenceCard
