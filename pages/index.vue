@@ -44,13 +44,16 @@
                 <v-stepper-step :complete="e6 > 2" step="2"> Prediction Methods </v-stepper-step>
 
                 <v-stepper-content step="2">
-                    <v-checkbox v-model="ampep" label="Anti-microbial peptide (AmPEP)"></v-checkbox>
                     <v-checkbox
-                        v-model="deepampep30"
+                        v-model="form.ampep"
+                        label="Anti-microbial peptide (AmPEP)"
+                    ></v-checkbox>
+                    <v-checkbox
+                        v-model="form.deepampep30"
                         label="Short anti-microbial peptide (Deep-AmPEP30, for length <=30)"
                     ></v-checkbox>
                     <v-checkbox
-                        v-model="rfampep30"
+                        v-model="form.rfampep30"
                         label="Short anti-microbial peptide (RF-AmPEP30, for length <=30)"
                     ></v-checkbox>
                     <v-btn color="primary" @click="e6 = 3"> Continue </v-btn>
@@ -64,7 +67,7 @@
                 <v-stepper-content step="3">
                     <v-text-field
                         class="py-2"
-                        v-model="description"
+                        v-model="form.description"
                         :rules="[rules.counter]"
                         counter
                         maxlength="255"
@@ -82,7 +85,7 @@
                 <v-stepper-content step="4">
                     <v-text-field
                         class="py-2"
-                        v-model="email"
+                        v-model="form.email"
                         :rules="[rules.required, rules.email]"
                         label="Email"
                         outlined
@@ -98,13 +101,19 @@
 <script>
 import InputFastaArea from '../components/InputFastaArea';
 import ExampleFastaDialog from '../components/ExampleFastaDialog';
+import TaskAPI from '../apis/task';
 
 export default {
     data() {
         return {
             e6: 1,
-            description: '',
-            email: '',
+            form: {
+                description: '',
+                email: '',
+                ampep: true,
+                deepampep30: true,
+                rfampep30: true,
+            },
             rules: {
                 required: value => !!value || 'Required.',
                 counter: value => value.length <= 255 || 'Max 255 characters',
@@ -113,9 +122,6 @@ export default {
                     return pattern.test(value) || 'Invalid e-mail.';
                 },
             },
-            ampep: true,
-            deepampep30: true,
-            rfampep30: true,
             showExample: false,
         };
     },
@@ -128,8 +134,9 @@ export default {
         dialogCallback(toggle) {
             this.showExample = toggle;
         },
-        submit() {
+        async submit() {
             console.log('Submit!');
+            let res = await TaskAPI.newTaskByFile(this.form);
         },
     },
 };
