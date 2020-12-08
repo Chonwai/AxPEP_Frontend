@@ -36,7 +36,7 @@
                 </v-stepper-step>
 
                 <v-stepper-content step="1">
-                    <InputFastaArea class="py-2" />
+                    <InputFastaArea class="py-2" v-on:file="uploadFile" v-on:source="fileSource" />
                     <v-btn color="primary" @click="e6 = 2"> Continue </v-btn>
                     <v-btn text> Cancel </v-btn>
                 </v-stepper-content>
@@ -45,16 +45,22 @@
 
                 <v-stepper-content step="2">
                     <v-checkbox
-                        v-model="form.ampep"
+                        v-model="models.ampep"
                         label="Anti-microbial peptide (AmPEP)"
+                        :falseValue="0"
+                        :trueValue="1"
                     ></v-checkbox>
                     <v-checkbox
-                        v-model="form.deepampep30"
+                        v-model="models.deepampep30"
                         label="Short anti-microbial peptide (Deep-AmPEP30, for length <=30)"
+                        :falseValue="0"
+                        :trueValue="1"
                     ></v-checkbox>
                     <v-checkbox
-                        v-model="form.rfampep30"
+                        v-model="models.rfampep30"
                         label="Short anti-microbial peptide (RF-AmPEP30, for length <=30)"
+                        :falseValue="0"
+                        :trueValue="1"
                     ></v-checkbox>
                     <v-btn color="primary" @click="e6 = 3"> Continue </v-btn>
                     <v-btn text> Cancel </v-btn>
@@ -67,7 +73,7 @@
                 <v-stepper-content step="3">
                     <v-text-field
                         class="py-2"
-                        v-model="form.description"
+                        v-model="description"
                         :rules="[rules.counter]"
                         counter
                         maxlength="255"
@@ -85,7 +91,7 @@
                 <v-stepper-content step="4">
                     <v-text-field
                         class="py-2"
-                        v-model="form.email"
+                        v-model="email"
                         :rules="[rules.required, rules.email]"
                         label="Email"
                         outlined
@@ -107,12 +113,14 @@ export default {
     data() {
         return {
             e6: 1,
-            form: {
-                description: '',
-                email: '',
-                ampep: true,
-                deepampep30: true,
-                rfampep30: true,
+            file: [],
+            description: '',
+            email: '',
+            source: '',
+            models: {
+                ampep: 1,
+                deepampep30: 1,
+                rfampep30: 1,
             },
             rules: {
                 required: value => !!value || 'Required.',
@@ -134,9 +142,21 @@ export default {
         dialogCallback(toggle) {
             this.showExample = toggle;
         },
+        uploadFile(file) {
+            this.file = file;
+        },
+        fileSource(source) {
+            this.source = source;
+        },
         async submit() {
-            console.log('Submit!');
-            let res = await TaskAPI.newTaskByFile(this.form);
+            let form = new FormData();
+            form.append('description', this.description);
+            form.append('email', this.email);
+            form.append('source', this.source);
+            if (this.source == 'file') {
+                form.append('file', this.file);
+                let res = await TaskAPI.newTaskByFile(this.models, form);
+            }
         },
     },
 };

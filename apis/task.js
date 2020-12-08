@@ -1,12 +1,7 @@
-function newTaskByFile(data) {
+function newTaskByFile(param, data) {
     return window.$nuxt.$api.$post(
-        `axpep/tasks/file?ampep=${data.ampep}&deepampep30=${data.deepampep30}&rfampep30=${data.rfampep30}`,
-        {
-            file: 'new name',
-            email: data.email,
-            source: 'file',
-            description: data.description,
-        }
+        `axpep/tasks/file?ampep=${param.ampep}&deepampep30=${param.deepampep30}&rfampep30=${param.rfampep30}`,
+        data
     );
 }
 

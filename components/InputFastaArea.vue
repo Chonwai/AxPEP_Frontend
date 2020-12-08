@@ -7,9 +7,9 @@
             value=""
         ></v-textarea>
         <v-file-input
-            v-show="source === 'upload'"
+            v-show="source === 'file'"
             show-size
-            v-model="files"
+            v-model="file"
             accept=".fasta"
             placeholder="Upload your FASTA file"
             label="File input"
@@ -24,7 +24,7 @@
         <div>
             <v-radio-group v-model="source" row>
                 <v-radio label="Type manually" value="textarea"></v-radio>
-                <v-radio label="Upload FASTA sequences (.fasta)" value="upload"></v-radio>
+                <v-radio label="Upload FASTA sequences (.fasta)" value="file"></v-radio>
                 <v-radio label="Option 2" value="radio-2"></v-radio>
             </v-radio-group>
         </div>
@@ -37,8 +37,24 @@ export default {
     data() {
         return {
             source: 'textarea',
-            files: [],
+            file: [],
         };
+    },
+    watch: {
+        file: {
+            deep: true,
+            immediate: true,
+            handler: function (val, oldVal) {
+                this.$emit('file', val);
+            },
+        },
+        source: {
+            deep: true,
+            immediate: true,
+            handler: function (val, oldVal) {
+                this.$emit('source', val);
+            },
+        },
     },
 };
 </script>
