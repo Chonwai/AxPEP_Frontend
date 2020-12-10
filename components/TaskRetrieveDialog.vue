@@ -22,7 +22,7 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn color="blue darken-1" text @click="closeDialog"> Close </v-btn>
-                    <v-btn color="blue darken-1" text> Retrieve </v-btn>
+                    <v-btn color="blue darken-1" text @click="retrieve"> Retrieve </v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -41,7 +41,7 @@ export default {
     data() {
         return {
             show: false,
-            email: '',
+            email: null,
         };
     },
     watch: {
@@ -66,6 +66,11 @@ export default {
     methods: {
         closeDialog() {
             this.$emit('dialogToggle', false);
+        },
+        retrieve() {
+            if (this.email != null) {
+                this.$router.push({ name: 'retrieve-email', params: { email: this.email } });
+            }
         },
     },
 };
