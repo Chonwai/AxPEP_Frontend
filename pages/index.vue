@@ -5,7 +5,11 @@
                 <v-row align="center">
                     <v-col class="grow"> You have uploaded sequences already? </v-col>
                     <v-col class="shrink">
-                        <v-btn>Click here to retrieve</v-btn>
+                        <v-btn @click="showRetrieve = true">Click here to retrieve</v-btn>
+                        <TaskRetrieveDialog
+                            :dialog="showRetrieve"
+                            v-on:dialogToggle="retrieveDialogCallback"
+                        />
                     </v-col>
                 </v-row>
             </v-alert>
@@ -22,7 +26,7 @@
                     </div>
                     <ExampleFastaDialog
                         :dialog="showExample"
-                        v-on:dialogToggle="dialogCallback"
+                        v-on:dialogToggle="exampleDialogCallback"
                         title="Example"
                     >
                         <div>
@@ -107,6 +111,7 @@
 <script>
 import InputFastaArea from '../components/InputFastaArea';
 import ExampleFastaDialog from '../components/ExampleFastaDialog';
+import TaskRetrieveDialog from '../components/TaskRetrieveDialog';
 import TaskAPI from '../apis/task';
 
 export default {
@@ -131,6 +136,7 @@ export default {
                 },
             },
             showExample: false,
+            showRetrieve: false,
         };
     },
     name: 'HomePageIndex',
@@ -139,8 +145,11 @@ export default {
         ExampleFastaDialog,
     },
     methods: {
-        dialogCallback(toggle) {
+        exampleDialogCallback(toggle) {
             this.showExample = toggle;
+        },
+        retrieveDialogCallback(toggle) {
+            this.showRetrieve = toggle;
         },
         uploadFile(file) {
             this.file = file;
