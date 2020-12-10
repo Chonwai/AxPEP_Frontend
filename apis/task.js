@@ -5,8 +5,8 @@ function newTaskByFile(param, data) {
     );
 }
 
-function getSpecifyTasksByEmail(data) {
-    return window.$nuxt.$api.$get(`axpep/emails/${data}/tasks`);
+function getSpecifyTasksByEmail(data, page = 1) {
+    return window.$nuxt.$api.$get(`axpep/emails/${data}/tasks?page=${page}`);
 }
 
 export default {

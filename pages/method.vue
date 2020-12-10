@@ -1,6 +1,6 @@
 <template>
     <div id="method-page-index">
-        <v-navigation-drawer class="p-2" absolute permanent right disable-resize-watcher>
+        <!-- <v-navigation-drawer class="p-2" absolute permanent right disable-resize-watcher>
             <h2 class="p-2 text-xl text-gray-700 font-bold">Content</h2>
             <v-divider></v-divider>
             <v-tabs vertical>
@@ -8,7 +8,7 @@
                 <v-tab>Item Two</v-tab>
                 <v-tab>Item Three</v-tab>
             </v-tabs>
-        </v-navigation-drawer>
+        </v-navigation-drawer> -->
         <div class="p-8">
             <section id="AxPEP-Server" class="mb-8">
                 <h2 class="text-4xl">AxPEP Server</h2>
