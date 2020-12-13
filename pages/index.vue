@@ -165,6 +165,9 @@ export default {
             if (this.source == 'file') {
                 form.append('file', this.file);
                 let res = await TaskAPI.newTaskByFile(this.models, form);
+            } else if (this.source == 'textarea') {
+                form.append('fasta', this.file);
+                let res = await TaskAPI.newTaskByTextarea(this.models, form);
             }
         },
     },

@@ -5,6 +5,7 @@
             outlined
             label="Input Sequences"
             value=""
+            v-model="textarea"
         ></v-textarea>
         <v-file-input
             v-show="source === 'file'"
@@ -38,10 +39,18 @@ export default {
         return {
             source: 'textarea',
             file: [],
+            textarea: '',
         };
     },
     watch: {
         file: {
+            deep: true,
+            immediate: true,
+            handler: function (val, oldVal) {
+                this.$emit('file', val);
+            },
+        },
+        textarea: {
             deep: true,
             immediate: true,
             handler: function (val, oldVal) {
