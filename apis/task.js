@@ -12,6 +12,10 @@ function newTaskByTextarea(param, data) {
     );
 }
 
+function getSpecifyTask(id) {
+    return window.$nuxt.$api.$get(`axpep/tasks/${id}`);
+}
+
 function getSpecifyTasksByEmail(data, page = 1) {
     return window.$nuxt.$api.$get(`axpep/emails/${data}/tasks?page=${page}`);
 }
@@ -20,4 +24,5 @@ export default {
     newTaskByFile,
     newTaskByTextarea,
     getSpecifyTasksByEmail,
+    getSpecifyTask,
 };
