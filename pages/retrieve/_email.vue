@@ -75,11 +75,11 @@ export default {
         async updateTable() {
             this.loading = true;
             let res = await TaskAPI.getSpecifyTasksByEmail(this.email, this.current_page);
-            this.data = res.data;
-            this.total = res.total;
-            this.itemsPerPage = res.per_page;
-            this.current_page = res.current_page;
-            this.last_page = res.last_page;
+            this.data = res.message.data;
+            this.total = res.message.total;
+            this.itemsPerPage = res.message.per_page;
+            this.current_page = res.message.current_page;
+            this.last_page = res.message.last_page;
             this.loading = false;
         },
         pagination(current_page) {
