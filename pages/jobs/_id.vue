@@ -8,10 +8,16 @@
                 >
             </p>
             <p class="mb-0">
-                Description: <span>{{ data.description }}</span>
+                Description:
+                <span
+                    ><b>{{ data.description }}</b></span
+                >
             </p>
             <p>
-                Submitted at: <span>{{ data.created_at }}</span>
+                Submitted at:
+                <span
+                    ><b>{{ data.created_at }}</b></span
+                >
             </p>
             <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2">
                 Note: The default classification cutoff is 0.5. Positive sequence is 1, negative
@@ -35,7 +41,18 @@
                                 item-key="id"
                                 class="elevation-1"
                                 :itemsPerPage="15"
-                            ></v-data-table>
+                            >
+                                <template v-slot:item.created_at="{ item }">
+                                    <v-chip>
+                                        {{
+                                            new Date(item.created_at)
+                                                .toISOString()
+                                                .slice(0, 19)
+                                                .replace('T', ' ')
+                                        }}
+                                    </v-chip>
+                                </template>
+                            </v-data-table>
                             <v-data-table
                                 v-show="item.tab == 'Prediction Score'"
                                 dense
@@ -78,6 +95,10 @@ export default {
         async getJob() {
             let res = await TaskAPI.getSpecifyTask(this.id);
             this.data = res.message[0];
+            this.data.created_at = new Date(res.message[0].created_at)
+                .toISOString()
+                .slice(0, 19)
+                .replace('T', ' ');
             for (const item of Object.keys(this.data.classifications[0])) {
                 if (item == 'sequence') {
                     continue;

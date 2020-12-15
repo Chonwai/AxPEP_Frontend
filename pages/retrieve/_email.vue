@@ -1,5 +1,8 @@
 <template>
-    <div id="retrieve-page-index">
+    <div id="retrieve-page-index" class="py-8">
+        <h2 class="text-xl mb-4">
+            Email: <b>{{ email }}</b>
+        </h2>
         <v-data-table
             class="mb-4 elevation-1"
             :headers="headers"
@@ -9,6 +12,18 @@
             :itemsPerPage="itemsPerPage"
             hide-default-footer
         >
+            <template v-slot:item.id="{ item }">
+                <v-btn
+                    v-show="item.action == 'finished'"
+                    text
+                    color="success"
+                    @click="retrieve(item.id)"
+                    ><v-icon left> mdi-magnify </v-icon>{{ item.id }}</v-btn
+                >
+                <v-btn v-show="item.action == 'running'" text disabled
+                    ><v-icon left> mdi-pulse </v-icon>{{ item.id }}</v-btn
+                >
+            </template>
             <template v-slot:item.action="{ item }">
                 <v-chip color="primary" label v-show="item.action == 'finished'">
                     {{ item.action }}
@@ -61,7 +76,6 @@ export default {
                 { text: 'Description', value: 'description' },
                 { text: 'Status', value: 'action' },
                 { text: 'Created At', value: 'created_at' },
-                { text: 'Prediction Method', value: 'prediction_method' },
             ],
         };
     },
@@ -85,6 +99,9 @@ export default {
         pagination(current_page) {
             this.current_page = current_page;
             this.updateTable();
+        },
+        retrieve(id) {
+            this.$router.push({ name: 'jobs-id', params: { id: id } });
         },
     },
 };
