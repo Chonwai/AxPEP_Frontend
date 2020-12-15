@@ -42,16 +42,6 @@
                                 class="elevation-1"
                                 :itemsPerPage="15"
                             >
-                                <template v-slot:item.created_at="{ item }">
-                                    <v-chip>
-                                        {{
-                                            new Date(item.created_at)
-                                                .toISOString()
-                                                .slice(0, 19)
-                                                .replace('T', ' ')
-                                        }}
-                                    </v-chip>
-                                </template>
                             </v-data-table>
                             <v-data-table
                                 v-show="item.tab == 'Prediction Score'"
@@ -117,7 +107,6 @@ export default {
                     value: item,
                 });
             }
-            console.log(res);
         },
     },
 };
