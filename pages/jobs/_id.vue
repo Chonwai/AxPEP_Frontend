@@ -29,43 +29,18 @@
                         {{ item.tab }}
                     </v-tab>
                 </v-tabs>
-
                 <v-tabs-items v-model="tab">
                     <v-tab-item v-for="item in items" :key="item.tab">
-                        <v-card flat>
-                            <v-data-table
-                                v-show="item.tab == 'Classification'"
-                                dense
-                                :headers.sync="classificationsHeader"
-                                :items.sync="data.classifications"
-                                item-key="id"
-                                class="elevation-1"
-                                :itemsPerPage="15"
-                                show-expand
-                            >
-                                <template v-slot:expanded-item="{ headers, item }">
-                                    <td :colspan="headers.length">
-                                        Sequence: {{ item.sequence.substring(0, 50) }}...
-                                    </td>
-                                </template>
-                            </v-data-table>
-                            <v-data-table
-                                v-show="item.tab == 'Prediction Score'"
-                                dense
-                                :headers.sync="scoresHeader"
-                                :items.sync="data.scores"
-                                item-key="id"
-                                class="elevation-1"
-                                :itemsPerPage="15"
-                                show-expand
-                            >
-                                <template v-slot:expanded-item="{ headers, item }">
-                                    <td :colspan="headers.length">
-                                        Sequence: {{ item.sequence.substring(0, 50) }}...
-                                    </td>
-                                </template>
-                            </v-data-table>
-                        </v-card>
+                        <ResultTable
+                            v-show="item.tab == 'Classification'"
+                            :header.sync="classificationsHeader"
+                            :items.sync="data.classifications"
+                        />
+                        <ResultTable
+                            v-show="item.tab == 'Prediction Score'"
+                            :header.sync="scoresHeader"
+                            :items.sync="data.scores"
+                        />
                     </v-tab-item>
                 </v-tabs-items>
             </v-card>
@@ -75,8 +50,12 @@
 
 <script>
 import TaskAPI from '../../apis/task';
+import ResultTable from '../../components/ResultTable';
 export default {
     name: 'GetJobByIDPageIndex',
+    components: {
+        ResultTable,
+    },
     data() {
         return {
             id: this.$route.params.id,
@@ -124,5 +103,3 @@ export default {
     },
 };
 </script>
-
-<style lang="scss" scoped></style>
