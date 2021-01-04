@@ -41,7 +41,13 @@
                                 item-key="id"
                                 class="elevation-1"
                                 :itemsPerPage="15"
+                                show-expand
                             >
+                                <template v-slot:expanded-item="{ headers, item }">
+                                    <td :colspan="headers.length">
+                                        Sequence: {{ item.sequence.substring(0, 50) }}...
+                                    </td>
+                                </template>
                             </v-data-table>
                             <v-data-table
                                 v-show="item.tab == 'Prediction Score'"
@@ -51,7 +57,14 @@
                                 item-key="id"
                                 class="elevation-1"
                                 :itemsPerPage="15"
-                            ></v-data-table>
+                                show-expand
+                            >
+                                <template v-slot:expanded-item="{ headers, item }">
+                                    <td :colspan="headers.length">
+                                        Sequence: {{ item.sequence.substring(0, 50) }}...
+                                    </td>
+                                </template>
+                            </v-data-table>
                         </v-card>
                     </v-tab-item>
                 </v-tabs-items>
