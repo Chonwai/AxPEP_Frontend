@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="result-table-component">
         <v-data-table
             dense
             :headers.sync="header"

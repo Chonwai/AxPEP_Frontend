@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4">
+    <div class="download-card-component p-4">
         <v-card class="mx-auto" color="#26c6da" dark max-width="400">
             <v-card-title>
                 <v-icon large left> mdi-star </v-icon>

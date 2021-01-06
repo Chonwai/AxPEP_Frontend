@@ -1,23 +1,7 @@
 <template>
     <v-row justify="center" align="center">
         <v-col cols="12" sm="8" md="12">
-            <v-alert icon="mdi-alert-circle-outline" prominent dense text type="info">
-                <v-row align="center">
-                    <v-col class="grow"> You have uploaded sequences already? </v-col>
-                    <v-col class="shrink">
-                        <v-btn @click="showRetrieve = true">Click here to retrieve</v-btn>
-                        <TaskRetrieveDialog
-                            :dialog="showRetrieve"
-                            v-on:dialogToggle="retrieveDialogCallback"
-                        />
-                    </v-col>
-                </v-row>
-            </v-alert>
-            <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2">
-                AxPEP is a collection of sequence-based machine learning methods for peptide
-                activities prediction. Currently, we predict peptides for anti-microbial and
-                anti-cancer activities.
-            </v-alert>
+            <IndexPageHelper />
             <v-stepper class="stepper-container" v-model="e6" vertical>
                 <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                     <div class="flex items-center">
@@ -109,9 +93,9 @@
 </template>
 
 <script>
+import IndexPageHelper from '../components/IndexPageHelper';
 import InputFastaArea from '../components/InputFastaArea';
 import ExampleFastaDialog from '../components/ExampleFastaDialog';
-import TaskRetrieveDialog from '../components/TaskRetrieveDialog';
 import TaskAPI from '../apis/task';
 
 export default {
@@ -136,20 +120,17 @@ export default {
                 },
             },
             showExample: false,
-            showRetrieve: false,
         };
     },
     name: 'HomePageIndex',
     components: {
         InputFastaArea,
         ExampleFastaDialog,
+        IndexPageHelper,
     },
     methods: {
         exampleDialogCallback(toggle) {
             this.showExample = toggle;
-        },
-        retrieveDialogCallback(toggle) {
-            this.showRetrieve = toggle;
         },
         uploadFile(file) {
             this.file = file;

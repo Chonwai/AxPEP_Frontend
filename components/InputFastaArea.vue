@@ -1,5 +1,5 @@
 <template>
-    <div class="input-fasta-area-container">
+    <div class="input-fasta-area-component">
         <v-textarea
             v-show="source === 'textarea'"
             outlined

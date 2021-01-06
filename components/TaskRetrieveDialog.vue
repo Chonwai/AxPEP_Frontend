@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="task-retrieve-dialog-component">
         <v-dialog v-model="show" persistent max-width="600px">
             <v-card>
                 <v-card-title>
