@@ -1,80 +1,67 @@
 <template>
     <div>
         <v-app-bar color="#3f51b5" height="96px">
-            <v-app-bar-nav-icon color="#FFFFFF" @click="drawer = true"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon
+                class="d-md-none"
+                color="#FFFFFF"
+                @click="drawer = true"
+            ></v-app-bar-nav-icon>
             <v-toolbar-title
                 ><img class="h-16" src="/images/logo.png" alt="" srcset=""
             /></v-toolbar-title>
             <v-spacer></v-spacer>
-            <div class="d-none d-sm-block">
-                <v-btn style="text-transform: capitalize" text color="white" nuxt to="/">
-                    <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">
-                        Home
-                    </p>
-                </v-btn>
-                <v-btn style="text-transform: capitalize" text color="white" nuxt to="/method">
-                    <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">
-                        Method
-                    </p>
-                </v-btn>
-                <v-btn style="text-transform: capitalize" text color="white" nuxt to="/dataset">
-                    <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">
-                        Dataset
-                    </p>
-                </v-btn>
-                <v-btn style="text-transform: capitalize" text color="white" nuxt to="/method">
-                    <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">
-                        Statistics
-                    </p>
-                </v-btn>
-                <v-btn style="text-transform: capitalize" text color="white" nuxt to="/help">
-                    <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">
-                        Help
-                    </p>
-                </v-btn>
-                <v-btn
-                    class="capitalize"
-                    text
-                    color="white"
-                    value="Help"
-                    href="https://cbbio.online/"
-                >
-                    <div class="flex flex-row justify-center items-center">
-                        <p class="text-2xl" style="margin-bottom: 0px; text-transform: capitalize">
-                            CBBio
-                        </p>
-                        <v-spacer class="w-1" />
-                        <p class="text-xs" style="margin-bottom: 0px; text-transform: capitalize">
-                            Computational Biology <br />and Bioinformatics Lab
-                        </p>
-                    </div>
-                </v-btn>
-            </div>
+            <NavItems class="d-none d-md-block" />
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
-            <v-list nav dense>
-                <v-list-item-group v-model="group" active-class="deep-purple--text text--accent-4">
-                    <v-list-item>
-                        <v-list-item-icon>
-                            <v-icon>mdi-home</v-icon>
-                        </v-list-item-icon>
-                        <v-list-item-title>Home</v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                        <v-list-item-icon>
-                            <v-icon>mdi-account</v-icon>
-                        </v-list-item-icon>
-                        <v-list-item-title>Account</v-list-item-title>
-                    </v-list-item>
-                </v-list-item-group>
+            <v-list nav>
+                <v-list-item link nuxt to="/">
+                    <v-list-item-icon>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Home</v-list-item-title>
+                </v-list-item>
+                <v-list-item link nuxt to="/method">
+                    <v-list-item-icon>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Method</v-list-item-title>
+                </v-list-item>
+                <v-list-item link nuxt to="/dataset">
+                    <v-list-item-icon>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Dataset</v-list-item-title>
+                </v-list-item>
+                <v-list-item link nuxt to="/method">
+                    <v-list-item-icon>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Statistics</v-list-item-title>
+                </v-list-item>
+                <v-list-item link nuxt to="/help">
+                    <v-list-item-icon>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>Help</v-list-item-title>
+                </v-list-item>
+                <v-list-item link href="https://cbbio.online/">
+                    <v-list-item-icon>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-title>CBBio</v-list-item-title>
+                </v-list-item>
             </v-list>
         </v-navigation-drawer>
     </div>
 </template>
 
 <script>
+import NavItems from './NavItems';
 export default {
     name: 'AppNav',
+    components: {
+        NavItems,
+    },
     data() {
         return {
             drawer: false,
