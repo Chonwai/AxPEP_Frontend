@@ -1,5 +1,6 @@
 <template>
     <v-app light>
+        <notifications group="foo" />
         <AppNav />
         <v-main>
             <v-container>

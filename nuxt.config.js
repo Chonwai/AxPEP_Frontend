@@ -17,7 +17,7 @@ export default {
     css: [],
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-    plugins: ['~/plugins/axios', '~/plugins/api'],
+    plugins: ['~/plugins/axios', '~/plugins/api', { src: '~/plugins/notification', ssr: false }],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
     components: true,

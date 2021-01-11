@@ -14,10 +14,11 @@
                         title="Example"
                     >
                         <div>
-                            <p>>AC_1</p>
-                            <p>ALWKTMLKKLGTMALHAGKAALGAAADTISQGTQ</p>
-                            <p>>AC_2</p>
-                            <p>AWKKWAKAWKWAKAKWWAKAA</p>
+                            <p>
+                                >AC_1
+                                <br />ALWKTMLKKLGTMALHAGKAALGAAADTISQGTQ <br />AC_2
+                                <br />AWKKWAKAWKWAKAKWWAKAA
+                            </p>
                             <b>Note: AC_1 is the ID you give for the serial.</b>
                         </div>
                     </ExampleFastaDialog>
@@ -25,11 +26,10 @@
 
                 <v-stepper-content step="1">
                     <InputFastaArea class="py-2" v-on:file="uploadFile" v-on:source="fileSource" />
-                    <v-btn color="primary" @click="e6 = 2"> Continue </v-btn>
-                    <v-btn text> Cancel </v-btn>
+                    <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
                 </v-stepper-content>
 
-                <v-stepper-step :complete="e6 > 2" step="2"> Prediction Methods </v-stepper-step>
+                <v-stepper-step :complete="e6 > 2" step="2">Prediction Methods</v-stepper-step>
 
                 <v-stepper-content step="2">
                     <v-checkbox
@@ -50,13 +50,13 @@
                         :falseValue="0"
                         :trueValue="1"
                     ></v-checkbox>
-                    <v-btn color="primary" @click="e6 = 3"> Continue </v-btn>
-                    <v-btn text> Cancel </v-btn>
+                    <v-btn color="primary" @click="e6 = 3">Continue</v-btn>
+                    <v-btn text @click="e6 = 1">Cancel</v-btn>
                 </v-stepper-content>
 
-                <v-stepper-step :complete="e6 > 3" step="3">
-                    Job Description (optional)
-                </v-stepper-step>
+                <v-stepper-step :complete="e6 > 3" step="3"
+                    >Job Description (optional)</v-stepper-step
+                >
 
                 <v-stepper-content step="3">
                     <v-text-field
@@ -69,12 +69,12 @@
                         label="Job Description"
                         outlined
                     ></v-text-field>
-                    <v-btn color="primary" @click="e6 = 4"> Continue </v-btn>
-                    <v-btn text> Cancel </v-btn>
+                    <v-btn color="primary" @click="e6 = 4">Continue</v-btn>
+                    <v-btn text @click="e6 = 2">Cancel</v-btn>
                 </v-stepper-content>
 
-                <v-stepper-step step="4">
-                    Create account to retrieve all submitted jobs</v-stepper-step
+                <v-stepper-step step="4"
+                    >Create account to retrieve all submitted jobs</v-stepper-step
                 >
                 <v-stepper-content step="4">
                     <v-text-field
@@ -84,8 +84,8 @@
                         label="Email"
                         outlined
                     ></v-text-field>
-                    <v-btn color="primary" @click="submit"> Submit </v-btn>
-                    <v-btn text> Cancel </v-btn>
+                    <v-btn color="primary" @click="submit">Submit</v-btn>
+                    <v-btn text @click="e6 = 3">Cancel</v-btn>
                 </v-stepper-content>
             </v-stepper>
         </v-col>
@@ -139,16 +139,29 @@ export default {
             this.source = source;
         },
         async submit() {
-            let form = new FormData();
-            form.append('description', this.description);
-            form.append('email', this.email);
-            form.append('source', this.source);
-            if (this.source == 'file') {
-                form.append('file', this.file);
-                let res = await TaskAPI.newTaskByFile(this.models, form);
-            } else if (this.source == 'textarea') {
-                form.append('fasta', this.file);
-                let res = await TaskAPI.newTaskByTextarea(this.models, form);
+            if (
+                this.rules.email(this.email) == 'Invalid e-mail.' ||
+                this.rules.required(this.email) == 'Required.'
+            ) {
+                this.$notify({
+                    group: 'foo',
+                    type: 'error',
+                    title: 'Error',
+                    text: 'Please enter a correct email address.',
+                });
+            } else {
+                console.log(this.rules.email(this.email));
+                let form = new FormData();
+                form.append('description', this.description);
+                form.append('email', this.email);
+                form.append('source', this.source);
+                if (this.source == 'file') {
+                    form.append('file', this.file);
+                    let res = await TaskAPI.newTaskByFile(this.models, form);
+                } else if (this.source == 'textarea') {
+                    form.append('fasta', this.file);
+                    let res = await TaskAPI.newTaskByTextarea(this.models, form);
+                }
             }
         },
     },
