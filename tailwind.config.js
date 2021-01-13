@@ -5,7 +5,13 @@ module.exports = {
         // defaultLineHeights: true,
         // standardFontWeights: true
     },
-    purge: [],
+    purge: [
+        './components/**/*.{vue,js}',
+        './layouts/**/*.vue',
+        './pages/**/*.vue',
+        './plugins/**/*.{js,ts}',
+        './nuxt.config.{js,ts}',
+    ],
     target: 'relaxed',
     prefix: '',
     important: false,
