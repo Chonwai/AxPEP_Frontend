@@ -4,10 +4,4 @@ export default function ({ $axios }) {
             console.log(error);
         }
     });
-    $axios.interceptors.response.use(response => {
-        if (response.status === 200) {
-            console.log(response);
-        }
-        return response;
-    });
 }

@@ -150,7 +150,7 @@ export default {
                     text: 'Please enter a correct email address.',
                 });
             } else {
-                console.log(this.rules.email(this.email));
+                // console.log(this.rules.email(this.email));
                 let form = new FormData();
                 form.append('description', this.description);
                 form.append('email', this.email);
