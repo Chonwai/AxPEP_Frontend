@@ -64,7 +64,7 @@
             </div>
             <div>
                 <h3 class="text-2xl">Input – Submit</h3>
-                <ImageCard class="mt-2" src="/images/help-submit.png" />
+                <ImageCard class="mt-2" src="/images/help-email.png" />
                 <p>
                     Click the submit button when ready. A job ID will be given to your submitted
                     job; a status page will be displayed with automatically refreshing function to
@@ -73,6 +73,35 @@
                     before leaving the window, so that you can check back the result later. Or if
                     you have provided an email during job submission, you can enter your email at
                     the Input page to login and retrieve all your past job results.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-2xl">Result</h3>
+                <p>
+                    The prediction result of all submitted sequences will be displayed in a single
+                    page. All columns can be sorted as user’s need, and all results are downloadable
+                    in a CSV file.
+                </p>
+                <ImageCard class="mt-2" src="/images/help-classification.png" />
+                <p>
+                    The <b>Classification</b> tag shows 1 or 0 predicted by each selected method,
+                    where 1 for positive and 0 for negative. In case there are invalid sequences,
+                    such as violating the sequence length required by the method, they are
+                    classified as -1. The last column shows the sum of the prediction results for
+                    each sequence. A classification threshold of 0.5 is used by default to color
+                    code the result table.
+                </p>
+                <ImageCard class="mt-2" src="/images/help-prediction-score.png" />
+                <p>
+                    The <b>Prediction Score</b> tag shows the predicted score returned by each
+                    method, with a value close to 1 being positive and close to 0 being negative.
+                    Again, invalid sequences are given -1. The last column shows the product of all
+                    predicted scores for each sequence. A classification threshold of 0.5 is used by
+                    default to color code the result table.
+                </p>
+                <p>
+                    For genome screening, only the top-scoring 1000 sequences will be displayed.
+                    Prediction result of all valid sequences is available in the CSV file.
                 </p>
             </div>
         </section>
