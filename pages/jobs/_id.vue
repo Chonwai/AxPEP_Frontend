@@ -7,19 +7,30 @@
                     ><b>#{{ data.id }}</b></span
                 >
             </p>
-            <p class="mb-0">
-                Description:
-                <span
-                    ><b>{{ data.description }}</b></span
-                >
-            </p>
-            <p>
-                Submitted at:
-                <span
-                    ><b>{{ data.created_at }}</b></span
-                >
-            </p>
-            <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2">
+            <div class="flex justify-center items-center mb-4">
+                <div class="w-full">
+                    <p class="mb-0">
+                        Description:
+                        <span
+                            ><b>{{ data.description }}</b></span
+                        >
+                    </p>
+                    <p class="mb-0">
+                        Submitted at:
+                        <span
+                            ><b>{{ data.created_at }}</b></span
+                        >
+                    </p>
+                </div>
+                <v-btn class="w-auto" large outline color="primary" dark>Export to CSV</v-btn>
+            </div>
+            <v-alert
+                class="w-full mr-4 my-4"
+                border="left"
+                colored-border
+                color="deep-purple accent-4"
+                elevation="2"
+            >
                 Note: The default classification cutoff is 0.5. Positive sequence is 1, negative
                 sequence is 0, invalid sequence is -1.
             </v-alert>
