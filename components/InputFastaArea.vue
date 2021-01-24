@@ -26,7 +26,10 @@
             <v-radio-group v-model="source" row>
                 <v-radio label="Type manually" value="textarea"></v-radio>
                 <v-radio label="Upload FASTA sequences (.fasta)" value="file"></v-radio>
-                <v-radio label="Option 2" value="radio-2"></v-radio>
+                <v-radio
+                    label="Upload Genome sequences (.fasta, max. file size 50 MB)"
+                    value="radio-2"
+                ></v-radio>
             </v-radio-group>
         </div>
     </div>
