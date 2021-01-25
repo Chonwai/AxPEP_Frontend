@@ -22,7 +22,9 @@
                         >
                     </p>
                 </div>
-                <v-btn class="w-auto" large outline color="primary" dark>Export to CSV</v-btn>
+                <v-btn class="w-auto" large color="primary" dark @click="downloadResult"
+                    >Export to CSV</v-btn
+                >
             </div>
             <v-alert
                 class="w-full mr-4 my-4"
@@ -62,6 +64,7 @@
 <script>
 import TaskAPI from '../../apis/task';
 import ResultTable from '../../components/ResultTable';
+import Utils from '../../utils/utils';
 export default {
     name: 'GetJobByIDPageIndex',
     components: {
@@ -110,6 +113,12 @@ export default {
                     value: item,
                 });
             }
+        },
+        async downloadResult() {
+            let data = await TaskAPI.downloadSpecifyClassificationFile(this.id);
+            await Utils.downloadResult(data, `${this.id}-classification.csv`);
+            data = await TaskAPI.downloadSpecifyScoreFile(this.id);
+            await Utils.downloadResult(data, `${this.id}-score.csv`);
         },
     },
 };

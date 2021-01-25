@@ -20,9 +20,19 @@ function getSpecifyTasksByEmail(data, page = 1) {
     return window.$nuxt.$api.$get(`axpep/emails/${data}/tasks?page=${page}`);
 }
 
+function downloadSpecifyClassificationFile(id) {
+    return window.$nuxt.$api.$get(`axpep/tasks/${id}/classification/download`);
+}
+
+function downloadSpecifyScoreFile(id) {
+    return window.$nuxt.$api.$get(`axpep/tasks/${id}/score/download`);
+}
+
 export default {
     newTaskByFile,
     newTaskByTextarea,
     getSpecifyTasksByEmail,
     getSpecifyTask,
+    downloadSpecifyClassificationFile,
+    downloadSpecifyScoreFile,
 };
