@@ -9,7 +9,7 @@
         <v-btn style="text-transform: capitalize" text color="white" nuxt to="/dataset">
             <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">Dataset</p>
         </v-btn>
-        <v-btn style="text-transform: capitalize" text color="white" nuxt to="/method">
+        <v-btn style="text-transform: capitalize" text color="white" nuxt to="/statistics">
             <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">
                 Statistics
             </p>

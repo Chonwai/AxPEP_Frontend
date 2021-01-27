@@ -93,6 +93,7 @@ import ExampleFastaDialog from '../components/ExampleFastaDialog';
 import TaskAPI from '../apis/task';
 
 export default {
+    name: 'HomePageIndex',
     data() {
         return {
             e6: 1,
@@ -116,7 +117,6 @@ export default {
             showExample: false,
         };
     },
-    name: 'HomePageIndex',
     components: {
         InputFastaArea,
         ExampleFastaDialog,
