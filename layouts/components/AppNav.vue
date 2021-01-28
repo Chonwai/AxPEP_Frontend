@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: #3f51b5">
+    <div class="z-50" style="background-color: #3f51b5">
         <v-app-bar color="transparent" height="96px">
             <v-app-bar-nav-icon
                 class="d-md-none"

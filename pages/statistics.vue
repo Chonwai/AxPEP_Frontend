@@ -13,7 +13,7 @@
                     <v-btn :value="365"> 365 Days </v-btn>
                 </v-btn-toggle>
             </div>
-            <div id="map-wrap" class="h-80 mb-8">
+            <div id="map-wrap z-10" class="h-80 mb-8">
                 <no-ssr>
                     <l-map :zoom="1" :center="[25, 0]">
                         <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
@@ -28,7 +28,8 @@
                 </no-ssr>
             </div>
             <div class="line-chart mb-8">
-                <LineChart :height="96" :data="lineChartData" />
+                <p>Total {{ totalJobs }} jobs on period {{ daysAgo }} days</p>
+                <LineChart :height="192" :data="lineChartData" />
             </div>
         </section>
     </div>
@@ -53,6 +54,7 @@ export default {
                     },
                 ],
             },
+            totalJobs: 0,
         };
     },
     components: {
@@ -80,12 +82,15 @@ export default {
             console.log(res);
             let dateList = [];
             let countList = [];
+            let totalCount = 0;
             for (const item of res.message) {
                 dateList.push(item.date);
                 countList.push(item.total);
+                totalCount += item.total;
             }
             this.lineChartData.labels = dateList;
             this.lineChartData.datasets[0].data = countList;
+            this.totalJobs = totalCount;
             console.log(this.lineChartData);
         },
     },
