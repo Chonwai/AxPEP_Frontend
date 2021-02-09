@@ -5,12 +5,12 @@
             outlined
             label="Input Sequences"
             value=""
-            v-model="textarea"
+            v-model="handleTextarea"
         ></v-textarea>
         <v-file-input
             v-show="source === 'file'"
             show-size
-            v-model="file"
+            v-model="handleFile"
             accept=".fasta"
             placeholder="Upload your FASTA file"
             label="File input"
@@ -22,13 +22,36 @@
                 </v-chip>
             </template>
         </v-file-input>
+        <div v-show="source === 'codon'">
+            <v-file-input
+                show-size
+                v-model="handleFile"
+                accept=".fasta"
+                placeholder="Upload your FASTA file"
+                label="File input"
+                prepend-icon="mdi-paperclip"
+            >
+                <template v-slot:selection="{ text }">
+                    <v-chip small label color="primary">
+                        {{ text }}
+                    </v-chip>
+                </template>
+            </v-file-input>
+            <v-select
+                v-model="handleCodon"
+                :items="getCodonList"
+                label="*Please Select Codon Table:"
+                dense
+                prepend-icon="mdi-table"
+            ></v-select>
+        </div>
         <div>
-            <v-radio-group v-model="source" row>
+            <v-radio-group v-model="handleSource" row>
                 <v-radio label="Type manually" value="textarea"></v-radio>
                 <v-radio label="Upload FASTA sequences (.fasta)" value="file"></v-radio>
                 <v-radio
                     label="Upload Genome sequences (.fasta, max. file size 50 MB)"
-                    value="radio-2"
+                    value="codon"
                 ></v-radio>
             </v-radio-group>
         </div>
@@ -36,6 +59,7 @@
 </template>
 
 <script>
+import CodonAPI from '../apis/codon';
 export default {
     name: 'InputFASTAArea',
     data() {
@@ -43,28 +67,56 @@ export default {
             source: 'textarea',
             file: [],
             textarea: '',
+            codonList: [],
+            codon: false,
+            items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
         };
     },
-    watch: {
-        file: {
-            deep: true,
-            immediate: true,
-            handler: function (val, oldVal) {
-                this.$emit('file', val);
+    async mounted() {
+        const res = await CodonAPI.getAllCodons();
+        this.codonList = res.message;
+        this.$emit('source', this.source);
+    },
+    computed: {
+        getCodonList() {
+            return this.codonList.map(condon => {
+                return condon.name;
+            });
+        },
+        handleTextarea: {
+            get() {
+                return this.textarea;
+            },
+            set(value) {
+                this.textarea = value;
+                this.$emit('file', value);
             },
         },
-        textarea: {
-            deep: true,
-            immediate: true,
-            handler: function (val, oldVal) {
-                this.$emit('file', val);
+        handleFile: {
+            get() {
+                return this.file;
+            },
+            set(value) {
+                this.file = value;
+                this.$emit('file', value);
             },
         },
-        source: {
-            deep: true,
-            immediate: true,
-            handler: function (val, oldVal) {
-                this.$emit('source', val);
+        handleSource: {
+            get() {
+                return this.source;
+            },
+            set(value) {
+                this.source = value;
+                this.$emit('source', value);
+            },
+        },
+        handleCodon: {
+            get() {
+                return this.codon;
+            },
+            set(value) {
+                this.codon = value;
+                this.$emit('codon', value);
             },
         },
     },

@@ -15,7 +15,7 @@
                     <div>
                         <p>
                             >AC_1
-                            <br />ALWKTMLKKLGTMALHAGKAALGAAADTISQGTQ <br />AC_2
+                            <br />ALWKTMLKKLGTMALHAGKAALGAAADTISQGTQ <br />>AC_2
                             <br />AWKKWAKAWKWAKAKWWAKAA
                         </p>
                         <b>Note: AC_1 is the ID you give for the serial.</b>
@@ -24,7 +24,12 @@
             </v-stepper-step>
 
             <v-stepper-content step="1">
-                <InputFastaArea class="py-2" v-on:file="uploadFile" v-on:source="fileSource" />
+                <InputFastaArea
+                    class="py-2"
+                    v-on:file="uploadFile"
+                    v-on:source="fileSource"
+                    v-on:codon="selectedCodon"
+                />
                 <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
             </v-stepper-content>
 
@@ -101,6 +106,7 @@ export default {
             description: '',
             email: '',
             source: '',
+            codon: false,
             models: {
                 ampep: 1,
                 deepampep30: 1,
@@ -132,6 +138,9 @@ export default {
         fileSource(source) {
             this.source = source;
         },
+        selectedCodon(codon) {
+            this.codon = codon;
+        },
         async submit() {
             if (
                 this.rules.email(this.email) == 'Invalid e-mail.' ||
@@ -144,17 +153,20 @@ export default {
                     text: 'Please enter a correct email address.',
                 });
             } else {
-                // console.log(this.rules.email(this.email));
                 let form = new FormData();
                 form.append('description', this.description);
                 form.append('email', this.email);
                 form.append('source', this.source);
+                console.log(this.source);
                 if (this.source == 'file') {
                     form.append('file', this.file);
                     let res = await TaskAPI.newTaskByFile(this.models, form);
                 } else if (this.source == 'textarea') {
                     form.append('fasta', this.file);
                     let res = await TaskAPI.newTaskByTextarea(this.models, form);
+                } else if (this.source == 'codon') {
+                    form.append('fasta', this.file);
+                    console.log(this.codon);
                 }
             }
         },
