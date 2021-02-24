@@ -69,12 +69,12 @@ export default {
             textarea: '',
             codonList: [],
             codon: false,
-            items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
         };
     },
     async mounted() {
         const res = await CodonAPI.getAllCodons();
         this.codonList = res.message;
+        console.log(this.codonList);
         this.$emit('source', this.source);
     },
     computed: {
@@ -116,8 +116,14 @@ export default {
             },
             set(value) {
                 this.codon = value;
-                this.$emit('codon', value);
+                let target = this.codonList.find(this.findCodonID);
+                this.$emit('codon', target.codons_number);
             },
+        },
+    },
+    methods: {
+        findCodonID(codon) {
+            return codon.name == this.codon;
         },
     },
 };

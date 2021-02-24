@@ -12,6 +12,13 @@ function newTaskByTextarea(param, data) {
     );
 }
 
+function newTaskByCodon(param, data) {
+    return window.$nuxt.$api.$post(
+        `axpep/tasks/codon?ampep=${param.ampep}&deepampep30=${param.deepampep30}&rfampep30=${param.rfampep30}`,
+        data
+    );
+}
+
 function getSpecifyTask(id) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}`);
 }
@@ -31,6 +38,7 @@ function downloadSpecifyScoreFile(id) {
 export default {
     newTaskByFile,
     newTaskByTextarea,
+    newTaskByCodon,
     getSpecifyTasksByEmail,
     getSpecifyTask,
     downloadSpecifyClassificationFile,

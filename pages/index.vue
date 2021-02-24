@@ -157,7 +157,6 @@ export default {
                 form.append('description', this.description);
                 form.append('email', this.email);
                 form.append('source', this.source);
-                console.log(this.source);
                 if (this.source == 'file') {
                     form.append('file', this.file);
                     let res = await TaskAPI.newTaskByFile(this.models, form);
@@ -165,8 +164,9 @@ export default {
                     form.append('fasta', this.file);
                     let res = await TaskAPI.newTaskByTextarea(this.models, form);
                 } else if (this.source == 'codon') {
-                    form.append('fasta', this.file);
-                    console.log(this.codon);
+                    form.append('file', this.file);
+                    form.append('codon', this.codon);
+                    let res = await TaskAPI.newTaskByCodon(this.models, form);
                 }
             }
         },
