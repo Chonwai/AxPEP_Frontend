@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors';
+const axios = require('axios');
 
 export default {
     // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -75,4 +76,19 @@ export default {
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {},
+
+    generate: {
+        routes(callback) {
+            axios
+                .get('http://159.203.14.63/retrieve')
+                .then(res => {
+                    const routes = res.data.map(retrieve => {
+                        console.log(retrieve);
+                        return '/retrieve/' + retrieve.email;
+                    });
+                    callback(null, routes);
+                })
+                .catch(callback);
+        },
+    },
 };
