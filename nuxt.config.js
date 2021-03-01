@@ -69,7 +69,6 @@ export default {
     build: {
         analyze: true,
         cache: true,
-        extractCSS: true,
         optimization: {
             splitChunks: {
                 cacheGroups: {
