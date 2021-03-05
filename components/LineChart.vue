@@ -2,7 +2,7 @@
 import { Line } from 'vue-chartjs';
 export default {
     extends: Line,
-    props: ['data'],
+    props: ['labels', 'data', 'dataName', 'height'],
     mounted() {
         this.renderLineChart();
     },
@@ -13,7 +13,19 @@ export default {
     },
     methods: {
         renderLineChart() {
-            this.renderChart(this.chartData);
+            this.renderChart(
+                {
+                    labels: this.labels,
+                    datasets: [
+                        {
+                            label: this.dataName,
+                            backgroundColor: '#f87979',
+                            data: this.data,
+                        },
+                    ],
+                },
+                { responsive: true, maintainAspectRatio: false }
+            );
         },
     },
     watch: {

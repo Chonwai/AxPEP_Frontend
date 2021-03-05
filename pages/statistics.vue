@@ -10,6 +10,7 @@
                     <v-btn :value="7"> 7 Days </v-btn>
                     <v-btn :value="14"> 14 Days </v-btn>
                     <v-btn :value="30"> 30 Days </v-btn>
+                    <v-btn :value="180"> 180 Days </v-btn>
                     <v-btn :value="365"> 365 Days </v-btn>
                 </v-btn-toggle>
             </div>
@@ -29,7 +30,12 @@
             </div>
             <div class="line-chart mb-8">
                 <p>Total {{ totalJobs }} jobs on period {{ daysAgo }} days</p>
-                <LineChart :height="192" :data="lineChartData" />
+                <LineChart
+                    :height="360"
+                    :labels="labels"
+                    :data="chartData"
+                    :dataName="chartDataName"
+                />
             </div>
         </section>
     </div>
@@ -44,16 +50,9 @@ export default {
         return {
             daysAgo: 14,
             locationsList: [],
-            lineChartData: {
-                labels: [],
-                datasets: [
-                    {
-                        label: 'Jobs',
-                        backgroundColor: '#f87979',
-                        data: [],
-                    },
-                ],
-            },
+            labels: [],
+            chartData: [],
+            chartDataName: 'Jobs',
             totalJobs: 0,
         };
     },
@@ -79,7 +78,6 @@ export default {
         },
         async getCountTasks() {
             let res = await AnalysisAPI.getCountingTasksByNDaysAgo(this.daysAgo);
-            console.log(res);
             let dateList = [];
             let countList = [];
             let totalCount = 0;
@@ -88,10 +86,9 @@ export default {
                 countList.push(item.total);
                 totalCount += item.total;
             }
-            this.lineChartData.labels = dateList;
-            this.lineChartData.datasets[0].data = countList;
+            this.labels = dateList;
+            this.chartData = countList;
             this.totalJobs = totalCount;
-            console.log(this.lineChartData);
         },
     },
 };
