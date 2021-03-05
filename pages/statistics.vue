@@ -15,7 +15,7 @@
                 </v-btn-toggle>
             </div>
             <div id="map-wrap z-10" class="h-80 mb-8">
-                <no-ssr>
+                <client-only>
                     <l-map :zoom="1" :center="[25, 0]">
                         <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
                         <div v-if="locationsList != []">
@@ -26,7 +26,7 @@
                             ></l-marker>
                         </div>
                     </l-map>
-                </no-ssr>
+                </client-only>
             </div>
             <div class="line-chart mb-8">
                 <p>Total {{ totalJobs }} jobs on period {{ daysAgo }} days</p>
