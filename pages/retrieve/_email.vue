@@ -23,23 +23,39 @@
                 <v-btn v-show="item.action == 'running'" text disabled
                     ><v-icon left> mdi-pulse </v-icon>{{ item.id }}</v-btn
                 >
+                <v-btn v-show="item.action == 'failed'" text color="error"
+                    ><v-icon left> mdi-close-box </v-icon>{{ item.id }}</v-btn
+                >
             </template>
             <template v-slot:item.action="{ item }">
-                <v-chip color="primary" label v-show="item.action == 'finished'">
+                <v-chip
+                    class="w-full flex justify-center"
+                    color="primary"
+                    label
+                    v-show="item.action == 'finished'"
+                >
                     {{ item.action }}
                 </v-chip>
                 <v-chip
+                    class="w-full flex justify-center"
                     color="cyan"
                     text-color="white"
                     label
                     v-show="item.action == 'running'"
-                    class="flex flex-col"
+                >
+                    {{ item.action }}
+                </v-chip>
+                <v-chip
+                    class="w-full flex justify-center"
+                    color="error"
+                    label
+                    v-show="item.action == 'failed'"
                 >
                     {{ item.action }}
                 </v-chip>
             </template>
             <template v-slot:item.created_at="{ item }">
-                <v-chip>
+                <v-chip label>
                     {{ new Date(item.created_at).toISOString().slice(0, 19).replace('T', ' ') }}
                 </v-chip>
             </template>
