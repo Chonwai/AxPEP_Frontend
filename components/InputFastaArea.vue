@@ -74,7 +74,6 @@ export default {
     async mounted() {
         const res = await CodonAPI.getAllCodons();
         this.codonList = res.message;
-        console.log(this.codonList);
         this.$emit('source', this.source);
     },
     computed: {
