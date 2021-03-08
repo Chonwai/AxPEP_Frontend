@@ -154,19 +154,23 @@ export default {
                 });
             } else {
                 let form = new FormData();
+                let res = null;
                 form.append('description', this.description);
                 form.append('email', this.email);
                 form.append('source', this.source);
                 if (this.source == 'file') {
                     form.append('file', this.file);
-                    let res = await TaskAPI.newTaskByFile(this.models, form);
+                    res = await TaskAPI.newTaskByFile(this.models, form);
                 } else if (this.source == 'textarea') {
                     form.append('fasta', this.file);
-                    let res = await TaskAPI.newTaskByTextarea(this.models, form);
+                    res = await TaskAPI.newTaskByTextarea(this.models, form);
                 } else if (this.source == 'codon') {
                     form.append('file', this.file);
                     form.append('codon', this.codon);
-                    let res = await TaskAPI.newTaskByCodon(this.models, form);
+                    res = await TaskAPI.newTaskByCodon(this.models, form);
+                }
+                if (res.status == true) {
+                    this.$router.push({ name: 'retrieve-email', params: { email: this.email } });
                 }
             }
         },
