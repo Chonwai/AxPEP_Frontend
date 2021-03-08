@@ -93,6 +93,7 @@ export default {
                 { text: 'Status', value: 'action' },
                 { text: 'Created At', value: 'created_at' },
             ],
+            jobMonitor: null,
         };
     },
     created() {
@@ -101,6 +102,7 @@ export default {
     methods: {
         init() {
             this.updateTable();
+            this.monitor();
         },
         async updateTable() {
             this.loading = true;
@@ -116,9 +118,20 @@ export default {
             this.current_page = current_page;
             this.updateTable();
         },
+        monitor() {
+            this.jobMonitor = setInterval(
+                function () {
+                    this.updateTable();
+                }.bind(this),
+                5000
+            );
+        },
         retrieve(id) {
             this.$router.push({ name: 'jobs-id', params: { id: id } });
         },
+    },
+    beforeDestroy() {
+        clearInterval(this.jobMonitor);
     },
 };
 </script>
