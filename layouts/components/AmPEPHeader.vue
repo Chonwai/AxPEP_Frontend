@@ -10,7 +10,7 @@
                 ><img class="h-16" src="/images/logo.png" alt="" srcset=""
             /></v-toolbar-title>
             <v-spacer></v-spacer>
-            <NavItems class="d-none d-md-block" />
+            <AmPEPNavItems class="d-none d-md-block" />
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list nav>
@@ -56,11 +56,11 @@
 </template>
 
 <script>
-import NavItems from './NavItems';
+import AmPEPNavItems from './AmPEPNavItems';
 export default {
-    name: 'AppNav',
+    name: 'AmPEPHeader',
     components: {
-        NavItems,
+        AmPEPNavItems,
     },
     data() {
         return {

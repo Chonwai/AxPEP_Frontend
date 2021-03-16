@@ -203,6 +203,7 @@
 
 <script>
 export default {
+    layout: 'ampep',
     name: 'MethodPageIndex',
     data() {
         return {

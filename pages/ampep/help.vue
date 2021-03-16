@@ -131,8 +131,9 @@
 </template>
 
 <script>
-import ImageCard from '../components/ImageCard';
+import ImageCard from '@/components/ImageCard';
 export default {
+    layout: 'ampep',
     name: 'HelpPageIndex',
     component: {
         ImageCard,

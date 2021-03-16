@@ -14,31 +14,31 @@
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list nav>
-                <v-list-item link nuxt to="/">
+                <v-list-item link nuxt to="/ampep">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Home</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/method">
+                <v-list-item link nuxt to="/ampep/method">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Method</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/dataset">
+                <v-list-item link nuxt to="/ampep/dataset">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Dataset</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/statistics">
+                <v-list-item link nuxt to="/ampep/statistics">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Statistics</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/help">
+                <v-list-item link nuxt to="/ampep/help">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>

@@ -66,10 +66,11 @@
 </template>
 
 <script>
-import DownloadCard from '../components/DownloadCard';
-import ReferenceCard from '../components/ReferenceCard';
-import ImageCard from '../components/ImageCard';
+import DownloadCard from '@/components/DownloadCard';
+import ReferenceCard from '@/components/ReferenceCard';
+import ImageCard from '@/components/ImageCard';
 export default {
+    layout: 'ampep',
     name: 'DatasetPageIndex',
     components: {
         DownloadCard,

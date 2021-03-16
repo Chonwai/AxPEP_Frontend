@@ -1,44 +1,44 @@
 <template>
     <div class="z-50">
-        <v-app-bar color="#3f51b5" height="96px">
+        <v-app-bar color="#1C2833" height="96px">
             <v-app-bar-nav-icon
                 class="d-md-none"
                 color="#FFFFFF"
                 @click="drawer = true"
             ></v-app-bar-nav-icon>
             <v-toolbar-title
-                ><img class="h-16" src="/images/logo.png" alt="" srcset=""
+                ><img class="h-16" src="/images/bestox-logo.png" alt="" srcset=""
             /></v-toolbar-title>
             <v-spacer></v-spacer>
-            <NavItems class="d-none d-md-block" />
+            <BESToxNavItems class="d-none d-md-block" />
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list nav>
-                <v-list-item link nuxt to="/">
+                <v-list-item link nuxt to="/bestox/">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Home</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/method">
+                <v-list-item link nuxt to="/bestox/method">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Method</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/dataset">
+                <v-list-item link nuxt to="/bestox/dataset">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Dataset</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/statistics">
+                <v-list-item link nuxt to="/bestox/statistics">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Statistics</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/help">
+                <v-list-item link nuxt to="/bestox/help">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
@@ -56,11 +56,11 @@
 </template>
 
 <script>
-import NavItems from './NavItems';
+import BESToxNavItems from './BESToxNavItems';
 export default {
-    name: 'AppNav',
+    name: 'BESToxHeader',
     components: {
-        NavItems,
+        BESToxNavItems,
     },
     data() {
         return {

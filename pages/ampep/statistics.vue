@@ -40,9 +40,10 @@
 </template>
 
 <script>
-import LineChart from '../components/LineChart';
-import AnalysisAPI from '../apis/analysis';
+import LineChart from '@/components/LineChart';
+import AnalysisAPI from '@/apis/analysis';
 export default {
+    layout: 'ampep',
     name: 'StatisticsPageIndex',
     data() {
         return {
