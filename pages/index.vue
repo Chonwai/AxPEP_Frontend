@@ -42,12 +42,12 @@
                     :falseValue="0"
                     :trueValue="1"
                 ></v-checkbox>
-                <v-checkbox
+                <!-- <v-checkbox
                     v-model="models.deepampep30"
                     label="Short anti-microbial peptide (Deep-AmPEP30, for length <=30)"
                     :falseValue="0"
                     :trueValue="1"
-                ></v-checkbox>
+                ></v-checkbox> -->
                 <v-checkbox
                     v-model="models.rfampep30"
                     label="Short anti-microbial peptide (RF-AmPEP30, for length <=30)"
@@ -109,7 +109,7 @@ export default {
             codon: false,
             models: {
                 ampep: 1,
-                deepampep30: 1,
+                deepampep30: 0,
                 rfampep30: 1,
             },
             rules: {
