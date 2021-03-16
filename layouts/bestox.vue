@@ -1,5 +1,5 @@
 <template>
-    <v-app light>
+    <v-app dark>
         <notifications group="foo" />
         <BESToxHeader />
         <v-main>

@@ -31,6 +31,6 @@
 
 <script>
 export default {
-    name: 'NavItemsIndex',
+    name: 'BESToxNavItemsIndex',
 };
 </script>
