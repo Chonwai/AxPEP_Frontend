@@ -7,16 +7,13 @@
                 <nuxt />
             </v-container>
         </v-main>
-        <v-footer>
-            <span class="p-2 flex justify-center items-center font-medium"
-                >Copyright &copy; {{ new Date().getFullYear() }} University of Macau</span
-            >
-        </v-footer>
+        <AppFooter />
     </v-app>
 </template>
 
 <script>
 import AmPEPHeader from './components/AmPEPHeader';
+import AppFooter from './components/AppFooter';
 export default {
     data() {
         return {
@@ -31,6 +28,7 @@ export default {
     },
     components: {
         AmPEPHeader,
+        AppFooter,
     },
 };
 </script>

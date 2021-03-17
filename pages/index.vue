@@ -1,14 +1,16 @@
 <template>
     <div>
         <div
-            class="flex flex-col items-center justify-center h-60vh mb-4 bg-fixed bg-center bg-cover banner-img"
+            class="flex flex-col items-center justify-center h-70vh mb-4 bg-fixed bg-center bg-cover banner-img"
         >
-            <h1 class="text-4xl text-white font-normal">
-                Computational Biology and Bioinformatics Lab (CBBio)
-            </h1>
-            <h4 class="text-base text-white font-normal">
-                Department of Computer and Information Science University of Macau
-            </h4>
+            <div class="p-4">
+                <h1 class="text-4xl text-white font-normal">
+                    Computational Biology and Bioinformatics Lab (CBBio)
+                </h1>
+                <h4 class="text-base text-white font-normal">
+                    Department of Computer and Information Science University of Macau
+                </h4>
+            </div>
         </div>
         <v-container class="min-h-80vh">
             <section class="py-4">
