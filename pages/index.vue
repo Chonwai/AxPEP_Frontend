@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            class="flex flex-col items-center justify-center h-70vh mb-4 bg-fixed bg-center bg-cover banner-img"
+            class="flex flex-col items-center justify-center h-80vh mb-4 bg-fixed bg-center bg-cover banner-img"
         >
             <div class="p-4">
                 <h1 class="text-4xl text-white font-normal">
