@@ -8,7 +8,11 @@
                     @click="drawer = true"
                 ></v-app-bar-nav-icon>
                 <v-toolbar-title
-                    ><img class="h-16" src="/images/bestox-logo.png" alt="" srcset=""
+                    ><img
+                        class="h-16 cursor-pointer"
+                        src="/images/bestox-logo.png"
+                        alt="bestox-logo"
+                        @click="goToIndex"
                 /></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <BESToxNavItems :navList="navList" class="d-none d-md-block" />
@@ -98,6 +102,11 @@ export default {
                 },
             ],
         };
+    },
+    methods: {
+        goToIndex() {
+            this.$router.push({ name: 'bestox' });
+        },
     },
 };
 </script>

@@ -62,10 +62,11 @@
 </template>
 
 <script>
-import TaskAPI from '../../apis/task';
-import ResultTable from '../../components/ResultTable';
-import Utils from '../../utils/utils';
+import TaskAPI from '../../../apis/task';
+import ResultTable from '../../../components/ResultTable';
+import Utils from '../../../utils/utils';
 export default {
+    layout: 'ampep',
     name: 'GetJobByIDPageIndex',
     components: {
         ResultTable,

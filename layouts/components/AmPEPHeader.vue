@@ -7,8 +7,12 @@
                     color="#FFFFFF"
                     @click="drawer = true"
                 ></v-app-bar-nav-icon>
-                <v-toolbar-title
-                    ><img class="h-16" src="/images/ampep-logo.png" alt="" srcset=""
+                <v-toolbar-title>
+                    <img
+                        class="h-16 cursor-pointer"
+                        src="/images/ampep-logo.png"
+                        alt="ampep-logo"
+                        @click="goToIndex"
                 /></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <AmPEPNavItems :navList="navList" class="d-none d-md-block" />
@@ -98,6 +102,11 @@ export default {
                 },
             ],
         };
+    },
+    methods: {
+        goToIndex() {
+            this.$router.push({ name: 'ampep' });
+        },
     },
 };
 </script>

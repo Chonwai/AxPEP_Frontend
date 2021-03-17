@@ -70,8 +70,9 @@
 </template>
 
 <script>
-import TaskAPI from '../../apis/task';
+import TaskAPI from '../../../apis/task';
 export default {
+    layout: 'ampep',
     name: 'RetrievePageIndex',
     data() {
         return {
@@ -127,7 +128,7 @@ export default {
             );
         },
         retrieve(id) {
-            this.$router.push({ name: 'jobs-id', params: { id: id } });
+            this.$router.push({ name: 'ampep-jobs-id', params: { id: id } });
         },
     },
     beforeDestroy() {

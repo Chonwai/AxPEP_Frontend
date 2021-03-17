@@ -171,7 +171,10 @@ export default {
                     res = await TaskAPI.newTaskByCodon(this.models, form);
                 }
                 if (res.status == true) {
-                    this.$router.push({ name: 'retrieve-email', params: { email: this.email } });
+                    this.$router.push({
+                        name: 'ampep-retrieve-email',
+                        params: { email: this.email },
+                    });
                 }
             }
         },

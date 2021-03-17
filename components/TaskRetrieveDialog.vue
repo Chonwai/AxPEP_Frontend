@@ -69,7 +69,7 @@ export default {
         },
         retrieve() {
             if (this.email != null) {
-                this.$router.push({ name: 'retrieve-email', params: { email: this.email } });
+                this.$router.push({ name: 'ampep-retrieve-email', params: { email: this.email } });
             }
         },
     },
