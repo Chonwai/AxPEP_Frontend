@@ -3,9 +3,7 @@
         <notifications group="foo" />
         <AppNav />
         <v-main>
-            <v-container>
-                <nuxt />
-            </v-container>
+            <nuxt />
         </v-main>
         <v-footer>
             <span class="p-2 flex justify-center items-center font-medium"

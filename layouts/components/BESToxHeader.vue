@@ -1,16 +1,18 @@
 <template>
     <div class="z-50">
         <v-app-bar color="#1C2833" height="96px">
-            <v-app-bar-nav-icon
-                class="d-md-none"
-                color="#FFFFFF"
-                @click="drawer = true"
-            ></v-app-bar-nav-icon>
-            <v-toolbar-title
-                ><img class="h-16" src="/images/bestox-logo.png" alt="" srcset=""
-            /></v-toolbar-title>
-            <v-spacer></v-spacer>
-            <BESToxNavItems class="d-none d-md-block" />
+            <v-container d-flex align-center>
+                <v-app-bar-nav-icon
+                    class="d-md-none"
+                    color="#FFFFFF"
+                    @click="drawer = true"
+                ></v-app-bar-nav-icon>
+                <v-toolbar-title
+                    ><img class="h-16" src="/images/logo.png" alt="" srcset=""
+                /></v-toolbar-title>
+                <v-spacer></v-spacer>
+                <BESToxNavItems class="d-none d-md-block" />
+            </v-container>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list nav>
