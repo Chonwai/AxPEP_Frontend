@@ -1,21 +1,17 @@
 <template>
     <div>
-        <v-btn style="text-transform: capitalize" text color="white" nuxt to="/bestox">
-            <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">Home</p>
-        </v-btn>
-        <v-btn style="text-transform: capitalize" text color="white" nuxt to="/bestox/method">
-            <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">Method</p>
-        </v-btn>
-        <v-btn style="text-transform: capitalize" text color="white" nuxt to="/bestox/method">
+        <v-btn
+            v-for="(item, i) in navList"
+            :key="i"
+            style="text-transform: capitalize"
+            text
+            color="white"
+            nuxt
+            :to="item.to"
+        >
             <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">
-                Statistics
+                {{ item.title }}
             </p>
-        </v-btn>
-        <v-btn style="text-transform: capitalize" text color="white" nuxt to="/bestox/help">
-            <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">Help</p>
-        </v-btn>
-        <v-btn style="text-transform: capitalize" text color="white" nuxt to="/bestox/contact">
-            <p class="text-base" style="margin-bottom: 0px; text-transform: capitalize">Contact</p>
         </v-btn>
         <v-btn text color="white" value="Help" href="https://cbbio.online/">
             <div class="flex flex-row justify-center items-center">
@@ -35,5 +31,11 @@
 <script>
 export default {
     name: 'BESToxNavItemsIndex',
+    props: {
+        navList: {
+            type: Array,
+            default: [],
+        },
+    },
 };
 </script>

@@ -40,7 +40,16 @@
                                 >
                                 <v-card-subtitle v-text="item.subtitle"></v-card-subtitle>
                                 <v-card-actions>
-                                    <v-btn class="ml-2 mt-5" outlined rounded small> START </v-btn>
+                                    <v-btn
+                                        class="ml-2 mt-5"
+                                        outlined
+                                        rounded
+                                        small
+                                        nuxt
+                                        :to="item.to"
+                                    >
+                                        START
+                                    </v-btn>
                                 </v-card-actions>
                             </div>
                             <v-avatar class="ma-3 h-full" width="33.3333%" height="100%" tile>
@@ -69,6 +78,7 @@ export default {
                     src: '/images/AmPEPCard.png',
                     title: 'AmPEP | AxPEP',
                     subtitle: 'Sequence-based classification of Antimicrobial peptides',
+                    to: '/ampep',
                 },
                 {
                     color: '#1C2833',
@@ -76,6 +86,7 @@ export default {
                     title: 'BESTox',
                     subtitle:
                         'Convolutional neural network regression model for acute oral toxicity prediction',
+                    to: '/bestox',
                 },
                 {
                     color: '#89cff0',

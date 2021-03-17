@@ -8,15 +8,15 @@
                     @click="drawer = true"
                 ></v-app-bar-nav-icon>
                 <v-toolbar-title
-                    ><img class="h-16" src="/images/logo.png" alt="" srcset=""
+                    ><img class="h-16" src="/images/bestox-logo.png" alt="" srcset=""
                 /></v-toolbar-title>
                 <v-spacer></v-spacer>
-                <BESToxNavItems class="d-none d-md-block" />
+                <BESToxNavItems :navList="navList" class="d-none d-md-block" />
             </v-container>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list nav>
-                <v-list-item link nuxt to="/bestox/">
+                <v-list-item link nuxt to="/">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
@@ -70,6 +70,33 @@ export default {
             group: null,
             fixed: false,
             text: 'center',
+            navList: [
+                {
+                    to: '/',
+                    title: 'Home',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/bestox/method',
+                    title: 'Method',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/bestox/statistics',
+                    title: 'Statistics',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/bestox/help',
+                    title: 'Help',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/bestox/contact',
+                    title: 'Contact',
+                    icon: 'mdi-home',
+                },
+            ],
         };
     },
 };

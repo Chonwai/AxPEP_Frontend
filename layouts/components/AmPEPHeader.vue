@@ -8,10 +8,10 @@
                     @click="drawer = true"
                 ></v-app-bar-nav-icon>
                 <v-toolbar-title
-                    ><img class="h-16" src="/images/logo.png" alt="" srcset=""
+                    ><img class="h-16" src="/images/ampep-logo.png" alt="" srcset=""
                 /></v-toolbar-title>
                 <v-spacer></v-spacer>
-                <AmPEPNavItems class="d-none d-md-block" />
+                <AmPEPNavItems :navList="navList" class="d-none d-md-block" />
             </v-container>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
@@ -70,6 +70,33 @@ export default {
             group: null,
             fixed: false,
             text: 'center',
+            navList: [
+                {
+                    to: '/',
+                    title: 'Home',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/ampep/method',
+                    title: 'Method',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/ampep/dataset',
+                    title: 'Dataset',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/ampep/statistics',
+                    title: 'Statistics',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/ampep/help',
+                    title: 'Help',
+                    icon: 'mdi-home',
+                },
+            ],
         };
     },
 };

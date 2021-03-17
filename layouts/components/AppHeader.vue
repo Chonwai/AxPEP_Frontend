@@ -1,6 +1,6 @@
 <template>
     <div class="z-50 w-full">
-        <v-app-bar style="box-shadow: none !important" color="transparent" height="96px">
+        <v-app-bar style="box-shadow: none !important" :color="color" height="96px">
             <v-app-bar-nav-icon
                 class="d-md-none"
                 color="#FFFFFF"
@@ -36,6 +36,12 @@ export default {
     name: 'AppHeader',
     components: {
         AppNavItems,
+    },
+    props: {
+        color: {
+            type: String,
+            default: 'transparent',
+        },
     },
     data() {
         return {
