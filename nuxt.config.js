@@ -11,7 +11,13 @@ export default {
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: '' },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            {
+                rel: 'stylesheet',
+                href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css',
+            },
+        ],
     },
 
     // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -37,6 +43,7 @@ export default {
         // https://go.nuxtjs.dev/pwa
         // '@nuxtjs/pwa',
         'nuxt-leaflet',
+        '@neneos/nuxt-animate.css',
     ],
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)

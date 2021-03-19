@@ -3,7 +3,7 @@
         <div
             class="flex flex-col items-center justify-center h-80vh mb-4 bg-fixed bg-center bg-cover banner-img"
         >
-            <div class="p-4">
+            <div class="p-4 animate__animated animate__fadeInUp">
                 <h1 class="text-4xl text-white font-normal">
                     Computational Biology and Bioinformatics Lab (CBBio)
                 </h1>
