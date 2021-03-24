@@ -18,13 +18,13 @@ class ThemesUtils {
         return {
             name: 'ampep',
             light: {
-                primary: '#FFD700',
-                accent: '#e91e63',
-                secondary: '#30b1dc',
+                primary: '#3f51b5',
+                accent: '#8c9eff',
+                secondary: '#b0bec5',
                 success: '#4CAF50',
                 info: '#663399',
                 warning: '#FB8C00',
-                error: '#FF5252',
+                error: '#b71c1c',
             },
         };
     }
