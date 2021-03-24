@@ -48,11 +48,11 @@ class ThemesUtils {
         return {
             name: 'bestox',
             light: {
-                primary: '#21CFF3',
-                accent: '#FF4081',
-                secondary: '#ffe18d',
-                success: '#4CAF50',
-                info: '#2196F3',
+                primary: '#1C2833',
+                accent: '#b6babf',
+                secondary: '#0f5d82',
+                success: '#0d445f',
+                info: '#87a8b7',
                 warning: '#FB8C00',
                 error: '#FF5252',
             },
