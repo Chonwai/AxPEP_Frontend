@@ -32,13 +32,12 @@ export default {
         AppFooter,
     },
     mounted() {
-        console.log('AmPEP!');
-        console.log(this.$vuetify.theme.themes);
         const theme = ThemesUtils.ampep;
         Object.keys(theme.light).forEach(i => {
             this.$vuetify.theme.themes.light[i] = theme.light[i];
         });
         this.$vuetify.theme.themes.name = theme.name;
+        this.$meta().refresh();
     },
 };
 </script>

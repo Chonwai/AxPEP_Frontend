@@ -37,6 +37,7 @@ export default {
             this.$vuetify.theme.themes.light[i] = theme.light[i];
         });
         this.$vuetify.theme.themes.name = theme.name;
+        this.$meta().refresh();
     },
 };
 </script>
