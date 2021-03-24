@@ -1,7 +1,7 @@
 <template>
-    <v-app theme="ampep">
+    <v-app>
         <notifications group="foo" />
-        <AmPEPHeader />
+        <AcPEPHeader />
         <v-main>
             <v-container>
                 <nuxt />
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import AmPEPHeader from './components/AmPEPHeader';
+import AcPEPHeader from './components/AcPEPHeader';
 import AppFooter from './components/AppFooter';
 import ThemesUtils from '../utils/theme';
 export default {
@@ -28,13 +28,11 @@ export default {
         };
     },
     components: {
-        AmPEPHeader,
+        AcPEPHeader,
         AppFooter,
     },
     mounted() {
-        console.log('AmPEP!');
-        console.log(this.$vuetify.theme.themes);
-        const theme = ThemesUtils.ampep;
+        const theme = ThemesUtils.acpep;
         Object.keys(theme.light).forEach(i => {
             this.$vuetify.theme.themes.light[i] = theme.light[i];
         });

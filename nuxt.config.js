@@ -54,17 +54,6 @@ export default {
     // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
     vuetify: {
         customVariables: ['~/assets/variables.scss'],
-        theme: {
-            light: true,
-            themes: {
-                light: {
-                    primary: '#3f51b5',
-                    secondary: '#b0bec5',
-                    accent: '#8c9eff',
-                    error: '#b71c1c',
-                },
-            },
-        },
     },
 
     // Tailwindcss module configuration

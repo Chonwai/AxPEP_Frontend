@@ -69,6 +69,7 @@
 
 <script>
 export default {
+    layout: 'default',
     name: 'HomePageIndex',
     data() {
         return {
@@ -79,6 +80,13 @@ export default {
                     title: 'AmPEP | AxPEP',
                     subtitle: 'Sequence-based classification of Antimicrobial peptides',
                     to: '/ampep',
+                },
+                {
+                    color: '#c0d9c2',
+                    src: '/images/AmPEPCard.png',
+                    title: 'AcPEP | AxPEP',
+                    subtitle: 'Sequence-based classification of Antimicrobial peptides',
+                    to: '/acpep',
                 },
                 {
                     color: '#1C2833',

@@ -12,6 +12,7 @@
 <script>
 import AppHeader from './components/AppHeader';
 import AppFooter from './components/AppFooter';
+import ThemesUtils from '../utils/theme';
 export default {
     data() {
         return {
@@ -27,6 +28,13 @@ export default {
     components: {
         AppHeader,
         AppFooter,
+    },
+    mounted() {
+        const theme = ThemesUtils.default;
+        Object.keys(theme.light).forEach(i => {
+            this.$vuetify.theme.themes.light[i] = theme.light[i];
+        });
+        this.$vuetify.theme.themes.name = theme.name;
     },
 };
 </script>

@@ -56,6 +56,11 @@ export default {
                     icon: 'mdi-home',
                 },
                 {
+                    to: '/acpep',
+                    title: 'AcPEP',
+                    icon: 'mdi-home',
+                },
+                {
                     to: '/bestox',
                     title: 'BESTox',
                     icon: 'mdi-home',

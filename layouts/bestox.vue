@@ -14,6 +14,7 @@
 <script>
 import BESToxHeader from './components/BESToxHeader';
 import AppFooter from './components/AppFooter';
+import ThemesUtils from '../utils/theme';
 export default {
     data() {
         return {
@@ -29,6 +30,13 @@ export default {
     components: {
         BESToxHeader,
         AppFooter,
+    },
+    mounted() {
+        const theme = ThemesUtils.bestox;
+        Object.keys(theme.light).forEach(i => {
+            this.$vuetify.theme.themes.light[i] = theme.light[i];
+        });
+        this.$vuetify.theme.themes.name = theme.name;
     },
 };
 </script>
