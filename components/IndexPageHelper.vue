@@ -7,6 +7,7 @@
                     <v-btn @click="showRetrieve = true">Click here to retrieve</v-btn>
                     <TaskRetrieveDialog
                         :dialog="showRetrieve"
+                        :page="page"
                         v-on:dialogToggle="retrieveDialogCallback"
                     />
                 </v-col>
@@ -24,6 +25,12 @@
 import TaskRetrieveDialog from './TaskRetrieveDialog';
 export default {
     name: 'IndexPageHelper',
+    props: {
+        page: {
+            default: 'ampep',
+            type: String,
+        },
+    },
     components: {
         TaskRetrieveDialog,
     },

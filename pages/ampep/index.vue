@@ -1,6 +1,6 @@
 <template>
     <div class="p-0 md:p-8">
-        <IndexPageHelper />
+        <IndexPageHelper page="ampep" />
         <v-stepper class="stepper-container" v-model="e6" vertical>
             <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                 <div class="flex items-center">

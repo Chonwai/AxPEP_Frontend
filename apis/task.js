@@ -19,12 +19,24 @@ function newTaskByCodon(param, data) {
     );
 }
 
+function newAcPEPTaskByFile(data) {
+    return window.$nuxt.$api.$post(`acpep/tasks/file`, data);
+}
+
+function newAcPEPTaskByTextarea(data) {
+    return window.$nuxt.$api.$post(`acpep/tasks/textarea`, data);
+}
+
 function getSpecifyTask(id) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}`);
 }
 
 function getSpecifyTasksByEmail(data, page = 1) {
     return window.$nuxt.$api.$get(`axpep/emails/${data}/tasks?page=${page}`);
+}
+
+function getSpecifyAcPEPTasksByEmail(data, page = 1) {
+    return window.$nuxt.$api.$get(`acpep/emails/${data}/tasks?page=${page}`);
 }
 
 function downloadSpecifyClassificationFile(id) {
@@ -39,8 +51,11 @@ export default {
     newTaskByFile,
     newTaskByTextarea,
     newTaskByCodon,
-    getSpecifyTasksByEmail,
+    newAcPEPTaskByFile,
+    newAcPEPTaskByTextarea,
     getSpecifyTask,
+    getSpecifyTasksByEmail,
+    getSpecifyAcPEPTasksByEmail,
     downloadSpecifyClassificationFile,
     downloadSpecifyScoreFile,
 };

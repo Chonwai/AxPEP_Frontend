@@ -1,6 +1,6 @@
 <template>
     <div class="p-0 md:p-8">
-        <IndexPageHelper />
+        <IndexPageHelper page="acpep" />
         <v-stepper class="stepper-container" v-model="e6" vertical>
             <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                 <div class="flex items-center">
@@ -24,12 +24,7 @@
             </v-stepper-step>
 
             <v-stepper-content step="1">
-                <InputFastaArea
-                    class="py-2"
-                    v-on:file="uploadFile"
-                    v-on:source="fileSource"
-                    v-on:codon="selectedCodon"
-                />
+                <InputFastaArea class="py-2" v-on:file="uploadFile" v-on:source="fileSource" />
                 <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
             </v-stepper-content>
 
@@ -37,14 +32,38 @@
 
             <v-stepper-content step="2">
                 <v-checkbox
-                    v-model="models.ampep"
-                    label="Anti-microbial peptide (AmPEP)"
+                    v-model="methods.breast"
+                    label="Breast"
                     :falseValue="0"
                     :trueValue="1"
                 ></v-checkbox>
                 <v-checkbox
-                    v-model="models.rfampep30"
-                    label="Short anti-microbial peptide (RF-AmPEP30, for length <=30)"
+                    v-model="methods.cervix"
+                    label="Cervix"
+                    :falseValue="0"
+                    :trueValue="1"
+                ></v-checkbox>
+                <v-checkbox
+                    v-model="methods.colon"
+                    label="Colon"
+                    :falseValue="0"
+                    :trueValue="1"
+                ></v-checkbox>
+                <v-checkbox
+                    v-model="methods.lung"
+                    label="Lung"
+                    :falseValue="0"
+                    :trueValue="1"
+                ></v-checkbox>
+                <v-checkbox
+                    v-model="methods.prostate"
+                    label="Prostate"
+                    :falseValue="0"
+                    :trueValue="1"
+                ></v-checkbox>
+                <v-checkbox
+                    v-model="methods.skin"
+                    label="Skin"
                     :falseValue="0"
                     :trueValue="1"
                 ></v-checkbox>
@@ -101,11 +120,13 @@ export default {
             description: '',
             email: '',
             source: '',
-            codon: false,
-            models: {
-                ampep: 1,
-                deepampep30: 0,
-                rfampep30: 1,
+            methods: {
+                breast: 1,
+                cervix: 1,
+                colon: 1,
+                lung: 1,
+                prostate: 1,
+                skin: 1,
             },
             rules: {
                 required: value => !!value || 'Required.',
@@ -136,6 +157,20 @@ export default {
         selectedCodon(codon) {
             this.codon = codon;
         },
+        prepareFormData() {
+            let form = new FormData();
+            form.append('description', this.description);
+            form.append('email', this.email);
+            form.append('source', this.source);
+            form.append('application', 'acpep');
+            for (const key in this.methods) {
+                if (this.methods.hasOwnProperty(key)) {
+                    const element = this.methods[key];
+                    form.append(`methods[${key}]`, element);
+                }
+            }
+            return form;
+        },
         async submit() {
             if (
                 this.rules.email(this.email) == 'Invalid e-mail.' ||
@@ -148,25 +183,18 @@ export default {
                     text: 'Please enter a correct email address.',
                 });
             } else {
-                let form = new FormData();
                 let res = null;
-                form.append('description', this.description);
-                form.append('email', this.email);
-                form.append('source', this.source);
+                let form = this.prepareFormData();
                 if (this.source == 'file') {
                     form.append('file', this.file);
-                    res = await TaskAPI.newTaskByFile(this.models, form);
+                    res = await TaskAPI.newAcPEPTaskByFile(form);
                 } else if (this.source == 'textarea') {
                     form.append('fasta', this.file);
-                    res = await TaskAPI.newTaskByTextarea(this.models, form);
-                } else if (this.source == 'codon') {
-                    form.append('file', this.file);
-                    form.append('codon', this.codon);
-                    res = await TaskAPI.newTaskByCodon(this.models, form);
+                    res = await TaskAPI.newAcPEPTaskByTextarea(form);
                 }
                 if (res.status == true) {
                     this.$router.push({
-                        name: 'ampep-retrieve-email',
+                        name: 'acpep-retrieve-email',
                         params: { email: this.email },
                     });
                 }

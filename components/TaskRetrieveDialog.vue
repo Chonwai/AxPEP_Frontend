@@ -37,6 +37,10 @@ export default {
             default: false,
             type: Boolean,
         },
+        page: {
+            default: 'ampep',
+            type: String,
+        },
     },
     data() {
         return {
@@ -69,7 +73,10 @@ export default {
         },
         retrieve() {
             if (this.email != null) {
-                this.$router.push({ name: 'ampep-retrieve-email', params: { email: this.email } });
+                this.$router.push({
+                    name: `${this.page}-retrieve-email`,
+                    params: { email: this.email },
+                });
             }
         },
     },
