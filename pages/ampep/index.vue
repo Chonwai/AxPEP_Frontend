@@ -160,6 +160,7 @@ export default {
                 form.append('description', this.description);
                 form.append('email', this.email);
                 form.append('source', this.source);
+                form.append('application', 'ampep');
                 if (this.source == 'file') {
                     form.append('file', this.file);
                     res = await TaskAPI.newTaskByFile(this.models, form);
