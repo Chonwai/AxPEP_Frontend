@@ -29,6 +29,7 @@
                     v-on:file="uploadFile"
                     v-on:source="fileSource"
                     v-on:codon="selectedCodon"
+                    application="ampep"
                 />
                 <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
             </v-stepper-content>

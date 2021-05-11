@@ -24,7 +24,12 @@
             </v-stepper-step>
 
             <v-stepper-content step="1">
-                <InputFastaArea class="py-2" v-on:file="uploadFile" v-on:source="fileSource" />
+                <InputFastaArea
+                    class="py-2"
+                    v-on:file="uploadFile"
+                    v-on:source="fileSource"
+                    application="acpep"
+                />
                 <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
             </v-stepper-content>
 
