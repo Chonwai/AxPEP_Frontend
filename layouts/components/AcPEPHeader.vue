@@ -86,7 +86,7 @@ export default {
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/ampep/help',
+                    to: '/acpep/help',
                     title: 'Help',
                     icon: 'mdi-home',
                 },
