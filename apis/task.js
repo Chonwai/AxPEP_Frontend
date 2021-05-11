@@ -31,6 +31,10 @@ function getSpecifyTask(id) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}`);
 }
 
+function getSpecifyAcPEPTask(id) {
+    return window.$nuxt.$api.$get(`acpep/tasks/${id}`);
+}
+
 function getSpecifyTasksByEmail(data, page = 1) {
     return window.$nuxt.$api.$get(`axpep/emails/${data}/tasks?page=${page}`);
 }
@@ -54,6 +58,7 @@ export default {
     newAcPEPTaskByFile,
     newAcPEPTaskByTextarea,
     getSpecifyTask,
+    getSpecifyAcPEPTask,
     getSpecifyTasksByEmail,
     getSpecifyAcPEPTasksByEmail,
     downloadSpecifyClassificationFile,

@@ -1,10 +1,10 @@
 <script>
-import { Line } from 'vue-chartjs';
+import { Doughnut } from 'vue-chartjs';
 export default {
-    extends: Line,
+    extends: Doughnut,
     props: ['labels', 'data', 'dataName', 'height', 'color'],
     mounted() {
-        this.renderLineChart();
+        this.renderDoughnutChart();
     },
     computed: {
         chartData: function () {
@@ -12,7 +12,7 @@ export default {
         },
     },
     methods: {
-        renderLineChart() {
+        renderDoughnutChart() {
             this.renderChart(
                 {
                     labels: this.labels,
@@ -35,7 +35,7 @@ export default {
             handler: function (val, oldVal) {
                 if (this.$data._chart != null) {
                     this.$data._chart.destroy();
-                    this.renderLineChart();
+                    this.renderDoughnutChart();
                 }
             },
         },

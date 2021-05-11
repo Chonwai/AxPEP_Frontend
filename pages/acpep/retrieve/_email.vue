@@ -128,7 +128,7 @@ export default {
             );
         },
         retrieve(id) {
-            this.$router.push({ name: 'ampep-jobs-id', params: { id: id } });
+            this.$router.push({ name: 'acpep-jobs-id', params: { id: id } });
         },
     },
     beforeDestroy() {

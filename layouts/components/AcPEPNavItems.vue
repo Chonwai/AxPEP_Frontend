@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    name: 'AmPEPNavItemsIndex',
+    name: 'AcPEPNavItemsIndex',
     props: {
         navList: {
             type: Array,

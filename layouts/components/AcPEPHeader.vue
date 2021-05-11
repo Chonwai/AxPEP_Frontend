@@ -11,11 +11,11 @@
                     <img
                         class="h-16 cursor-pointer"
                         src="/images/ampep-logo.png"
-                        alt="ampep-logo"
+                        alt="axpep-logo"
                         @click="goToIndex"
                 /></v-toolbar-title>
                 <v-spacer></v-spacer>
-                <AmPEPNavItems :navList="navList" class="d-none d-md-block" />
+                <AcPEPNavItems :navList="navList" class="d-none d-md-block" />
             </v-container>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
@@ -62,11 +62,11 @@
 </template>
 
 <script>
-import AmPEPNavItems from './AmPEPNavItems';
+import AcPEPNavItems from './AcPEPNavItems';
 export default {
     name: 'AmPEPHeader',
     components: {
-        AmPEPNavItems,
+        AcPEPNavItems,
     },
     data() {
         return {
@@ -81,17 +81,7 @@ export default {
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/ampep/method',
-                    title: 'Method',
-                    icon: 'mdi-home',
-                },
-                {
-                    to: '/ampep/dataset',
-                    title: 'Dataset',
-                    icon: 'mdi-home',
-                },
-                {
-                    to: '/ampep/statistics',
+                    to: '/acpep/statistics',
                     title: 'Statistics',
                     icon: 'mdi-home',
                 },
@@ -105,7 +95,7 @@ export default {
     },
     methods: {
         goToIndex() {
-            this.$router.push({ name: 'ampep' });
+            this.$router.push({ name: 'acpep' });
         },
     },
 };
