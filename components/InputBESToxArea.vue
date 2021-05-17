@@ -7,7 +7,14 @@
             value=""
             v-model="textarea"
         ></v-textarea>
-        <div v-show="source === 'draw'">Draw Something</div>
+        <div v-show="source === 'draw'">
+            <center>
+                <div>
+                    <br />
+                    <canvas id="sketcher"></canvas>
+                </div>
+            </center>
+        </div>
         <v-file-input
             v-show="source === 'file'"
             show-size
@@ -42,6 +49,19 @@ export default {
             file: [],
             textarea: '',
         };
+    },
+    mounted() {
+        console.log('The version of ChemDoodle installed is: ' + ChemDoodle.getVersion());
+        ChemDoodle.ELEMENT['H'].jmolColor = 'black';
+        ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';
+        var sketcher = new ChemDoodle.SketcherCanvas('sketcher', 500, 300, {
+            useServices: true,
+            oneMolecule: true,
+        });
+        sketcher.styles.atoms_displayTerminalCarbonLabels_2D = true;
+        sketcher.styles.atoms_useJMOLColors = true;
+        sketcher.styles.bonds_clearOverlaps_2D = true;
+        sketcher.repaint();
     },
     watch: {
         file: {

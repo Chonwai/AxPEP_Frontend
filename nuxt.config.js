@@ -18,10 +18,20 @@ export default {
                 href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css',
             },
         ],
+        script: [
+            {
+                type: 'text/javascript',
+                src: '/js/ChemDoodleWeb.js',
+            },
+            {
+                type: 'text/javascript',
+                src: '/uis/ChemDoodleWeb-uis.js',
+            },
+        ],
     },
 
     // Global CSS (https://go.nuxtjs.dev/config-css)
-    css: [],
+    css: ['static/css/ChemDoodleWeb.css', 'static/uis/jquery-ui-1.11.4.css'],
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: ['~/plugins/axios', '~/plugins/api', { src: '~/plugins/notification', ssr: false }],
