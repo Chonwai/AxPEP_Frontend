@@ -2555,16 +2555,14 @@
                 this._helper
                     ? ((this.helper =
                           this.helper || a("\x3cdiv style\x3d'overflow:hidden;'\x3e\x3c/div\x3e")),
-                      this.helper
-                          .addClass(this._helper)
-                          .css({
-                              width: this.element.outerWidth() - 1,
-                              height: this.element.outerHeight() - 1,
-                              position: 'absolute',
-                              left: this.elementOffset.left + 'px',
-                              top: this.elementOffset.top + 'px',
-                              zIndex: ++b.zIndex,
-                          }),
+                      this.helper.addClass(this._helper).css({
+                          width: this.element.outerWidth() - 1,
+                          height: this.element.outerHeight() - 1,
+                          position: 'absolute',
+                          left: this.elementOffset.left + 'px',
+                          top: this.elementOffset.top + 'px',
+                          zIndex: ++b.zIndex,
+                      }),
                       this.helper.appendTo('body').disableSelection())
                     : (this.helper = this.element);
             },
@@ -21506,14 +21504,12 @@ ChemDoodle.uis.gui.templateDepot = (function (g, a, p) {
             ? h
                   .fadeIn(200)
                   .position({ my: 'center bottom', at: 'center top', of: f, collision: 'fit' })
-            : h
-                  .slideDown(400)
-                  .position({
-                      my: 'center top',
-                      at: 'center top',
-                      of: a('#' + this.sketcher.id),
-                      collision: 'fit',
-                  });
+            : h.slideDown(400).position({
+                  my: 'center top',
+                  at: 'center top',
+                  of: a('#' + this.sketcher.id),
+                  collision: 'fit',
+              });
         return !1;
     };
     g.close = function (g) {

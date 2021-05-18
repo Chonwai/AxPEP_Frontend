@@ -114,6 +114,7 @@ import IndexPageHelper from '@/components/IndexPageHelper';
 import InputFastaArea from '@/components/InputFastaArea';
 import ExampleFastaDialog from '@/components/ExampleFastaDialog';
 import TaskAPI from '@/apis/task';
+import Fasta from 'biojs-io-fasta';
 
 export default {
     layout: 'acpep',
@@ -177,6 +178,8 @@ export default {
             return form;
         },
         async submit() {
+            // var seqs = Fasta.parse(this.file);
+            // console.log(seqs);
             if (
                 this.rules.email(this.email) == 'Invalid e-mail.' ||
                 this.rules.required(this.email) == 'Required.'
