@@ -178,8 +178,6 @@ export default {
             return form;
         },
         async submit() {
-            // var seqs = Fasta.parse(this.file);
-            // console.log(seqs);
             if (
                 this.rules.email(this.email) == 'Invalid e-mail.' ||
                 this.rules.required(this.email) == 'Required.'

@@ -1,22 +1,13 @@
-function newTaskByFile(param, data) {
-    return window.$nuxt.$api.$post(
-        `axpep/tasks/file?ampep=${param.ampep}&deepampep30=${param.deepampep30}&rfampep30=${param.rfampep30}`,
-        data
-    );
+function newTaskByFile(data) {
+    return window.$nuxt.$api.$post(`axpep/tasks/file`, data);
 }
 
-function newTaskByTextarea(param, data) {
-    return window.$nuxt.$api.$post(
-        `axpep/tasks/textarea?ampep=${param.ampep}&deepampep30=${param.deepampep30}&rfampep30=${param.rfampep30}`,
-        data
-    );
+function newTaskByTextarea(data) {
+    return window.$nuxt.$api.$post(`axpep/tasks/textarea`, data);
 }
 
-function newTaskByCodon(param, data) {
-    return window.$nuxt.$api.$post(
-        `axpep/tasks/codon?ampep=${param.ampep}&deepampep30=${param.deepampep30}&rfampep30=${param.rfampep30}`,
-        data
-    );
+function newTaskByCodon(data) {
+    return window.$nuxt.$api.$post(`axpep/tasks/codon`, data);
 }
 
 function newAcPEPTaskByFile(data) {

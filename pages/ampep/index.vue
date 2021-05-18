@@ -38,19 +38,19 @@
 
             <v-stepper-content step="2">
                 <v-checkbox
-                    v-model="models.ampep"
+                    v-model="methods.ampep"
                     label="Anti-microbial peptide (AmPEP)"
                     :falseValue="0"
                     :trueValue="1"
                 ></v-checkbox>
                 <!-- <v-checkbox
-                    v-model="models.deepampep30"
+                    v-model="methods.deepampep30"
                     label="Short anti-microbial peptide (Deep-AmPEP30, for length <=30)"
                     :falseValue="0"
                     :trueValue="1"
                 ></v-checkbox> -->
                 <v-checkbox
-                    v-model="models.rfampep30"
+                    v-model="methods.rfampep30"
                     label="Short anti-microbial peptide (RF-AmPEP30, for length <=30)"
                     :falseValue="0"
                     :trueValue="1"
@@ -109,7 +109,7 @@ export default {
             email: '',
             source: '',
             codon: false,
-            models: {
+            methods: {
                 ampep: 1,
                 deepampep30: 0,
                 rfampep30: 1,
@@ -143,6 +143,20 @@ export default {
         selectedCodon(codon) {
             this.codon = codon;
         },
+        prepareFormData() {
+            let form = new FormData();
+            form.append('description', this.description);
+            form.append('email', this.email);
+            form.append('source', this.source);
+            form.append('application', 'ampep');
+            for (const key in this.methods) {
+                if (this.methods.hasOwnProperty(key)) {
+                    const element = this.methods[key];
+                    form.append(`methods[${key}]`, element);
+                }
+            }
+            return form;
+        },
         async submit() {
             if (
                 this.rules.email(this.email) == 'Invalid e-mail.' ||
@@ -155,22 +169,18 @@ export default {
                     text: 'Please enter a correct email address.',
                 });
             } else {
-                let form = new FormData();
                 let res = null;
-                form.append('description', this.description);
-                form.append('email', this.email);
-                form.append('source', this.source);
-                form.append('application', 'ampep');
+                let form = this.prepareFormData();
                 if (this.source == 'file') {
                     form.append('file', this.file);
-                    res = await TaskAPI.newTaskByFile(this.models, form);
+                    res = await TaskAPI.newTaskByFile(form);
                 } else if (this.source == 'textarea') {
                     form.append('fasta', this.file);
-                    res = await TaskAPI.newTaskByTextarea(this.models, form);
+                    res = await TaskAPI.newTaskByTextarea(form);
                 } else if (this.source == 'codon') {
                     form.append('file', this.file);
                     form.append('codon', this.codon);
-                    res = await TaskAPI.newTaskByCodon(this.models, form);
+                    res = await TaskAPI.newTaskByCodon(form);
                 }
                 if (res.status == true) {
                     this.$router.push({
