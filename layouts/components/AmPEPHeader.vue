@@ -76,7 +76,7 @@ export default {
             text: 'center',
             navList: [
                 {
-                    to: '/',
+                    to: '/ampep',
                     title: 'Home',
                     icon: 'mdi-home',
                 },
@@ -105,7 +105,7 @@ export default {
     },
     methods: {
         goToIndex() {
-            this.$router.push({ name: 'ampep' });
+            this.$router.push({ path: '/' });
         },
     },
 };
