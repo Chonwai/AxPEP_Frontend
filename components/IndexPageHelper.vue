@@ -13,10 +13,10 @@
                 </v-col>
             </v-row>
         </v-alert>
-        <v-alert border="left" colored-border color="deep-purple accent-4" elevation="2">
-            AxPEP is a collection of sequence-based machine learning methods for peptide activities
-            prediction. Currently, we predict peptides for anti-microbial and anti-cancer
-            activities.
+        <v-alert border="left" colored-border elevation="2">
+            AxPEP is a collection of sequence-based machine learning methods for antimicrobial
+            peptide (AMP) prediction. It accepts amino acid sequences in FASTA format. It can also
+            screen AMPs directly from the DNA genome sequence.
         </v-alert>
     </div>
 </template>
