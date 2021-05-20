@@ -51,17 +51,17 @@ export default {
             text: 'center',
             navList: [
                 {
-                    to: '/ampep',
+                    to: '/ampep/home',
                     title: 'AmPEP',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/acpep',
+                    to: '/acpep/home',
                     title: 'AcPEP',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/bestox',
+                    to: '/bestox/home',
                     title: 'BESTox',
                     icon: 'mdi-home',
                 },

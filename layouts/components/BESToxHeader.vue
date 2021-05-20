@@ -20,7 +20,7 @@
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list nav>
-                <v-list-item link nuxt to="/">
+                <v-list-item link nuxt to="/bestox/home">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
@@ -76,7 +76,7 @@ export default {
             text: 'center',
             navList: [
                 {
-                    to: '/bestox',
+                    to: '/bestox/home',
                     title: 'Home',
                     icon: 'mdi-home',
                 },
