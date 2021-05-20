@@ -43,12 +43,13 @@
                     :falseValue="0"
                     :trueValue="1"
                 ></v-checkbox>
-                <!-- <v-checkbox
+                <v-checkbox
                     v-model="methods.deepampep30"
                     label="Short anti-microbial peptide (Deep-AmPEP30, for length <=30)"
                     :falseValue="0"
                     :trueValue="1"
-                ></v-checkbox> -->
+                    disabled
+                ></v-checkbox>
                 <v-checkbox
                     v-model="methods.rfampep30"
                     label="Short anti-microbial peptide (RF-AmPEP30, for length <=30)"
