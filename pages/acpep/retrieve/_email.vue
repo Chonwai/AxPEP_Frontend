@@ -107,7 +107,7 @@ export default {
         },
         async updateTable() {
             this.loading = true;
-            let res = await TaskAPI.getSpecifyAcPEPTasksByEmail(this.email, this.current_page);
+            let res = await TaskAPI.getSpecifyTasksByEmail(this.email, this.current_page, 'acpep');
             this.data = res.message.data;
             this.total = res.message.total;
             this.itemsPerPage = res.message.per_page;

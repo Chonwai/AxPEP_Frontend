@@ -26,8 +26,10 @@ function getSpecifyAcPEPTask(id) {
     return window.$nuxt.$api.$get(`acpep/tasks/${id}`);
 }
 
-function getSpecifyTasksByEmail(data, page = 1) {
-    return window.$nuxt.$api.$get(`axpep/emails/${data}/tasks?page=${page}`);
+function getSpecifyTasksByEmail(data, page = 1, application) {
+    return window.$nuxt.$api.$get(
+        `axpep/emails/${data}/tasks?page=${page}&application=${application}`
+    );
 }
 
 function getSpecifyAcPEPTasksByEmail(data, page = 1) {

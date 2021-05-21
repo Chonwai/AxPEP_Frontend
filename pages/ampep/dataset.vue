@@ -18,11 +18,13 @@
                     class="flex-1"
                     title="AMP"
                     text="Unique data collected from ADP3, CAMPR3, LAMP. All non-natural amino acids were removed."
+                    downloadLink="https://sourceforge.net/projects/axpep/files/AmPEP_datasets/"
                 />
                 <DownloadCard
                     class="flex-1"
                     title="Non-AMP"
                     text="Generated from Uniprot sequences without annotation of AMP, membrane, toxic, secretory, defensing, antibiotic, anticancer, antiviral and antifungal."
+                    downloadLink="https://sourceforge.net/projects/axpep/files/AmPEP_datasets/"
                 />
             </div>
             <p>
@@ -30,9 +32,10 @@
                 <a href="http://www.jci-bioinfo.cn/iAMP/data.html">downloaded from here</a>.
             </p>
             <ReferenceCard
+                authors="Bhadra, P.; Yan, J.; Li, J.; Fong, S.; Siu, Shirley W. I.*"
                 title="AmPEP: Sequence-based prediction of antimicrobial peptides using distribution patterns of amino acid properties and random forest."
-                subtitle="Scientific Reports, 1697 (2018)."
-                authors="Pratiti Bhadra, Jielu Yan, Jinyan Li, Simon Fong, and Shirley W. I. Siu.*"
+                subtitle="Scientific Reports 2018, 8, 1697."
+                link="https://www.nature.com/articles/s41598-018-19752-w"
             />
         </section>
         <section id="Short-Anti-Microbial-Peptides" class="mb-8">
@@ -49,17 +52,20 @@
                     class="flex-1"
                     title="Train Dataset"
                     text="1529 positives and 1529 negatives"
+                    downloadLink="https://sourceforge.net/projects/axpep/files/Deep-AmPEP30_datasets/"
                 />
                 <DownloadCard
                     class="flex-1"
                     title="Test Dataset (Benchmark)"
                     text="94 positives and 94 negatives"
+                    downloadLink="https://sourceforge.net/projects/axpep/files/Deep-AmPEP30_datasets/"
                 />
             </div>
             <ReferenceCard
+                authors="Yan, J.; Bhadra, P.; Li, A.; Sethiya, P.; Qin, L.; Tai, H. K.; Wong, K. H.; and Siu, Shirley W. I.* "
                 title="Deep-AmPEP30: Improve short antimicrobial peptides prediction with deep learning."
-                subtitle="Accepted for publication in Molecular Therapy – Nucleic Acids."
-                authors="Jielu Yan, Pratiti Bhadra, Ang Li, Pooja Sethiya, Longguang Qin, Hio Kuan Tai, Koon Ho Wong, and Shirley W. I. Siu*"
+                subtitle="Molecular Therapy - Nucleic Acid 2020, 20, 882-894."
+                link="https://www.sciencedirect.com/science/article/pii/S2162253120301323"
             />
         </section>
     </div>

@@ -3,11 +3,11 @@
         <v-card class="mx-auto w-4/5 mb-8">
             <v-card-text>
                 <div>Reference</div>
-                <p class="text-base font-bold text--primary">
-                    {{ title }}
-                </p>
-                <p>{{ subtitle }}</p>
                 <div class="text--primary">{{ authors }}</div>
+                <a :href="link" class="text-base font-bold text--primary">
+                    {{ title }}
+                </a>
+                <p>{{ subtitle }}</p>
             </v-card-text>
         </v-card>
     </div>
@@ -28,6 +28,10 @@ export default {
         authors: {
             type: String,
             default: '',
+        },
+        link: {
+            type: String,
+            default: '#',
         },
     },
 };

@@ -39,20 +39,20 @@
             <v-stepper-content step="2">
                 <v-checkbox
                     v-model="methods.ampep"
-                    label="Anti-microbial peptide (AmPEP)"
+                    label="AmPEP: Random forest model for sequence of any length"
                     :falseValue="0"
                     :trueValue="1"
                 ></v-checkbox>
                 <v-checkbox
                     v-model="methods.deepampep30"
-                    label="Short anti-microbial peptide (Deep-AmPEP30, for length <=30)"
+                    label="Deep-AmPEP30: Convolutional neural network model for short sequence <=30 residues"
                     :falseValue="0"
                     :trueValue="1"
                     disabled
                 ></v-checkbox>
                 <v-checkbox
                     v-model="methods.rfampep30"
-                    label="Short anti-microbial peptide (RF-AmPEP30, for length <=30)"
+                    label="RF-AmPEP30: Random forest model for short sequence <=30 residues"
                     :falseValue="0"
                     :trueValue="1"
                 ></v-checkbox>

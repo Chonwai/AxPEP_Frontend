@@ -11,7 +11,7 @@
             <v-card-actions>
                 <v-list-item class="grow">
                     <v-row align="center" justify="end">
-                        <v-icon class="mr-1"> mdi-download </v-icon>
+                        <a :href="downloadLink"><v-icon class="mr-1"> mdi-download </v-icon></a>
                         <span class="subheading">{{ downloadNumber }}</span>
                     </v-row>
                 </v-list-item>
@@ -35,6 +35,10 @@ export default {
         downloadNumber: {
             type: String,
             default: '',
+        },
+        downloadLink: {
+            type: String,
+            default: '#',
         },
     },
 };
