@@ -79,14 +79,14 @@ export default {
                     src: '/images/AmPEPCard.png',
                     title: 'AmPEP | AxPEP',
                     subtitle: 'Sequence-based classification of Antimicrobial peptides',
-                    to: '/ampep',
+                    to: '/ampep/home',
                 },
                 {
                     color: '#c0d9c2',
                     src: '/images/AmPEPCard.png',
                     title: 'AcPEP | AxPEP',
                     subtitle: 'Sequence-based classification of Antimicrobial peptides',
-                    to: '/acpep',
+                    to: '/acpep/home',
                 },
                 {
                     color: '#1C2833',
@@ -94,13 +94,21 @@ export default {
                     title: 'BESTox',
                     subtitle:
                         'Convolutional neural network regression model for acute oral toxicity prediction',
-                    to: '/bestox',
+                    to: '/bestox/home',
                 },
                 {
                     color: '#89cff0',
                     src: '/images/LigTMapCard.png',
                     title: 'LigTMap',
                     subtitle: 'Target and activity prediction server for small molecules',
+                    to: 'https://cbbio.online/LigTMap/',
+                },
+                {
+                    color: '#3f51b5',
+                    src: '/images/POSVinaCard.png',
+                    title: 'PSOVina',
+                    subtitle: 'Fast protein-ligand docking tool based on PSO and AutoDock Vina',
+                    to: '/posvina/home',
                 },
             ],
         };
