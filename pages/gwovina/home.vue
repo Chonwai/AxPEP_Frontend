@@ -107,15 +107,13 @@
                 If you are interested in the source code of GWOVina for any research purposes,
                 please note that the following files were newly developed in our work or modified
                 based on Vina:<br />
-                <code>
-                    gwovina-x.x/src/main/main.cpp<br />
-                    gwovina-x.x/src/lib/gwo.h<br />
-                    gwovina-x.x/src/lib/gwo.cpp<br />
-                    gwovina-x.x/src/lib/parallel_gwo.h<br />
-                    gwovina-x.x/src/lib/parallel_gwo.cpp<br />
-                    gwovina-x.x/src/lib/gwo_mutate.h<br />
-                    gwovina-x.x/src/lib/gwo_mutate.cpp<br />
-                </code>
+                <code>gwovina-x.x/src/main/main.cpp</code><br />
+                <code>gwovina-x.x/src/lib/gwo.h</code><br />
+                <code>gwovina-x.x/src/lib/gwo.cpp</code><br />
+                <code>gwovina-x.x/src/lib/parallel_gwo.h</code><br />
+                <code>gwovina-x.x/src/lib/parallel_gwo.cpp</code><br />
+                <code>gwovina-x.x/src/lib/gwo_mutate.h</code><br />
+                <code>gwovina-x.x/src/lib/gwo_mutate.cpp</code>
             </p>
         </section>
         <section id="Citations" class="mb-8">

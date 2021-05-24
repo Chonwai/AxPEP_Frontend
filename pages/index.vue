@@ -17,15 +17,14 @@
                 <h2 class="text-2xl font-medium mb-4">Software</h2>
                 <p>We share Bioinformatics software and data to facilitate research.</p>
                 <v-chip-group mandatory active-class="primary--text mb-4">
-                    <v-chip>AmPEP</v-chip>
-                    <v-chip>AcPEP</v-chip>
-                    <v-chip>BESTox</v-chip>
-                    <v-chip>LigTMap</v-chip>
-                    <v-chip>PSOVina</v-chip>
-                    <v-chip>GWOVina</v-chip>
-                    <v-chip>TMDIM</v-chip>
-                    <v-chip>ProtPOS</v-chip>
-                    <v-chip>PyMOL mControl</v-chip>
+                    <div v-for="(item, i) in cardItems" :key="i">
+                        <v-chip v-if="item.title != 'LigTMap'" link nuxt :to="item.to">{{
+                            item.title
+                        }}</v-chip>
+                        <v-chip v-if="item.title == 'LigTMap'" :href="item.to">{{
+                            item.title
+                        }}</v-chip>
+                    </div>
                 </v-chip-group>
             </section>
             <v-divider></v-divider>
@@ -41,12 +40,25 @@
                                 <v-card-subtitle v-text="item.subtitle"></v-card-subtitle>
                                 <v-card-actions>
                                     <v-btn
+                                        v-if="item.title != 'LigTMap'"
                                         class="ml-2 mt-5"
                                         outlined
                                         rounded
                                         small
+                                        link
                                         nuxt
                                         :to="item.to"
+                                    >
+                                        START
+                                    </v-btn>
+                                    <v-btn
+                                        v-if="item.title == 'LigTMap'"
+                                        class="ml-2 mt-5"
+                                        outlined
+                                        rounded
+                                        small
+                                        link
+                                        :href="item.to"
                                     >
                                         START
                                     </v-btn>
@@ -77,14 +89,14 @@ export default {
                 {
                     color: '#3f51b5',
                     src: '/images/AmPEPCard.png',
-                    title: 'AmPEP | AxPEP',
+                    title: 'AmPEP',
                     subtitle: 'Sequence-based classification of Antimicrobial peptides',
                     to: '/ampep/home',
                 },
                 {
                     color: '#c0d9c2',
                     src: '/images/AmPEPCard.png',
-                    title: 'AcPEP | AxPEP',
+                    title: 'AcPEP',
                     subtitle: 'Sequence-based classification of Antimicrobial peptides',
                     to: '/acpep/home',
                 },
@@ -108,7 +120,7 @@ export default {
                     src: '/images/POSVinaCard.png',
                     title: 'PSOVina',
                     subtitle: 'Fast protein-ligand docking tool based on PSO and AutoDock Vina',
-                    to: '/posvina/home',
+                    to: '/psovina/home',
                 },
                 {
                     color: '#049068',

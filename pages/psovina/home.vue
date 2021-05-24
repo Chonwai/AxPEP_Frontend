@@ -135,17 +135,15 @@
                 If you are interested in the source code of PSOVina for any academic purposes,
                 please note that the following files were newly developedin our work or modified
                 based on Vina: <br />
-                <code>
-                    psovina-x.x/src/main/main.cpp<br />
-                    psovina-x.x/src/lib/pso.h<br />
-                    psovina-x.x/src/lib/pso.cpp<br />
-                    psovina-x.x/src/lib/parallel_pso.h<br />
-                    psovina-x.x/src/lib/parallel_pso.cpp<br />
-                    psovina-x.x/src/lib/pso_mutate.h<br />
-                    psovina-x.x/src/lib/pso_mutate.cpp<br />
-                    psovina-x.x/src/lib/pso_search.h<br />
-                    psovina-x.x/src/lib/pso_search.cpp<br
-                /></code>
+                <code>psovina-x.x/src/main/main.cpp</code><br />
+                <code>psovina-x.x/src/lib/pso.h</code><br />
+                <code>psovina-x.x/src/lib/pso.cpp</code><br />
+                <code>psovina-x.x/src/lib/parallel_pso.h</code><br />
+                <code>psovina-x.x/src/lib/parallel_pso.cpp</code><br />
+                <code>psovina-x.x/src/lib/pso_mutate.h</code><br />
+                <code>psovina-x.x/src/lib/pso_mutate.cpp</code><br />
+                <code>psovina-x.x/src/lib/pso_search.h</code><br />
+                <code>psovina-x.x/src/lib/pso_search.cpp</code>
             </p>
         </section>
         <section id="Citations" class="mb-8">
