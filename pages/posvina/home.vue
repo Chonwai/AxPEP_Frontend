@@ -1,6 +1,6 @@
 <template>
     <div id="home-page-index" class="p-0 md:p-8">
-        <section id="Deep-AmPEP30" class="mb-8">
+        <section id="PSOVina" class="mb-8">
             <h2 class="text-4xl">
                 PSOVina: Fast Protein-Ligand Docking Tool based on PSO and AutoDock Vina
             </h2>
@@ -159,21 +159,21 @@
                 authors="Hio Kuan Tai, Siti Azma Jusoh, and Shirley W. I. Siu*."
                 title="Chaos-embedded particle swarm optimization approach for protein-ligand docking and virtual screening."
                 subtitle="Journal of Cheminformatics 10:62, 2018."
-                link="https://www.nature.com/articles/s41598-018-19752-w"
+                link="https://pubmed.ncbi.nlm.nih.gov/30552524/"
             />
             <p><b>For PSOVina2LS:</b></p>
             <ReferenceCard
                 authors="Hio Kuan Tai, Hin Lin and Shirley W. I. Siu*."
                 title="Improving the efficiency of PSOVina for protein-ligand docking by two-stage local search."
                 subtitle="The 2016 IEEE Congress on Evolutionary Computation (CEC), Vancouver, BC, 2016, pp. 770-777."
-                link="https://www.nature.com/articles/s41598-018-19752-w"
+                link="https://ieeexplore.ieee.org/document/7743869"
             />
             <p><b>For PSOVina 1.0:</b></p>
             <ReferenceCard
                 authors="Marcus C. K. Ng, Simon Fong, and Shirley W. I. Siu*."
                 title="PSOVina: The Hybrid Particle Swarm Optimization Algorithm for Protein-Ligand Docking."
                 subtitle="Journal of Bioinformatics and Computational Biology 13 (3), 1541007, 2015."
-                link="https://www.nature.com/articles/s41598-018-19752-w"
+                link="https://pubmed.ncbi.nlm.nih.gov/25800162/"
             />
         </section>
         <section id="Contact-Us" class="mb-8">

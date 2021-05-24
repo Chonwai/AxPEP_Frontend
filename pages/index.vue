@@ -110,6 +110,13 @@ export default {
                     subtitle: 'Fast protein-ligand docking tool based on PSO and AutoDock Vina',
                     to: '/posvina/home',
                 },
+                {
+                    color: '#049068',
+                    src: '/images/GWOVinaCard.png',
+                    title: 'GWOVina',
+                    subtitle: 'Fast Protein-Ligand Docking Tool based on GWO and AutoDock Vina',
+                    to: '/gwovina/home',
+                },
             ],
         };
     },
