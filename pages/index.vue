@@ -104,7 +104,7 @@ export default {
                     to: 'https://cbbio.online/LigTMap/',
                 },
                 {
-                    color: '#3f51b5',
+                    color: '#049068',
                     src: '/images/POSVinaCard.png',
                     title: 'PSOVina',
                     subtitle: 'Fast protein-ligand docking tool based on PSO and AutoDock Vina',

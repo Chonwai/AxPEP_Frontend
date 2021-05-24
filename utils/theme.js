@@ -58,6 +58,21 @@ class ThemesUtils {
             },
         };
     }
+
+    static get blog() {
+        return {
+            name: 'default',
+            light: {
+                primary: '#06cc98',
+                accent: '#d8c960',
+                secondary: '#049068',
+                success: '#4CAF50',
+                info: '#2196F3',
+                warning: '#FB8C00',
+                error: '#FF5252',
+            },
+        };
+    }
 }
 
 export default ThemesUtils;

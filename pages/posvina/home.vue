@@ -41,8 +41,8 @@
             <p>
                 (Freely available for academic use only, please read our
                 <a href="https://cbbio.online/software/psovina/LICENSE_PSOVINA.txt"
-                    >Open Source License)</a
-                >
+                    >Open Source License</a
+                >)
             </p>
             <ul class="list-disc">
                 <li>
@@ -212,7 +212,7 @@
 import ReferenceCard from '@/components/ReferenceCard';
 import ImageCard from '@/components/ImageCard';
 export default {
-    layout: 'ampep',
+    layout: 'blog',
     name: 'HomePageIndex',
     components: {
         ReferenceCard,
