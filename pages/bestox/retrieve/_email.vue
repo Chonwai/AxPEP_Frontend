@@ -72,7 +72,7 @@
 <script>
 import TaskAPI from '../../../apis/task';
 export default {
-    layout: 'acpep',
+    layout: 'bestox',
     name: 'RetrievePageIndex',
     data() {
         return {
@@ -107,7 +107,7 @@ export default {
         },
         async updateTable() {
             this.loading = true;
-            let res = await TaskAPI.getSpecifyTasksByEmail(this.email, this.current_page, 'acpep');
+            let res = await TaskAPI.getSpecifyTasksByEmail(this.email, this.current_page, 'bestox');
             this.data = res.message.data;
             this.total = res.message.total;
             this.itemsPerPage = res.message.per_page;
@@ -128,7 +128,10 @@ export default {
             );
         },
         retrieve(id) {
-            this.$router.push({ name: 'acpep-jobs-id', params: { id: id, application: 'acpep' } });
+            this.$router.push({
+                name: 'bestox-jobs-id',
+                params: { id: id, application: 'bestox' },
+            });
         },
     },
     beforeDestroy() {

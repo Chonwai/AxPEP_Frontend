@@ -1,7 +1,7 @@
 <template>
     <v-row justify="center" align="center">
         <v-col cols="12" sm="8" md="12">
-            <IndexPageHelper />
+            <IndexPageHelper page="bestox" />
             <v-stepper class="stepper-container" v-model="e6" vertical>
                 <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                     <div class="flex items-center">

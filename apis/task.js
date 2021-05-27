@@ -18,22 +18,14 @@ function newAcPEPTaskByTextarea(data) {
     return window.$nuxt.$api.$post(`acpep/tasks/textarea`, data);
 }
 
-function getSpecifyTask(id) {
-    return window.$nuxt.$api.$get(`axpep/tasks/${id}`);
-}
-
-function getSpecifyAcPEPTask(id) {
-    return window.$nuxt.$api.$get(`acpep/tasks/${id}`);
+function getSpecifyTask(id, application) {
+    return window.$nuxt.$api.$get(`axpep/tasks/${id}?application=${application}`);
 }
 
 function getSpecifyTasksByEmail(data, page = 1, application) {
     return window.$nuxt.$api.$get(
         `axpep/emails/${data}/tasks?page=${page}&application=${application}`
     );
-}
-
-function getSpecifyAcPEPTasksByEmail(data, page = 1) {
-    return window.$nuxt.$api.$get(`acpep/emails/${data}/tasks?page=${page}`);
 }
 
 function downloadSpecifyClassificationFile(id) {
@@ -44,6 +36,10 @@ function downloadSpecifyScoreFile(id) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}/score/download`);
 }
 
+function downloadSpecifyResultFile(id) {
+    return window.$nuxt.$api.$get(`axpep/tasks/${id}/result/download`);
+}
+
 export default {
     newTaskByFile,
     newTaskByTextarea,
@@ -51,9 +47,8 @@ export default {
     newAcPEPTaskByFile,
     newAcPEPTaskByTextarea,
     getSpecifyTask,
-    getSpecifyAcPEPTask,
     getSpecifyTasksByEmail,
-    getSpecifyAcPEPTasksByEmail,
     downloadSpecifyClassificationFile,
     downloadSpecifyScoreFile,
+    downloadSpecifyResultFile,
 };

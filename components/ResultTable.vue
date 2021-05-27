@@ -10,7 +10,12 @@
             show-expand
         >
             <template v-slot:expanded-item="{ headers, item }">
-                <td :colspan="headers.length">Sequence: {{ item.sequence.substring(0, 50) }}...</td>
+                <td v-if="item.hasOwnProperty('sequence')" :colspan="headers.length">
+                    Sequence: {{ item.sequence.substring(0, 50) }}...
+                </td>
+                <td v-if="item.hasOwnProperty('smiles')" :colspan="headers.length">
+                    Smile: {{ item.smiles }}
+                </td>
             </template>
         </v-data-table>
     </div>

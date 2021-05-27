@@ -26,6 +26,16 @@
                     >Export to CSV</v-btn
                 >
             </div>
+            <v-alert
+                class="w-full mr-4 my-4"
+                border="left"
+                colored-border
+                color="deep-purple accent-4"
+                elevation="2"
+            >
+                Note: The default classification cutoff is 0.5. Positive sequence is 1, negative
+                sequence is 0, invalid sequence is -1.
+            </v-alert>
             <v-card>
                 <v-tabs v-model="tab" background-color="primary" dark>
                     <v-tab v-for="item in items" :key="item.tab">
@@ -35,9 +45,9 @@
                 <v-tabs-items v-model="tab">
                     <v-tab-item v-for="item in items" :key="item.tab">
                         <ResultTable
-                            v-show="item.tab == 'Classification'"
-                            :header.sync="classificationsHeader"
-                            :items.sync="data.classifications"
+                            v-show="item.tab == 'Result'"
+                            :header.sync="resultHeader"
+                            :items.sync="data.result"
                         />
                     </v-tab-item>
                 </v-tabs-items>
@@ -51,7 +61,7 @@ import TaskAPI from '../../../apis/task';
 import ResultTable from '../../../components/ResultTable';
 import Utils from '../../../utils/utils';
 export default {
-    layout: 'acpep',
+    layout: 'bestox',
     name: 'GetJobByIDPageIndex',
     components: {
         ResultTable,
@@ -59,13 +69,12 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
-            application: 'acpep',
+            application: 'bestox',
             loading: true,
             data: [],
-            classificationsHeader: [],
-            scoresHeader: [],
+            resultHeader: [],
             tab: null,
-            items: [{ tab: 'Classification' }],
+            items: [{ tab: 'Result' }],
         };
     },
     async created() {
@@ -82,11 +91,11 @@ export default {
                 .toISOString()
                 .slice(0, 19)
                 .replace('T', ' ');
-            for (const item of Object.keys(this.data.classifications[0])) {
-                if (item == 'sequence') {
+            for (const item of Object.keys(this.data.result[0])) {
+                if (item == 'Smiles') {
                     continue;
                 }
-                this.classificationsHeader.push({
+                this.resultHeader.push({
                     text: item.charAt(0).toUpperCase() + item.slice(1),
                     value: item,
                 });
@@ -94,7 +103,7 @@ export default {
         },
         async downloadResult() {
             let data = await TaskAPI.downloadSpecifyClassificationFile(this.id);
-            await Utils.downloadResult(data, `${this.id}-classification.csv`);
+            await Utils.downloadResult(data, `${this.id}-result.csv`);
         },
     },
 };

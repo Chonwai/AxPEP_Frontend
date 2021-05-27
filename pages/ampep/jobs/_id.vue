@@ -74,6 +74,7 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
+            application: 'ampep',
             loading: true,
             data: [],
             classificationsHeader: [],
@@ -90,7 +91,7 @@ export default {
             this.getJob();
         },
         async getJob() {
-            let res = await TaskAPI.getSpecifyTask(this.id);
+            let res = await TaskAPI.getSpecifyTask(this.id, this.application);
             this.data = res.message[0];
             this.data.created_at = new Date(res.message[0].created_at)
                 .toISOString()
