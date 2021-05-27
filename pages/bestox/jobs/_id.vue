@@ -102,7 +102,7 @@ export default {
             }
         },
         async downloadResult() {
-            let data = await TaskAPI.downloadSpecifyClassificationFile(this.id);
+            let data = await TaskAPI.downloadSpecifyResultFile(this.id);
             await Utils.downloadResult(data, `${this.id}-result.csv`);
         },
     },
