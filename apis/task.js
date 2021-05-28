@@ -18,6 +18,14 @@ function newAcPEPTaskByTextarea(data) {
     return window.$nuxt.$api.$post(`acpep/tasks/textarea`, data);
 }
 
+function newBESToxTaskByFile(data) {
+    return window.$nuxt.$api.$post(`bestox/tasks/file`, data);
+}
+
+function newBESToxTaskByTextarea(data) {
+    return window.$nuxt.$api.$post(`bestox/tasks/textarea`, data);
+}
+
 function getSpecifyTask(id, application) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}?application=${application}`);
 }
@@ -46,6 +54,8 @@ export default {
     newTaskByCodon,
     newAcPEPTaskByFile,
     newAcPEPTaskByTextarea,
+    newBESToxTaskByFile,
+    newBESToxTaskByTextarea,
     getSpecifyTask,
     getSpecifyTasksByEmail,
     downloadSpecifyClassificationFile,

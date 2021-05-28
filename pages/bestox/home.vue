@@ -64,6 +64,8 @@
 import IndexPageHelper from '../../components/IndexPageHelper';
 import ExampleDialog from '../../components/ExampleDialog';
 import InputBESToxArea from '../../components/InputBESToxArea';
+import TaskAPI from '@/apis/task';
+
 export default {
     layout: 'bestox',
     name: 'HomePageIndex',
@@ -79,7 +81,9 @@ export default {
             description: '',
             email: '',
             source: '',
-            showExample: false,
+            methods: {
+                bestox: 1,
+            },
             rules: {
                 required: value => !!value || 'Required.',
                 counter: value => value.length <= 255 || 'Max 255 characters',
@@ -88,6 +92,7 @@ export default {
                     return pattern.test(value) || 'Invalid e-mail.';
                 },
             },
+            showExample: false,
         };
     },
     methods: {
@@ -100,8 +105,48 @@ export default {
         fileSource(source) {
             this.source = source;
         },
-        submit() {
-            console.log('Hi');
+        prepareFormData() {
+            let form = new FormData();
+            form.append('description', this.description);
+            form.append('email', this.email);
+            form.append('source', this.source);
+            form.append('application', 'bestox');
+            for (const key in this.methods) {
+                if (this.methods.hasOwnProperty(key)) {
+                    const element = this.methods[key];
+                    form.append(`methods[${key}]`, element);
+                }
+            }
+            return form;
+        },
+        async submit() {
+            if (
+                this.rules.email(this.email) == 'Invalid e-mail.' ||
+                this.rules.required(this.email) == 'Required.'
+            ) {
+                this.$notify({
+                    group: 'foo',
+                    type: 'error',
+                    title: 'Error',
+                    text: 'Please enter a correct email address.',
+                });
+            } else {
+                let res = null;
+                let form = this.prepareFormData();
+                if (this.source == 'file') {
+                    form.append('file', this.file);
+                    res = await TaskAPI.newBESToxTaskByFile(form);
+                } else if (this.source == 'textarea') {
+                    form.append('smi', this.file);
+                    res = await TaskAPI.newBESToxTaskByTextarea(form);
+                }
+                if (res.status == true) {
+                    this.$router.push({
+                        name: 'bestox-retrieve-email',
+                        params: { email: this.email },
+                    });
+                }
+            }
         },
     },
 };

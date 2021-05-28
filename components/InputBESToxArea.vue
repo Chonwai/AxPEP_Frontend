@@ -19,7 +19,7 @@
             v-show="source === 'file'"
             show-size
             v-model="file"
-            accept=".fasta"
+            accept=".smi"
             placeholder="Upload a SMILES document:"
             label="File input"
             prepend-icon="mdi-paperclip"
