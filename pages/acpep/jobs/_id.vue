@@ -39,6 +39,11 @@
                             :header.sync="classificationsHeader"
                             :items.sync="data.classifications"
                         />
+                        <ResultTable
+                            v-show="item.tab == 'Prediction Score'"
+                            :header.sync="scoresHeader"
+                            :items.sync="data.scores"
+                        />
                     </v-tab-item>
                 </v-tabs-items>
             </v-card>
@@ -65,7 +70,7 @@ export default {
             classificationsHeader: [],
             scoresHeader: [],
             tab: null,
-            items: [{ tab: 'Classification' }],
+            items: [{ tab: 'Classification' }, { tab: 'Prediction Score' }],
         };
     },
     async created() {
@@ -91,10 +96,21 @@ export default {
                     value: item,
                 });
             }
+            for (const item of Object.keys(this.data.scores[0])) {
+                if (item == 'sequence') {
+                    continue;
+                }
+                this.scoresHeader.push({
+                    text: item.charAt(0).toUpperCase() + item.slice(1),
+                    value: item,
+                });
+            }
         },
         async downloadResult() {
             let data = await TaskAPI.downloadSpecifyClassificationFile(this.id);
             await Utils.downloadResult(data, `${this.id}-classification.csv`);
+            data = await TaskAPI.downloadSpecifyScoreFile(this.id);
+            await Utils.downloadResult(data, `${this.id}-score.csv`);
         },
     },
 };
