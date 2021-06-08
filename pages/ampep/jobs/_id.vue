@@ -102,7 +102,7 @@ export default {
                     continue;
                 }
                 this.classificationsHeader.push({
-                    text: item.charAt(0).toUpperCase() + item.slice(1),
+                    text: await Utils.convertAmPEPTableHeader(item),
                     value: item,
                 });
             }
@@ -111,7 +111,7 @@ export default {
                     continue;
                 }
                 this.scoresHeader.push({
-                    text: item.charAt(0).toUpperCase() + item.slice(1),
+                    text: await Utils.convertAmPEPTableHeader(item),
                     value: item,
                 });
             }

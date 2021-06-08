@@ -1,13 +1,13 @@
 function newTaskByFile(data) {
-    return window.$nuxt.$api.$post(`axpep/tasks/file`, data);
+    return window.$nuxt.$api.$post(`ampep/tasks/file`, data);
 }
 
 function newTaskByTextarea(data) {
-    return window.$nuxt.$api.$post(`axpep/tasks/textarea`, data);
+    return window.$nuxt.$api.$post(`ampep/tasks/textarea`, data);
 }
 
 function newTaskByCodon(data) {
-    return window.$nuxt.$api.$post(`axpep/tasks/codon`, data);
+    return window.$nuxt.$api.$post(`ampep/tasks/codon`, data);
 }
 
 function newAcPEPTaskByFile(data) {
