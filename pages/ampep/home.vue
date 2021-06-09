@@ -115,12 +115,37 @@ export default {
                 deepampep30: 0,
                 rfampep30: 1,
             },
+            warning: null,
             rules: {
-                required: value => !!value || 'Required.',
-                counter: value => value.length <= 255 || 'Max 255 characters',
+                required: value => {
+                    if (value) {
+                        this.warning = 'Please enter a correct email address.';
+                        return false;
+                    }
+                    return true;
+                },
+                counter: value => {
+                    if (value.length > 255) {
+                        this.warning = 'Max 255 characters';
+                        return false;
+                    }
+                    return true;
+                },
                 email: value => {
                     const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    return pattern.test(value) || 'Invalid e-mail.';
+                    if (!pattern.test(value)) {
+                        this.warning = 'Please enter a correct email address.';
+                        return false;
+                    }
+                    return true;
+                },
+                file: value => {
+                    if (value.size > 1024 * 1024) {
+                        this.warning =
+                            'The FASTA file is too big! Please upload small than 1MB FASTA file.';
+                        return false;
+                    }
+                    return true;
                 },
             },
             showExample: false,
@@ -160,14 +185,15 @@ export default {
         },
         async submit() {
             if (
-                this.rules.email(this.email) == 'Invalid e-mail.' ||
-                this.rules.required(this.email) == 'Required.'
+                this.rules.email(this.email) ||
+                this.rules.required(this.email) ||
+                this.rules.file(this.file)
             ) {
                 this.$notify({
                     group: 'foo',
                     type: 'error',
                     title: 'Error',
-                    text: 'Please enter a correct email address.',
+                    text: this.warning,
                 });
             } else {
                 let res = null;
