@@ -98,6 +98,7 @@ import IndexPageHelper from '@/components/IndexPageHelper';
 import InputFastaArea from '@/components/InputFastaArea';
 import ExampleFastaDialog from '@/components/ExampleFastaDialog';
 import TaskAPI from '@/apis/task';
+import rules from '../../utils/rules';
 
 export default {
     layout: 'ampep',
@@ -115,39 +116,7 @@ export default {
                 deepampep30: 0,
                 rfampep30: 1,
             },
-            warning: null,
-            rules: {
-                required: value => {
-                    if (value) {
-                        this.warning = 'Please enter a correct email address.';
-                        return false;
-                    }
-                    return true;
-                },
-                counter: value => {
-                    if (value.length > 255) {
-                        this.warning = 'Max 255 characters';
-                        return false;
-                    }
-                    return true;
-                },
-                email: value => {
-                    const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    if (!pattern.test(value)) {
-                        this.warning = 'Please enter a correct email address.';
-                        return false;
-                    }
-                    return true;
-                },
-                file: value => {
-                    if (value.size > 1024 * 1024) {
-                        this.warning =
-                            'The FASTA file is too big! Please upload small than 1MB FASTA file.';
-                        return false;
-                    }
-                    return true;
-                },
-            },
+            rules,
             showExample: false,
         };
     },
@@ -185,17 +154,10 @@ export default {
         },
         async submit() {
             if (
-                this.rules.email(this.email) ||
-                this.rules.required(this.email) ||
-                this.rules.file(this.file)
+                this.rules.email(this.email) &&
+                this.rules.required(this.email) &&
+                this.rules.fasta(this.file)
             ) {
-                this.$notify({
-                    group: 'foo',
-                    type: 'error',
-                    title: 'Error',
-                    text: this.warning,
-                });
-            } else {
                 let res = null;
                 let form = this.prepareFormData();
                 if (this.source == 'file') {
@@ -215,6 +177,13 @@ export default {
                         params: { email: this.email },
                     });
                 }
+            } else {
+                this.$notify({
+                    group: 'foo',
+                    type: 'error',
+                    title: 'Error',
+                    text: this.$store.state.warning,
+                });
             }
         },
     },

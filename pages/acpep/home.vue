@@ -115,6 +115,7 @@ import InputFastaArea from '@/components/InputFastaArea';
 import ExampleFastaDialog from '@/components/ExampleFastaDialog';
 import TaskAPI from '@/apis/task';
 import Fasta from 'biojs-io-fasta';
+import rules from '../../utils/rules';
 
 export default {
     layout: 'acpep',
@@ -122,7 +123,7 @@ export default {
     data() {
         return {
             e6: 1,
-            file: [],
+            file: new Blob(),
             description: '',
             email: '',
             source: '',
@@ -134,14 +135,7 @@ export default {
                 prostate: 1,
                 skin: 1,
             },
-            rules: {
-                required: value => !!value || 'Required.',
-                counter: value => value.length <= 255 || 'Max 255 characters',
-                email: value => {
-                    const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    return pattern.test(value) || 'Invalid e-mail.';
-                },
-            },
+            rules,
             showExample: false,
         };
     },
@@ -179,16 +173,10 @@ export default {
         },
         async submit() {
             if (
-                this.rules.email(this.email) == 'Invalid e-mail.' ||
-                this.rules.required(this.email) == 'Required.'
+                this.rules.email(this.email) &&
+                this.rules.required(this.email) &&
+                this.rules.fasta(this.file)
             ) {
-                this.$notify({
-                    group: 'foo',
-                    type: 'error',
-                    title: 'Error',
-                    text: 'Please enter a correct email address.',
-                });
-            } else {
                 let res = null;
                 let form = this.prepareFormData();
                 if (this.source == 'file') {
@@ -204,6 +192,13 @@ export default {
                         params: { email: this.email },
                     });
                 }
+            } else {
+                this.$notify({
+                    group: 'foo',
+                    type: 'error',
+                    title: 'Error',
+                    text: this.$store.state.warning,
+                });
             }
         },
     },
