@@ -1,9 +1,13 @@
-function getCountingLocationsByNDaysAgo(daysAgo) {
-    return window.$nuxt.$api.$get(`axpep/analysis/count/tasks/locations?days_ago=${daysAgo}`);
+function getCountingLocationsByNDaysAgo(daysAgo, application) {
+    return window.$nuxt.$api.$get(
+        `axpep/analysis/count/tasks/locations?days_ago=${daysAgo}&application=${application}`
+    );
 }
 
-function getCountingTasksByNDaysAgo(daysAgo) {
-    return window.$nuxt.$api.$get(`axpep/analysis/count/tasks?days_ago=${daysAgo}`);
+function getCountingTasksByNDaysAgo(daysAgo, application) {
+    return window.$nuxt.$api.$get(
+        `axpep/analysis/count/tasks?days_ago=${daysAgo}&application=${application}`
+    );
 }
 
 function getCountingEachMethods(application) {

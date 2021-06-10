@@ -89,11 +89,14 @@ export default {
             this.getCountEachMethods();
         },
         async getCountLocations() {
-            let res = await AnalysisAPI.getCountingLocationsByNDaysAgo(this.daysAgo);
+            let res = await AnalysisAPI.getCountingLocationsByNDaysAgo(
+                this.daysAgo,
+                this.application
+            );
             this.locationsList = res.message;
         },
         async getCountTasks() {
-            let res = await AnalysisAPI.getCountingTasksByNDaysAgo(this.daysAgo);
+            let res = await AnalysisAPI.getCountingTasksByNDaysAgo(this.daysAgo, this.application);
             let dateList = [];
             let countList = [];
             let totalCount = 0;
