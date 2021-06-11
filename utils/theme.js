@@ -33,13 +33,13 @@ class ThemesUtils {
         return {
             name: 'acpep',
             light: {
-                primary: '#c0d9c2',
-                accent: '#edf3e9',
-                secondary: '#808077',
-                success: '#86af3f',
-                info: '#88b2aa',
-                warning: '#faeaa1',
-                error: '#FF5252',
+                primary: '#fe6e00',
+                accent: '#fd5602',
+                secondary: '#ff8303',
+                success: '#ff8303',
+                info: '#ffaf42',
+                warning: '#FB8C00',
+                error: '#b71c1c',
             },
         };
     }

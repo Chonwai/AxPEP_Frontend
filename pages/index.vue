@@ -94,8 +94,8 @@ export default {
                     to: '/ampep/home',
                 },
                 {
-                    color: '#c0d9c2',
-                    src: '/images/AmPEPCard.png',
+                    color: '#fe6e00',
+                    src: '/images/acpep-logo.png',
                     title: 'AcPEP',
                     subtitle: 'Sequence-based classification of Antimicrobial peptides',
                     to: '/acpep/home',

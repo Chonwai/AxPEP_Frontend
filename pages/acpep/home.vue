@@ -33,7 +33,9 @@
                 <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
             </v-stepper-content>
 
-            <v-stepper-step :complete="e6 > 2" step="2">Prediction Methods</v-stepper-step>
+            <v-stepper-step :complete="e6 > 2" step="2"
+                >Prediction for Types of Cancer</v-stepper-step
+            >
 
             <v-stepper-content step="2">
                 <v-checkbox
@@ -123,7 +125,7 @@ export default {
     data() {
         return {
             e6: 1,
-            file: new Blob(),
+            file: [],
             description: '',
             email: '',
             source: '',

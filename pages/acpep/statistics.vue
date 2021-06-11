@@ -13,7 +13,7 @@ export default {
     name: 'AcPEPStatisticsPageIndex',
     data() {
         return {
-            lineChartColor: '#c0d9c2',
+            lineChartColor: '#fe6e00',
             doughnutChartColor: ['#ED6D0D', '#F2A805', '#FEE4B5', '#9BD185', '#7CC26A', '#649748'],
         };
     },

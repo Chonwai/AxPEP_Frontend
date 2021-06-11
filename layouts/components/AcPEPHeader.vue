@@ -1,6 +1,6 @@
 <template>
     <div class="z-50">
-        <v-app-bar color="#c0d9c2" height="96px">
+        <v-app-bar color="#fe6e00" height="96px">
             <v-container d-flex align-center>
                 <v-app-bar-nav-icon
                     class="d-md-none"
@@ -10,7 +10,7 @@
                 <v-toolbar-title>
                     <img
                         class="h-16 cursor-pointer"
-                        src="/images/ampep-logo.png"
+                        src="/images/acpep-logo.png"
                         alt="axpep-logo"
                         @click="goToIndex"
                 /></v-toolbar-title>
@@ -66,6 +66,11 @@ export default {
                 {
                     to: '/acpep/home',
                     title: 'Home',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/acpep/method',
+                    title: 'Method',
                     icon: 'mdi-home',
                 },
                 {
