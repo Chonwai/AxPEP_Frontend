@@ -28,6 +28,14 @@ class Utils {
         }
         return newHeader;
     }
+
+    static chopSequence(sequence) {
+        if (sequence.length > 50) {
+            return sequence.substring(0, 50) + '...';
+        } else {
+            return sequence;
+        }
+    }
 }
 
 export default Utils;

@@ -35,14 +35,14 @@
                 <v-tabs-items v-model="tab">
                     <v-tab-item v-for="item in items" :key="item.tab">
                         <ResultTable
-                            v-show="item.tab == 'Classification'"
-                            :header.sync="classificationsHeader"
-                            :items.sync="data.classifications"
-                        />
-                        <ResultTable
-                            v-show="item.tab == 'Prediction Score'"
+                            v-show="item.tab == 'CLASSIFICATION'"
                             :header.sync="scoresHeader"
                             :items.sync="data.scores"
+                        />
+                        <ResultTable
+                            v-show="item.tab == 'ACTIVITY PREDICTION'"
+                            :header.sync="classificationsHeader"
+                            :items.sync="data.classifications"
                         />
                     </v-tab-item>
                 </v-tabs-items>
@@ -70,7 +70,7 @@ export default {
             classificationsHeader: [],
             scoresHeader: [],
             tab: null,
-            items: [{ tab: 'Classification' }, { tab: 'Prediction Score' }],
+            items: [{ tab: 'CLASSIFICATION' }, { tab: 'ACTIVITY PREDICTION' }],
         };
     },
     async created() {
@@ -92,7 +92,7 @@ export default {
                     continue;
                 }
                 this.classificationsHeader.push({
-                    text: item.charAt(0).toUpperCase() + item.slice(1),
+                    text: item.charAt(0).toUpperCase() + item.slice(1) + ' (uM)',
                     value: item,
                 });
             }

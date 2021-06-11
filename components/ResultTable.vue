@@ -11,7 +11,7 @@
         >
             <template v-slot:expanded-item="{ headers, item }">
                 <td v-if="item.hasOwnProperty('sequence')" :colspan="headers.length">
-                    Sequence: {{ item.sequence.substring(0, 50) }}...
+                    Sequence: {{ chopSequence(item.sequence) }}
                 </td>
                 <td v-if="item.hasOwnProperty('smiles')" :colspan="headers.length">
                     Smile: {{ item.smiles }}
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import Utils from '../utils/utils';
 export default {
     name: 'ResultTableIndex',
     props: {
@@ -36,6 +37,11 @@ export default {
             default: () => {
                 return [];
             },
+        },
+    },
+    methods: {
+        chopSequence(sequence) {
+            return Utils.chopSequence(sequence);
         },
     },
 };

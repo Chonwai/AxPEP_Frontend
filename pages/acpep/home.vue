@@ -108,6 +108,11 @@
                 <v-btn text @click="e6 = 3">Cancel</v-btn>
             </v-stepper-content>
         </v-stepper>
+        <p>
+            Funding:<br />
+            This project is supported by University of Macau (grant No. MYRG2019-00098-FST and
+            MYRG2017-00146-FST)
+        </p>
     </div>
 </template>
 
