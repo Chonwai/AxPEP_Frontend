@@ -30,13 +30,15 @@
             <v-divider></v-divider>
             <section class="py-4">
                 <h2 class="text-2xl font-medium mb-4">Applications</h2>
-                <div class="my-4" v-for="(item, i) in cardItems" :key="i">
-                    <v-card :color="item.color" dark>
-                        <div class="d-flex flex-no-wrap justify-space-between">
-                            <div>
-                                <v-card-title v-text="item.title" class="headline"
-                                    >AmPEP | AxPEP</v-card-title
-                                >
+                <div class="md:flex md:flex-wrap">
+                    <div class="md:w-1/2 p-1" v-for="(item, i) in cardItems" :key="i">
+                        <v-card
+                            class="h-full d-flex flex-no-wrap justify-space-between"
+                            :color="item.color"
+                            dark
+                        >
+                            <div class="w-2/3">
+                                <v-card-title v-text="item.title" class="headline"></v-card-title>
                                 <v-card-subtitle v-text="item.subtitle"></v-card-subtitle>
                                 <v-card-actions>
                                     <v-btn
@@ -64,15 +66,15 @@
                                     </v-btn>
                                 </v-card-actions>
                             </div>
-                            <v-avatar class="ma-3 h-full" width="33.3333%" height="100%" tile>
+                            <div class="w-1/3 p-2 relative flex justify-center items-center">
                                 <v-img
                                     position="center center"
                                     :contain="true"
                                     :src="item.src"
                                 ></v-img>
-                            </v-avatar>
-                        </div>
-                    </v-card>
+                            </div>
+                        </v-card>
+                    </div>
                 </div>
             </section>
         </v-container>
