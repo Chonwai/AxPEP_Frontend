@@ -21,7 +21,7 @@
                     using the the user-selected codon table (standard by default). ORF sequences
                     which include arbitrary residues will be discarded; sequences which are shorter
                     than 5 residues and longer than 250 residues will also be ignored. Uploaded
-                    sequence files are limited to 50 MB.
+                    sequence files are limited to 1 MB.
                 </p>
             </div>
             <div>
@@ -123,7 +123,8 @@
             <h3 class="text-2xl">PI:</h3>
             <ul>
                 <li>
-                    <span class="font-bold">Shirley W. I. Siu</span> <code>shirleysiu@umac.mo</code>
+                    <span class="font-bold">Shirley W. I. Siu</span>
+                    <code>siuwengin@gmail.com</code>
                 </li>
             </ul>
         </section>
