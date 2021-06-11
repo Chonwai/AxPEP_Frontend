@@ -1,5 +1,5 @@
 <template>
-    <div class="z-50 w-full">
+    <div class="z-50">
         <v-app-bar :color="color" height="96px">
             <v-container d-flex align-center>
                 <v-app-bar-nav-icon

@@ -1,7 +1,7 @@
 <template>
     <v-app light>
         <notifications group="foo" />
-        <AppHeader color="transparent" class="absolute top-0" />
+        <AppHeader color="transparent" class="fixed top-0 h-screen" />
         <v-main>
             <nuxt />
         </v-main>

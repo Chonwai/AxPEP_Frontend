@@ -1,5 +1,5 @@
 <template>
-    <v-app theme="ampep">
+    <v-app>
         <notifications group="foo" />
         <BlogHeader />
         <v-main>
