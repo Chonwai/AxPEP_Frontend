@@ -34,7 +34,7 @@
             </v-stepper-content>
 
             <v-stepper-step :complete="e6 > 2" step="2"
-                >Prediction for Types of Cancer</v-stepper-step
+                >Prediction for types of cancer</v-stepper-step
             >
 
             <v-stepper-content step="2">
@@ -78,7 +78,7 @@
                 <v-btn text @click="e6 = 1">Cancel</v-btn>
             </v-stepper-content>
 
-            <v-stepper-step :complete="e6 > 3" step="3">Job Description (optional)</v-stepper-step>
+            <v-stepper-step :complete="e6 > 3" step="3">Job description (optional)</v-stepper-step>
 
             <v-stepper-content step="3">
                 <v-text-field
