@@ -17,7 +17,11 @@
                         <p>
                             >AP1-Z1<br />FLFSLIPHAISGLISAFK<br />>AP1-Z5b<br />FLFKLIKHAIKGLIKAFK<br />>OutAD<br />ALWKTMLKKLGTMALHAGKAALGAAADTISQGTQ
                         </p>
-                        <b>Note: AP1-Z1 is the ID you give for the serial.</b>
+                        <b
+                            >Note: AP1-Z1 is the ID you give for the serial. Each sequence should be
+                            at least 5 a.a. long and maximally 38 a.a. or an error will be
+                            reported.</b
+                        >
                     </div>
                 </ExampleFastaDialog>
             </v-stepper-step>
