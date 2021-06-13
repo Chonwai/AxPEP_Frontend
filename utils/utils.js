@@ -29,6 +29,36 @@ class Utils {
         return newHeader;
     }
 
+    static async convertAcPEPTableHeader(header) {
+        let newHeader = header;
+        switch (header) {
+            case 'id':
+                newHeader = 'Id';
+                break;
+            case 'breast':
+                newHeader = 'Breast (uM)';
+                break;
+            case 'cervix':
+                newHeader = 'Cervix (uM)';
+                break;
+            case 'colon':
+                newHeader = 'Colon (uM)';
+                break;
+            case 'lung':
+                newHeader = 'Lung (uM)';
+                break;
+            case 'prostate':
+                newHeader = 'Prostate (uM)';
+                break;
+            case 'skin':
+                newHeader = 'Skin (uM)';
+                break;
+            default:
+                break;
+        }
+        return newHeader;
+    }
+
     static chopSequence(sequence) {
         if (sequence.length > 50) {
             return sequence.substring(0, 50) + '...';

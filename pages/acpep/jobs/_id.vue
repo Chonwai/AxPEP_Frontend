@@ -69,7 +69,7 @@ export default {
             data: [],
             classificationsHeader: [],
             scoresHeader: [],
-            tab: null,
+            tab: 1,
             items: [{ tab: 'CLASSIFICATION' }, { tab: 'ACTIVITY PREDICTION' }],
         };
     },
@@ -92,7 +92,7 @@ export default {
                     continue;
                 }
                 this.classificationsHeader.push({
-                    text: item.charAt(0).toUpperCase() + item.slice(1) + ' (uM)',
+                    text: await Utils.convertAcPEPTableHeader(item),
                     value: item,
                 });
             }
