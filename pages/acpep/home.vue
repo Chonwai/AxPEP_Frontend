@@ -17,7 +17,7 @@
                         <p>
                             >AP1-Z1<br />FLFSLIPHAISGLISAFK<br />>AP1-Z5b<br />FLFKLIKHAIKGLIKAFK<br />>OutAD<br />ALWKTMLKKLGTMALHAGKAALGAAADTISQGTQ
                         </p>
-                        <b>Note: AC_1 is the ID you give for the serial.</b>
+                        <b>Note: AP1-Z1 is the ID you give for the serial.</b>
                     </div>
                 </ExampleFastaDialog>
             </v-stepper-step>
