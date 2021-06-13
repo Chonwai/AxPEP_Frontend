@@ -4,7 +4,8 @@
         <v-stepper class="stepper-container" v-model="e6" vertical>
             <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                 <div class="flex items-center">
-                    Input sequences in FASTA format (5 to 38 residues, only 20 naturally occuring amino acids)
+                    Input sequences in FASTA format (5 to 38 residues, only 20 naturally occuring
+                    amino acids)
                     <v-btn class="mx-2" small @click="showExample = true">(Example)</v-btn>
                 </div>
                 <ExampleFastaDialog
@@ -14,9 +15,7 @@
                 >
                     <div>
                         <p>
-                            >AC_1
-                            <br />ALWKTMLKKLGTMALHAGKAALGAAADTISQGTQ <br />>AC_2
-                            <br />AWKKWAKAWKWAKAKWWAKAA
+                            >AP1-Z1<br />FLFSLIPHAISGLISAFK<br />>AP1-Z5b<br />FLFKLIKHAIKGLIKAFK<br />>OutAD<br />ALWKTMLKKLGTMALHAGKAALGAAADTISQGTQ
                         </p>
                         <b>Note: AC_1 is the ID you give for the serial.</b>
                     </div>
