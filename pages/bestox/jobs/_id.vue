@@ -26,16 +26,6 @@
                     >Export to CSV</v-btn
                 >
             </div>
-            <v-alert
-                class="w-full mr-4 my-4"
-                border="left"
-                colored-border
-                color="deep-purple accent-4"
-                elevation="2"
-            >
-                Note: The default classification cutoff is 0.5. Positive sequence is 1, negative
-                sequence is 0, invalid sequence is -1.
-            </v-alert>
             <v-card>
                 <v-tabs v-model="tab" background-color="primary" dark>
                     <v-tab v-for="item in items" :key="item.tab">
