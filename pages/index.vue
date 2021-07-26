@@ -1,7 +1,15 @@
 <template>
     <div>
         <div
-            class="flex flex-col items-center justify-center h-screen mb-4 bg-fixed bg-center bg-cover banner-img"
+            class="
+                flex flex-col
+                items-center
+                justify-center
+                h-screen
+                mb-4
+                bg-fixed bg-center bg-cover
+                banner-img
+            "
         >
             <div class="p-4 animate__animated animate__fadeInUp">
                 <h1 class="text-4xl text-white font-normal">
@@ -109,6 +117,14 @@ export default {
                     subtitle:
                         'Convolutional neural network regression model for acute oral toxicity prediction',
                     to: '/bestox/home',
+                },
+                {
+                    color: '#1C2833',
+                    src: '/images/BESToxCard.png',
+                    title: 'SSL-BESTox',
+                    subtitle:
+                        'Compound Toxicity Prediction Based onSemi-supervised Learning and GraphConvolutional Neural Network',
+                    to: '/ssl-bestox/home',
                 },
                 {
                     color: '#89cff0',

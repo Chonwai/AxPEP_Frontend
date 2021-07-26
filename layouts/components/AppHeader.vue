@@ -65,6 +65,11 @@ export default {
                     title: 'BESTox',
                     icon: 'mdi-home',
                 },
+                {
+                    to: '/ssl-bestox/home',
+                    title: 'SSL-BESTox',
+                    icon: 'mdi-home',
+                },
             ],
         };
     },
