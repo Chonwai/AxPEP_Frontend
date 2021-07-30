@@ -35,9 +35,9 @@
                 <v-tabs-items v-model="tab">
                     <v-tab-item v-for="item in items" :key="item.tab">
                         <ResultTable
-                            v-show="item.tab == 'Result'"
+                            v-show="item.tab == 'Classification'"
                             :header.sync="resultHeader"
-                            :items.sync="data.result"
+                            :items.sync="data.classifications"
                         />
                     </v-tab-item>
                 </v-tabs-items>
@@ -64,7 +64,7 @@ export default {
             data: [],
             resultHeader: [],
             tab: null,
-            items: [{ tab: 'Result' }],
+            items: [{ tab: 'Classification' }],
         };
     },
     async created() {
@@ -81,8 +81,8 @@ export default {
                 .toISOString()
                 .slice(0, 19)
                 .replace('T', ' ');
-            for (const item of Object.keys(this.data.result[0])) {
-                if (item == 'Smiles') {
+            for (const item of Object.keys(this.data.classifications[0])) {
+                if (item == 'smiles') {
                     continue;
                 }
                 this.resultHeader.push({
@@ -92,8 +92,8 @@ export default {
             }
         },
         async downloadResult() {
-            let data = await TaskAPI.downloadSpecifyResultFile(this.id);
-            await Utils.downloadResult(data, `${this.id}-result.csv`);
+            let data = await TaskAPI.downloadSpecifyClassificationFile(this.id);
+            await Utils.downloadResult(data, `${this.id}-classification.csv`);
         },
     },
 };
