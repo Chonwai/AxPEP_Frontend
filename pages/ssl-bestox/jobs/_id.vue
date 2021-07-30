@@ -51,7 +51,7 @@ import TaskAPI from '../../../apis/task';
 import ResultTable from '../../../components/ResultTable';
 import Utils from '../../../utils/utils';
 export default {
-    layout: 'bestox',
+    layout: 'ssl-bestox',
     name: 'GetJobByIDPageIndex',
     components: {
         ResultTable,
@@ -59,7 +59,7 @@ export default {
     data() {
         return {
             id: this.$route.params.id,
-            application: 'bestox',
+            application: 'ssl-bestox',
             loading: true,
             data: [],
             resultHeader: [],

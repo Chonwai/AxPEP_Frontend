@@ -9,8 +9,8 @@
 <script>
 import StatisticsPage from '@/components/StatisticsPage';
 export default {
-    layout: 'bestox',
-    name: 'AcPEPStatisticsPageIndex',
+    layout: 'ssl-bestox',
+    name: 'SSLBESToxStatisticsPageIndex',
     data() {
         return {
             lineChartColor: '#c0d9c2',

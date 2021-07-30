@@ -26,6 +26,14 @@ function newBESToxTaskByTextarea(data) {
     return window.$nuxt.$api.$post(`bestox/tasks/textarea`, data);
 }
 
+function newSSLBESToxTaskByFile(data) {
+    return window.$nuxt.$api.$post(`ssl-bestox/tasks/file`, data);
+}
+
+function newSSLBESToxTaskByTextarea(data) {
+    return window.$nuxt.$api.$post(`ssl-bestox/tasks/textarea`, data);
+}
+
 function getSpecifyTask(id, application) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}?application=${application}`);
 }
@@ -56,6 +64,8 @@ export default {
     newAcPEPTaskByTextarea,
     newBESToxTaskByFile,
     newBESToxTaskByTextarea,
+    newSSLBESToxTaskByFile,
+    newSSLBESToxTaskByTextarea,
     getSpecifyTask,
     getSpecifyTasksByEmail,
     downloadSpecifyClassificationFile,

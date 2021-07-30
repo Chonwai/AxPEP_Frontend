@@ -48,7 +48,7 @@
 <script>
 import ContactCard from '../../components/ContactCard';
 export default {
-    layout: 'bestox',
+    layout: 'ssl-bestox',
     name: 'ContactPageIndex',
 };
 </script>

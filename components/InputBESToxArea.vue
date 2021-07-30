@@ -1,9 +1,18 @@
 <template>
     <div class="input-fasta-area-component">
         <v-textarea
+            v-if="application === 'bestox'"
             v-show="source === 'textarea'"
             outlined
             label="Input your SMILES"
+            value=""
+            v-model="textarea"
+        ></v-textarea>
+        <v-textarea
+            v-if="application === 'ssl-bestox'"
+            v-show="source === 'textarea'"
+            outlined
+            label="Input your Sequences"
             value=""
             v-model="textarea"
         ></v-textarea>
@@ -16,6 +25,7 @@
             </center>
         </div>
         <v-file-input
+            v-if="application === 'bestox'"
             v-show="source === 'file'"
             show-size
             v-model="file"
@@ -30,11 +40,36 @@
                 </v-chip>
             </template>
         </v-file-input>
+        <v-file-input
+            v-if="application === 'ssl-bestox'"
+            v-show="source === 'file'"
+            show-size
+            v-model="file"
+            accept=".fasta"
+            placeholder="Upload a FASTA document:"
+            label="File input"
+            prepend-icon="mdi-paperclip"
+        >
+            <template v-slot:selection="{ text }">
+                <v-chip small label color="primary">
+                    {{ text }}
+                </v-chip>
+            </template>
+        </v-file-input>
         <div>
             <v-radio-group v-model="source" row>
                 <v-radio label="Type manually" value="textarea"></v-radio>
                 <v-radio label="Draw the molecule" value="draw"></v-radio>
-                <v-radio label="Upload a file of SMILES (max. 500 SMILES)" value="file"></v-radio>
+                <v-radio
+                    v-if="application === 'ssl-bestox'"
+                    label="Upload FASTA sequences (.fasta)"
+                    value="file"
+                ></v-radio>
+                <v-radio
+                    v-else-if="application === 'bestox'"
+                    label="Upload a file of SMILES (max. 500 SMILES)"
+                    value="file"
+                ></v-radio>
             </v-radio-group>
         </div>
     </div>
@@ -43,6 +78,7 @@
 <script>
 export default {
     name: 'InputBESToxAreaComponent',
+    props: ['application'],
     data() {
         return {
             source: 'textarea',
