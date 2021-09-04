@@ -1,6 +1,6 @@
 <template>
     <div class="p-0 md:p-8">
-        <IndexPageHelper page="ssl-bestox" />
+        <IndexPageHelper page="ssl-gcn" />
         <v-stepper class="stepper-container" v-model="e6" vertical>
             <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                 <div class="flex items-center">
@@ -26,7 +26,7 @@
                     class="py-2"
                     v-on:file="uploadFile"
                     v-on:source="fileSource"
-                    application="ssl-bestox"
+                    application="ssl-gcn"
                 />
                 <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
             </v-stepper-content>
@@ -167,7 +167,7 @@ import TaskAPI from '@/apis/task';
 import rules from '../../utils/rules';
 
 export default {
-    layout: 'ssl-bestox',
+    layout: 'ssl-gcn',
     name: 'HomePageIndex',
     components: {
         IndexPageHelper,
@@ -214,7 +214,7 @@ export default {
             form.append('description', this.description);
             form.append('email', this.email);
             form.append('source', this.source);
-            form.append('application', 'ssl-bestox');
+            form.append('application', 'ssl-gcn');
             for (const key in this.methods) {
                 if (this.methods.hasOwnProperty(key)) {
                     const element = this.methods[key];
@@ -240,7 +240,7 @@ export default {
                 }
                 if (res.status == true) {
                     this.$router.push({
-                        name: 'ssl-bestox-retrieve-email',
+                        name: 'ssl-gcn-retrieve-email',
                         params: { email: this.email },
                     });
                 }

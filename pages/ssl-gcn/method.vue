@@ -105,7 +105,7 @@
 
 <script>
 export default {
-    layout: 'ssl-bestox',
+    layout: 'ssl-gcn',
     name: 'MethodPageIndex',
     data() {
         return {};

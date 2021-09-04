@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    name: 'SSLBESToxNavItemsIndex',
+    name: 'SSLGCNNavItemsIndex',
     props: {
         navList: {
             type: Array,

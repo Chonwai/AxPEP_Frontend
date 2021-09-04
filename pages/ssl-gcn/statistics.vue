@@ -1,6 +1,6 @@
 <template>
     <StatisticsPage
-        application="ssl-bestox"
+        application="ssl-gcn"
         :lineChartColor="lineChartColor"
         :doughnutChartColor="doughnutChartColor"
     ></StatisticsPage>
@@ -9,7 +9,7 @@
 <script>
 import StatisticsPage from '@/components/StatisticsPage';
 export default {
-    layout: 'ssl-bestox',
+    layout: 'ssl-gcn',
     name: 'SSLBESToxStatisticsPageIndex',
     data() {
         return {

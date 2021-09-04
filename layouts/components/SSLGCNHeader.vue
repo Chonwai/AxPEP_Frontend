@@ -15,36 +15,36 @@
                         @click="goToIndex"
                 /></v-toolbar-title>
                 <v-spacer></v-spacer>
-                <BESToxNavItems :navList="navList" class="d-none d-md-block" />
+                <SSLGCNNavItems :navList="navList" class="d-none d-md-block" />
             </v-container>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list nav>
-                <v-list-item link nuxt to="/ssl-bestox/home">
+                <v-list-item link nuxt to="/ssl-gcn/home">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Home</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/ssl-bestox/method">
+                <v-list-item link nuxt to="/ssl-gcn/method">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Method</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/ssl-bestox/dataset">
+                <v-list-item link nuxt to="/ssl-gcn/dataset">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Dataset</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/ssl-bestox/statistics">
+                <v-list-item link nuxt to="/ssl-gcn/statistics">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>Statistics</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/ssl-bestox/help">
+                <v-list-item link nuxt to="/ssl-gcn/help">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>
@@ -62,11 +62,11 @@
 </template>
 
 <script>
-import BESToxNavItems from './BESToxNavItems';
+import SSLGCNNavItems from './SSLGCNNavItems';
 export default {
-    name: 'SSLBESToxHeader',
+    name: 'SSLGCNHeader',
     components: {
-        BESToxNavItems,
+        SSLGCNNavItems,
     },
     data() {
         return {
@@ -76,27 +76,27 @@ export default {
             text: 'center',
             navList: [
                 {
-                    to: '/ssl-bestox/home',
+                    to: '/ssl-gcn/home',
                     title: 'Home',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/ssl-bestox/method',
+                    to: '/ssl-gcn/method',
                     title: 'Method',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/ssl-bestox/statistics',
+                    to: '/ssl-gcn/statistics',
                     title: 'Statistics',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/ssl-bestox/help',
+                    to: '/ssl-gcn/help',
                     title: 'Help',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/ssl-bestox/contact',
+                    to: '/ssl-gcn/contact',
                     title: 'Contact',
                     icon: 'mdi-home',
                 },

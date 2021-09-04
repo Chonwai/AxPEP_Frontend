@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    layout: 'ssl-bestox',
+    layout: 'ssl-gcn',
     name: 'HelpPageIndex',
 };
 </script>

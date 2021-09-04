@@ -72,7 +72,7 @@
 <script>
 import TaskAPI from '../../../apis/task';
 export default {
-    layout: 'ssl-bestox',
+    layout: 'ssl-gcn',
     name: 'RetrievePageIndex',
     data() {
         return {
@@ -110,7 +110,7 @@ export default {
             let res = await TaskAPI.getSpecifyTasksByEmail(
                 this.email,
                 this.current_page,
-                'ssl-bestox'
+                'ssl-gcn'
             );
             this.data = res.message.data;
             this.total = res.message.total;
@@ -133,7 +133,7 @@ export default {
         },
         retrieve(id) {
             this.$router.push({
-                name: 'ssl-bestox-jobs-id',
+                name: 'ssl-gcn-jobs-id',
                 params: { id: id, application: 'bestox' },
             });
         },

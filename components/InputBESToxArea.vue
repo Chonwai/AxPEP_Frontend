@@ -9,7 +9,7 @@
             v-model="textarea"
         ></v-textarea>
         <v-textarea
-            v-if="application === 'ssl-bestox'"
+            v-if="application === 'ssl-gcn'"
             v-show="source === 'textarea'"
             outlined
             label="Input your Sequences"
@@ -41,7 +41,7 @@
             </template>
         </v-file-input>
         <v-file-input
-            v-if="application === 'ssl-bestox'"
+            v-if="application === 'ssl-gcn'"
             v-show="source === 'file'"
             show-size
             v-model="file"
@@ -61,7 +61,7 @@
                 <v-radio label="Type manually" value="textarea"></v-radio>
                 <v-radio label="Draw the molecule" value="draw"></v-radio>
                 <v-radio
-                    v-if="application === 'ssl-bestox'"
+                    v-if="application === 'ssl-gcn'"
                     label="Upload FASTA sequences (.fasta)"
                     value="file"
                 ></v-radio>

@@ -9,7 +9,7 @@
 <script>
 import StatisticsPage from '@/components/StatisticsPage';
 export default {
-    layout: 'ssl-bestox',
+    layout: 'bestox',
     name: 'SSLBESToxStatisticsPageIndex',
     data() {
         return {

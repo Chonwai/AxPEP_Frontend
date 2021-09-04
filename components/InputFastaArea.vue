@@ -75,8 +75,10 @@ export default {
     },
     async mounted() {
         const res = await CodonAPI.getAllCodons();
-        this.codonList = res.message;
-        this.$emit('source', this.source);
+        if (res.status) {
+            this.codonList = res.message;
+            this.$emit('source', this.source);
+        }
     },
     computed: {
         getCodonList() {

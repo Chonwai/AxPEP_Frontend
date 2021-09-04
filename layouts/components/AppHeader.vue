@@ -66,8 +66,8 @@ export default {
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/ssl-bestox/home',
-                    title: 'SSL-BESTox',
+                    to: '/ssl-gcn/home',
+                    title: 'SSL-GCN',
                     icon: 'mdi-home',
                 },
             ],

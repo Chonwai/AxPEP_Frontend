@@ -27,11 +27,11 @@ function newBESToxTaskByTextarea(data) {
 }
 
 function newSSLBESToxTaskByFile(data) {
-    return window.$nuxt.$api.$post(`ssl-bestox/tasks/file`, data);
+    return window.$nuxt.$api.$post(`ssl-gcn/tasks/file`, data);
 }
 
 function newSSLBESToxTaskByTextarea(data) {
-    return window.$nuxt.$api.$post(`ssl-bestox/tasks/textarea`, data);
+    return window.$nuxt.$api.$post(`ssl-gcn/tasks/textarea`, data);
 }
 
 function getSpecifyTask(id, application) {

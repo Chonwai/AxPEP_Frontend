@@ -1,7 +1,7 @@
 <template>
     <v-app dark>
         <notifications group="foo" />
-        <SSLBESToxHeader />
+        <SSLGCNHeader />
         <v-main>
             <v-container>
                 <nuxt />
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import SSLBESToxHeader from './components/SSLBESToxHeader';
+import SSLGCNHeader from './components/SSLGCNHeader';
 import AppFooter from './components/AppFooter';
 import ThemesUtils from '../utils/theme';
 export default {
@@ -28,7 +28,7 @@ export default {
         };
     },
     components: {
-        SSLBESToxHeader,
+        SSLGCNHeader,
         AppFooter,
     },
     mounted() {

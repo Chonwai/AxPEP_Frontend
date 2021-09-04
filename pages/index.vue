@@ -121,10 +121,10 @@ export default {
                 {
                     color: '#1C2833',
                     src: '/images/BESToxCard.png',
-                    title: 'SSL-BESTox',
+                    title: 'SSL-GCN',
                     subtitle:
                         'Compound Toxicity Prediction Based onSemi-supervised Learning and GraphConvolutional Neural Network',
-                    to: '/ssl-bestox/home',
+                    to: '/ssl-gcn/home',
                 },
                 {
                     color: '#89cff0',
