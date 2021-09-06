@@ -66,6 +66,10 @@ class Utils {
             return sequence;
         }
     }
+
+    static randomItem(items) {
+        return items[Math.floor(Math.random() * items.length)];
+    }
 }
 
 export default Utils;

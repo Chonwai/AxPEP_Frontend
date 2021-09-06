@@ -10,8 +10,8 @@
                 <v-toolbar-title
                     ><img
                         class="h-16 cursor-pointer"
-                        src="/images/bestox-logo.png"
-                        alt="bestox-logo"
+                        src="/images/ssl-toxgcn-transparent-logo.png"
+                        alt="ssl-gcn-logo"
                         @click="goToIndex"
                 /></v-toolbar-title>
                 <v-spacer></v-spacer>

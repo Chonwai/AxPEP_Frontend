@@ -14,7 +14,7 @@
                     Sequence: {{ chopSequence(item.sequence) }}
                 </td>
                 <td v-if="item.hasOwnProperty('smiles')" :colspan="headers.length">
-                    Smile: {{ item.smiles }}
+                    SMILES: {{ item.smiles }}
                 </td>
             </template>
         </v-data-table>

@@ -8,13 +8,14 @@
 
 <script>
 import StatisticsPage from '@/components/StatisticsPage';
+import Utils from '@/utils/utils.js';
 export default {
     layout: 'ampep',
     name: 'AmPEPStatisticsPageIndex',
     data() {
         return {
-            lineChartColor: '#3f51b5',
-            doughnutChartColor: ['#3f51b5', '#69f0ae', '#0288d1', '#00bfa5'],
+            lineChartColor: Utils.randomItem(['#3f51b5', '#69f0ae']),
+            doughnutChartColor: ['#3f51b5', '#69f0ae'],
         };
     },
     components: {

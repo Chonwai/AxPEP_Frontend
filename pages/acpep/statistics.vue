@@ -8,12 +8,20 @@
 
 <script>
 import StatisticsPage from '@/components/StatisticsPage';
+import Utils from '@/utils/utils.js';
 export default {
     layout: 'acpep',
     name: 'AcPEPStatisticsPageIndex',
     data() {
         return {
-            lineChartColor: '#fe6e00',
+            lineChartColor: Utils.randomItem([
+                '#ED6D0D',
+                '#F2A805',
+                '#FEE4B5',
+                '#9BD185',
+                '#7CC26A',
+                '#649748',
+            ]),
             doughnutChartColor: ['#ED6D0D', '#F2A805', '#FEE4B5', '#9BD185', '#7CC26A', '#649748'],
         };
     },
