@@ -10,19 +10,7 @@
                         class="w-1/2"
                         title="Developer"
                         name="Ray Chen"
-                        email="mb85409@connect.um.edu.mo"
-                    />
-                    <ContactCard
-                        class="w-1/2"
-                        title="Developer"
-                        name="Carter Cheong"
-                        email="carter96121@gmail.com"
-                    />
-                    <ContactCard
-                        class="w-1/2"
-                        title="Developer"
-                        name="Giotto Tai"
-                        email="giottotai@yahoo.com.hk"
+                        email="chen709847237@gmail.com"
                     />
                     <ContactCard
                         class="w-1/2"
@@ -50,5 +38,8 @@ import ContactCard from '../../components/ContactCard';
 export default {
     layout: 'ssl-gcn',
     name: 'ContactPageIndex',
+    components: {
+        ContactCard,
+    },
 };
 </script>

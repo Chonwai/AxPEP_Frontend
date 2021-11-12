@@ -6,28 +6,27 @@
                 <div>
                     <h3 class="text-2xl">Input – Sequences</h3>
                     <ImageCard class="mt-2" src="/images/ssl-toxgcn-help-sequences.png" />
-                    <p>Paste your amino acide sequences in FASTA format such as:</p>
+                    <p>Paste your SMILES strings using the FASTA format such as:</p>
                     <code class="bg-gray-500"
                         >>TEST0<br />O=C1Cc2cc(CCN3CCN(c4nsc5ccccc45)CC3)c(Cl)cc2N1<br />>TEST1<br />CN(C)CCOC1=Cc2ccccc2Sc2ccc(Cl)cc21</code
                     >
                     <p>
-                        where AC_1 and AC_2 are sequence IDs. Each sequence should be at least 5
-                        a.a. long and maximally 250 a.a. or an error will be reported. Only 1-letter
-                        code for 20 standard amino acids is acceptable. If the number of sequences
-                        is large, you can upload them in a file (in FASTA format) by selecting the
-                        “Upload FASTA sequences” checkbox. Uploaded sequence files are limited to 1
-                        MB.
+                        where TEST0 and TEST1 are IDs. If the number of compounds is large, you can
+                        upload them in a file (in a FASTA-like format) by selecting the “Upload”
+                        checkbox. Uploaded data files are limited to 1 MB.
                     </p>
                 </div>
                 <div>
-                    <h3 class="text-2xl">Input – Prediction for Types of Cancer</h3>
+                    <h3 class="text-2xl">
+                        Input – Prediction for Types of Toxicological Endpoints
+                    </h3>
                     <ImageCard
                         class="mt-2"
-                        src="/images/ssl-toxgcn-help-prediction-for-types-of-cancer.png"
+                        src="/images/ssl-toxgcn-help-prediction-for-toxicological-endpoints.png"
                     />
                     <p>
-                        Select the prediction for types of cancer that you are interested to
-                        predict:
+                        Select the prediction for types of toxicological endpoint that you are
+                        interested to predict:
                     </p>
                     <ul>
                         <li>
@@ -101,7 +100,7 @@
                 <div>
                     <h3 class="text-2xl">Result</h3>
                     <p>
-                        The prediction result of all submitted sequences will be displayed in a
+                        The prediction result of all submitted compounds will be displayed in a
                         single page. All columns can be sorted as user’s need, and all results are
                         downloadable in a CSV file.
                     </p>
@@ -116,10 +115,6 @@
                     <li>
                         <span class="font-bold">Jiarui Chen</span>
                         <code>chen709847237@gmail.com</code>
-                    </li>
-                    <li>
-                        <span class="font-bold">Carter Cheong </span>
-                        <code>Carter96121@gmail.com</code>
                     </li>
                     <li>
                         <span class="font-bold">Edison Un (web developer)</span>
