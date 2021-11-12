@@ -59,10 +59,14 @@
         <div>
             <v-radio-group v-model="source" row>
                 <v-radio label="Type manually" value="textarea"></v-radio>
-                <v-radio label="Draw the molecule" value="draw"></v-radio>
+                <v-radio
+                    v-if="application === 'bestox'"
+                    label="Draw the molecule"
+                    value="draw"
+                ></v-radio>
                 <v-radio
                     v-if="application === 'ssl-gcn'"
-                    label="Upload FASTA sequences (.fasta)"
+                    label="Upload SMILES strings in a FASTA-like file (.fasta)"
                     value="file"
                 ></v-radio>
                 <v-radio

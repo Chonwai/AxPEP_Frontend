@@ -4,7 +4,7 @@
         <v-stepper class="stepper-container" v-model="e6" vertical>
             <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                 <div class="flex items-center">
-                    <span>Input sequences in FASTA format</span>
+                    <span>Input SMILES strings in FASTA-like format</span>
                     <v-btn class="mx-2" small @click="showExample = true">(Example)</v-btn>
                 </div>
                 <ExampleDialog
@@ -32,7 +32,7 @@
             </v-stepper-content>
 
             <v-stepper-step :complete="e6 > 2" step="2"
-                >Prediction for types of cancer</v-stepper-step
+                >Prediction for Toxicological Endpoints</v-stepper-step
             >
 
             <v-stepper-content step="2">
