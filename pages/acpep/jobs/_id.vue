@@ -108,9 +108,9 @@ export default {
         },
         async downloadResult() {
             let data = await TaskAPI.downloadSpecifyClassificationFile(this.id);
-            await Utils.downloadResult(data, `${this.id}-classification.csv`);
+            await Utils.downloadResult(data, `${this.id}-activity_in_uM.csv`);
             data = await TaskAPI.downloadSpecifyScoreFile(this.id);
-            await Utils.downloadResult(data, `${this.id}-score.csv`);
+            await Utils.downloadResult(data, `${this.id}-classification.csv`);
         },
     },
 };
