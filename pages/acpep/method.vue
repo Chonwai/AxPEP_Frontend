@@ -6,8 +6,8 @@
                 <ReferenceCard
                     authors="Jiarui Chen, Hong-Hin Cheong, and Shirley Weng In Siu."
                     title="xDeep-AcPEP: Deep Learning Method for Anticancer Peptide Activity Prediction based on Convolutional Neural Network and Multi-Task Learning."
-                    subtitle="Journal xxx, 2020 (under review)"
-                    link=""
+                    subtitle="American Chemical Society, 2021 (published)"
+                    link="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00181"
                 />
             </section>
             <section id="ACP" class="mb-8">
@@ -27,7 +27,24 @@
             </section>
             <section id="AcPEP" class="mb-8">
                 <h2 class="text-4xl">AcPEP: Method to Classify ACPs and non-ACPs</h2>
-                <p>(Work in progress)</p>
+                <p>
+                    The development of the ACP classifier is presented in Figure. It includes
+                    feature extraction (step 1) – each sample sequence was converted into numerical
+                    feature vectors of 32 feature groups using iFeature. Initial feature group
+                    selection (step 2) – The feature groups were evaluated for target relevance by
+                    comparing the performance of their Random Forest models. Model selection (step
+                    3) – The features of the best performing feature groups were concatenated and
+                    subjected to extensive evaluation using a combination of feature preprocessing,
+                    feature selection and learning algorithms to build prediction models which
+                    8+1(raw method) feature preprocessing methods, 6+1(raw method) feature selection
+                    methods and 5 learning algorithm as shown in Figure. So totally 315 different
+                    model training procedures were compared by 10-fold cross validation to identify
+                    the optimal one.
+                </p>
+                <ImageCard
+                    src="/images/acp-classifier.png"
+                    caption="Figure 3. The development of the ACP classifier."
+                />
             </section>
             <section id="AcPEP" class="mb-8">
                 <h2 class="text-4xl">

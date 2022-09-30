@@ -102,7 +102,7 @@
                     <code>chen709847237@gmail.com</code>
                 </li>
                 <li>
-                    <span class="font-bold">Carter Cheong </span> <code>Carter96121@gmail.com</code>
+                    <span class="font-bold">Carter Cheong </span> <code>carter96121@gmail.com</code>
                 </li>
                 <li>
                     <span class="font-bold">Edison Un (web developer)</span>
