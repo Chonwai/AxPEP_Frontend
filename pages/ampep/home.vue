@@ -169,7 +169,7 @@ export default {
                 } else if (this.source == 'codon') {
                     form.append('file', this.file);
                     form.append('codon', this.codon);
-                    res = await TaskAPI.newAcPEPTaskByCodon(form);
+                    res = await TaskAPI.newTaskByCodon(form);
                 }
                 if (res.status == true) {
                     this.$router.push({

@@ -198,7 +198,7 @@ export default {
                 } else if (this.source == 'codon') {
                     form.append('file', this.file);
                     form.append('codon', this.codon);
-                    res = await TaskAPI.newTaskByCodon(form);
+                    res = await TaskAPI.newAcPEPTaskByCodon(form);
                 }
                 if (res.status == true) {
                     this.$router.push({
