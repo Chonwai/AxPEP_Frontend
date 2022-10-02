@@ -31,6 +31,7 @@
                     class="py-2"
                     v-on:file="uploadFile"
                     v-on:source="fileSource"
+                    v-on:codon="selectedCodon"
                     application="acpep"
                 />
                 <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
@@ -137,6 +138,7 @@ export default {
             description: '',
             email: '',
             source: '',
+            codon: false,
             methods: {
                 breast: 1,
                 cervix: 1,
