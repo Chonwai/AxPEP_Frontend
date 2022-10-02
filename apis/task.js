@@ -18,6 +18,10 @@ function newAcPEPTaskByTextarea(data) {
     return window.$nuxt.$api.$post(`acpep/tasks/textarea`, data);
 }
 
+function newAcPEPTaskByCodon(data) {
+    return window.$nuxt.$api.$post(`acpep/tasks/codon`, data);
+}
+
 function newBESToxTaskByFile(data) {
     return window.$nuxt.$api.$post(`bestox/tasks/file`, data);
 }
@@ -62,6 +66,7 @@ export default {
     newTaskByCodon,
     newAcPEPTaskByFile,
     newAcPEPTaskByTextarea,
+    newAcPEPTaskByCodon,
     newBESToxTaskByFile,
     newBESToxTaskByTextarea,
     newSSLBESToxTaskByFile,

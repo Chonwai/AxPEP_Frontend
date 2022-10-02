@@ -195,6 +195,10 @@ export default {
                 } else if (this.source == 'textarea') {
                     form.append('fasta', this.file);
                     res = await TaskAPI.newAcPEPTaskByTextarea(form);
+                } else if (this.source == 'codon') {
+                    form.append('file', this.file);
+                    form.append('codon', this.codon);
+                    res = await TaskAPI.newTaskByCodon(form);
                 }
                 if (res.status == true) {
                     this.$router.push({
