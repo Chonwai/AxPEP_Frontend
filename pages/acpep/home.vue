@@ -4,7 +4,7 @@
         <v-stepper class="stepper-container" v-model="e6" vertical>
             <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                 <div class="flex items-center">
-                    Input sequences in FASTA format (5 to 38 residues, only 20 naturally occuring
+                    Input sequences in FASTA format (10 to 38 residues, only 20 naturally occuring
                     amino acids)
                     <v-btn class="mx-2" small @click="showExample = true">(Example)</v-btn>
                 </div>
