@@ -6,12 +6,28 @@
                 <ReferenceCard
                     authors="Jiarui Chen, Hong-Hin Cheong, and Shirley Weng In Siu."
                     title="xDeep-AcPEP: Deep Learning Method for Anticancer Peptide Activity Prediction based on Convolutional Neural Network and Multi-Task Learning."
-                    subtitle="American Chemical Society, 2021 (published)"
+                    subtitle="J. Chem. Inf. Model. 2021, 61, 8, 3789-3803."
                     link="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00181"
                 />
+                <v-card class="mx-auto w-4/5 mb-8">
+                    <v-card-text>
+                        <div>Reference</div>
+                        <div class="text--primary">
+                            Hong-Hin Cheong, Weimin Zuo, Jiarui Chen, Chon-Wai Un, Yain-Whar Si,
+                            Koon Ho Wong, Hang Fai Kwok, Shirley Weng In Siu.
+                        </div>
+                        <a href="#" class="text-base font-bold text--primary">
+                            <i>In Silico Identification and In Vitro</i> Validation of Anticancer
+                            Peptides for Colorectal Cancer by a Multi-step Artificial Intelligence
+                            Screening Workflow.
+                        </a>
+                        <p>Submitted, 2022.</p>
+                    </v-card-text>
+                </v-card>
             </section>
             <section id="ACP" class="mb-8">
                 <h2 class="text-4xl">What are Anticancer Peptides (ACP)?</h2>
+                <i></i>
                 <p>
                     Cancer is one of the leading causes of death worldwide. Conventional cancer
                     treatment relies on radiotherapy and chemotherapy, but both methods bring severe
@@ -44,6 +60,37 @@
                 <ImageCard
                     src="/images/acp-classifier.png"
                     caption="Figure 3. The development of the ACP classifier."
+                />
+            </section>
+            <section id="AcPEP" class="mb-8">
+                <h2 class="text-4xl">Model Performance</h2>
+                <p>
+                    In 10-fold cross-validation (CV) with different combinations of feature
+                    selection, feature scaling, and machine learning algorithms, the top 5 models
+                    were all based on SVC. As shown in Table 1, the accuracy of these models from CV
+                    is within one standard deviation of the top 1 mode. Specifically,
+                    Standard:RFE-SVC:SVC outperformed the others while Standard:ANOVA:SVC achieved
+                    similar performance with greatly reduced dimensionality. Using an independent
+                    test set, our models were compared with 11 previously published ACP
+                    classification methods and showed 1-2% improvement in accuracy (Figure 2).
+                    Considering better generalization, we chose Standard:ANOVA:SVC as our final
+                    model and named it AcPEP.
+                </p>
+                <div class="mb-8">
+                    <v-data-table
+                        :headers="headers"
+                        :items="desserts"
+                        hide-default-footer
+                        class="elevation-1"
+                    ></v-data-table>
+                    <v-card-subtitle class="pb-0 flex justify-center items-center"
+                        >Table 1: The 10-fold CV performance of the best 5 ACP classifiers developed
+                        in this work
+                    </v-card-subtitle>
+                </div>
+                <ImageCard
+                    src="/images/acpep-model-performance.png"
+                    caption="Figure 2: Performance comparison with 11 online ACP prediction methods on the independent test set."
                 />
             </section>
             <section id="AcPEP" class="mb-8">
@@ -117,11 +164,114 @@
 </template>
 
 <script>
+import ReferenceCard from '@/components/ReferenceCard';
+import ImageCard from '@/components/ImageCard';
 export default {
     layout: 'acpep',
     name: 'MethodPageIndex',
     data() {
-        return {};
+        return {
+            headers: [
+                {
+                    text: 'Scaler',
+                    align: 'start',
+                    value: 'scaler',
+                },
+                { text: 'Selection', value: 'selection' },
+                { text: 'Model', value: 'model' },
+                { text: 'Dims', value: 'dims' },
+                { text: 'ACC', value: 'acc' },
+                { text: 'MCC', value: 'mcc' },
+                { text: 'AUCROC', value: 'aucroc' },
+                { text: 'F1', value: 'f1' },
+                { text: 'SEN', value: 'sen' },
+                { text: 'SPC', value: 'spc' },
+                { text: 'PRC', value: 'rpc' },
+                { text: 'CV(mean)', value: 'cvmean' },
+                { text: 'CV(std)', value: 'cvstd' },
+            ],
+            desserts: [
+                {
+                    scaler: 'Standard',
+                    selection: 'RFE-SVC',
+                    model: 'SVC',
+                    dims: 1601,
+                    acc: 0.9471,
+                    mcc: 0.8983,
+                    aucroc: 0.9934,
+                    f1: 0.9445,
+                    sen: 0.9,
+                    spc: 0.9943,
+                    rpc: 0.9937,
+                    cvmean: 0.9471,
+                    cvstd: 0.0205,
+                },
+                {
+                    scaler: 'Power',
+                    selection: 'RFE-SVC',
+                    model: 'SVC',
+                    dims: 1601,
+                    acc: 0.9407,
+                    mcc: 0.885,
+                    aucroc: 0.9924,
+                    f1: 0.9379,
+                    sen: 0.8957,
+                    spc: 0.9857,
+                    rpc: 0.9843,
+                    cvmean: 0.9407,
+                    cvstd: 0.0181,
+                },
+                {
+                    scaler: 'Standard',
+                    selection: 'ANOVA',
+                    model: 'SVC',
+                    dims: 742,
+                    acc: 0.9307,
+                    mcc: 0.8635,
+                    aucroc: 0.9783,
+                    f1: 0.9282,
+                    sen: 0.8957,
+                    spc: 0.9657,
+                    rpc: 0.9631,
+                    cvmean: 0.9307,
+                    cvstd: 0.0128,
+                },
+                {
+                    scaler: 'Standard',
+                    selection: 'RF',
+                    model: 'SVC',
+                    dims: 1601,
+                    acc: 0.9279,
+                    mcc: 0.8584,
+                    aucroc: 0.9816,
+                    f1: 0.9249,
+                    sen: 0.8886,
+                    spc: 0.9671,
+                    rpc: 0.9643,
+                    cvmean: 0.9279,
+                    cvstd: 0.0203,
+                },
+                {
+                    scaler: 'Power',
+                    selection: 'RF',
+                    model: 'SVC',
+                    dims: 1601,
+                    acc: 0.9271,
+                    mcc: 0.857,
+                    aucroc: 0.9786,
+                    f1: 0.9241,
+                    sen: 0.8871,
+                    spc: 0.9671,
+                    rpc: 0.9643,
+                    cvmean: 0.9271,
+                    cvstd: 0.0188,
+                },
+            ],
+        };
+    },
+    components: {
+        ImageCard,
+        ReferenceCard,
     },
 };
 </script>

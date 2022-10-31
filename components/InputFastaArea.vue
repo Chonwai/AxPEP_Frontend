@@ -50,7 +50,7 @@
                 <v-radio label="Type manually" value="textarea"></v-radio>
                 <v-radio label="Upload FASTA sequences (.fasta)" value="file"></v-radio>
                 <v-radio
-                    v-if="application === 'ampep' || application === 'acpep'"
+                    v-if="application === 'ampep'"
                     label="Upload Genome sequences (.fasta, max. file size 50 MB)"
                     value="codon"
                 ></v-radio>
