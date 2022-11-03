@@ -89,7 +89,7 @@
                     </v-card-subtitle>
                 </div>
                 <ImageCard
-                    src="/images/acpep-model-performance.png"
+                    src="/images/acpep-model-performance.jpg"
                     caption="Figure 2: Performance comparison with 11 online ACP prediction methods on the independent test set."
                 />
             </section>
