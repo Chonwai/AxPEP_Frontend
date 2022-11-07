@@ -4,7 +4,7 @@
             <div class="p-4">
                 <v-img
                     v-if="direction == 'horizontal'"
-                    class="white--text align-end w-3/4 m-auto"
+                    class="white--text align-end w-5/6 m-auto"
                     :src="src"
                 >
                     <template v-slot:placeholder>
@@ -13,7 +13,7 @@
                 </v-img>
                 <v-img
                     v-if="direction == 'vertical'"
-                    class="white--text align-end w-2/4 m-auto"
+                    class="white--text align-end w-3/4 m-auto"
                     :src="src"
                 >
                     <template v-slot:placeholder>
