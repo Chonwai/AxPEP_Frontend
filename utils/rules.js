@@ -30,12 +30,12 @@ const rules = {
             return true;
         } else {
             // 2MB
-            if (value.size <= 1024 * 1024 * 2) {
+            if (value.size <= 1024 * 1024 * 1) {
                 return true;
             } else {
                 window.$nuxt.$store.commit(
                     'SET_WARNING',
-                    'The FASTA file is too big! Please upload small than 2MB FASTA file.'
+                    'The FASTA file is too big! Please upload small than 1MB FASTA file.'
                 );
                 return false;
             }
@@ -45,7 +45,7 @@ const rules = {
         if (typeof value === 'string') {
             return true;
         } else {
-            if (value.size <= 1024 * 1024) {
+            if (value.size <= 1024 * 1024 * 1) {
                 return true;
             } else {
                 window.$nuxt.$store.commit(
