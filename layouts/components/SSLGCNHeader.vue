@@ -32,12 +32,6 @@
                     </v-list-item-icon>
                     <v-list-item-title>Method</v-list-item-title>
                 </v-list-item>
-                <v-list-item link nuxt to="/ssl-gcn/dataset">
-                    <v-list-item-icon>
-                        <v-icon>mdi-home</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-title>Dataset</v-list-item-title>
-                </v-list-item>
                 <v-list-item link nuxt to="/ssl-gcn/statistics">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
