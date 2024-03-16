@@ -13,7 +13,7 @@
                 {{ item.title }}
             </p>
         </v-btn>
-        <v-btn text color="white" value="Help" href="https://cbbio.online/">
+        <v-btn text color="white" value="Help" href="https://app.cbbio.online/">
             <div class="flex flex-row justify-center items-center">
                 <p class="text-2xl" style="margin-bottom: 0px; text-transform: capitalize">CBBio</p>
                 <v-spacer class="w-1 d-none d-lg-block" />
@@ -21,7 +21,7 @@
                     class="d-none d-lg-block text-xs"
                     style="margin-bottom: 0px; text-transform: capitalize"
                 >
-                    Computational Biology <br />and Bioinformatics Lab
+                    Computational Biology <br />and Bioinformatics Tools
                 </p>
             </div>
         </v-btn>

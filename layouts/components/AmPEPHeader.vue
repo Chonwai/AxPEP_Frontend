@@ -50,7 +50,7 @@
                     </v-list-item-icon>
                     <v-list-item-title>Help</v-list-item-title>
                 </v-list-item>
-                <v-list-item link href="https://cbbio.online/">
+                <v-list-item link href="https://app.cbbio.online/">
                     <v-list-item-icon>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-icon>

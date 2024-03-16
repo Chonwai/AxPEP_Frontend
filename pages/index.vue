@@ -5,7 +5,7 @@
         >
             <div class="p-4 animate__animated animate__fadeInUp">
                 <h1 class="text-4xl text-white font-normal">
-                    Computational Biology and Bioinformatics Lab (CBBio)
+                    Computational Biology and Bioinformatics Tools (CBBio)
                 </h1>
                 <h4 class="text-base text-white font-normal">
                     Department of Computer and Information Science University of Macau
