@@ -3,13 +3,17 @@
         <div
             class="flex flex-col items-center justify-center h-screen mb-4 bg-fixed bg-center bg-cover banner-img"
         >
-            <div class="p-4 animate__animated animate__fadeInUp">
+            <div class="p-4 animate__animated animate__fadeInUp z-50">
                 <h1 class="text-4xl text-white font-normal">
-                    Computational Biology and Bioinformatics Tools (CBBio)
+                    Computational Drug Discovery and AI Lab
                 </h1>
-                <h4 class="text-base text-white font-normal">
-                    Department of Computer and Information Science University of Macau
-                </h4>
+                <a href="https://shirleysiulab.wordpress.com/">
+                    <h4 class="text-base text-white font-normal">
+                        Centre for Artificial Intelligence Driven Drug Discovery
+                        <br />
+                        Faculty of Applied Sciences, Macao Polytechnic University
+                    </h4>
+                </a>
             </div>
         </div>
         <v-container class="min-h-80vh">
