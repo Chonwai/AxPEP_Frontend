@@ -90,6 +90,11 @@
                 <v-btn text @click="e6 = 3">Cancel</v-btn>
             </v-stepper-content>
         </v-stepper>
+        <v-alert border="left" colored-border elevation="2">
+            <b>Funding:</b><br />
+            This project is supported by the Government of Canada’s New Frontiers in Research Fund
+            (NFRF) (NFRFE-2021-00913) (2022.04-2025.03)
+        </v-alert>
     </div>
 </template>
 

@@ -4,14 +4,18 @@
             class="flex flex-col items-center justify-center h-screen mb-4 bg-fixed bg-center bg-cover banner-img"
         >
             <div class="p-4 animate__animated animate__fadeInUp z-50">
-                <h1 class="text-4xl text-white font-normal">
-                    Computational Drug Discovery and AI Lab
-                </h1>
-                <a href="https://shirleysiulab.wordpress.com/">
+                <a class="cursor-pointer" href="https://shirleysiulab.wordpress.com/">
+                    <h1 class="text-4xl text-white font-normal" cursor="pointer">
+                        Computational Drug Discovery and AI Lab
+                    </h1>
+                </a>
+                <a class="cursor-pointer" href="https://www.mpu.edu.mo/esca/en/aidd.php">
                     <h4 class="text-base text-white font-normal">
                         Centre for Artificial Intelligence Driven Drug Discovery
                         <br />
-                        Faculty of Applied Sciences, Macao Polytechnic University
+                        Faculty of Applied Sciences
+                        <br />
+                        Macao Polytechnic University
                     </h4>
                 </a>
             </div>

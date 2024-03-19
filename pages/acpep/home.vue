@@ -114,8 +114,8 @@
         </v-stepper>
         <v-alert border="left" colored-border elevation="2">
             <b>Funding:</b><br />
-            This project is supported by the Government of Canada’s New Frontiers in Research Fund
-            (NFRF) (NFRFE-2021-00913) (2022.04-2025.03)
+            This project is supported by University of Macau (grant No. MYRG2019-00098-FST and
+            MYRG2017-00146-FST)
         </v-alert>
     </div>
 </template>
