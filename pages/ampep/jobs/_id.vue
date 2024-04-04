@@ -54,6 +54,12 @@
                             :header.sync="scoresHeader"
                             :items.sync="data.scores"
                         />
+                        <ResultTable
+                            v-if="data.amp_activity_prediction"
+                            v-show="item.tab == 'Activity Prediction'"
+                            :header.sync="ampActivityPredictionHeader"
+                            :items.sync="data.amp_activity_prediction"
+                        />
                     </v-tab-item>
                 </v-tabs-items>
             </v-card>
@@ -79,8 +85,13 @@ export default {
             data: [],
             classificationsHeader: [],
             scoresHeader: [],
+            ampActivityPredictionHeader: [],
             tab: null,
-            items: [{ tab: 'Classification' }, { tab: 'Prediction Score' }],
+            items: [
+                { tab: 'Classification' },
+                { tab: 'Prediction Score' },
+                { tab: 'Activity Prediction' },
+            ],
         };
     },
     async created() {
@@ -114,6 +125,17 @@ export default {
                     text: await Utils.convertAmPEPTableHeader(item),
                     value: item,
                 });
+            }
+            if (this.data.amp_activity_prediction) {
+                for (const item of Object.keys(this.data.amp_activity_prediction[0])) {
+                    if (item == 'sequence') {
+                        continue;
+                    }
+                    this.ampActivityPredictionHeader.push({
+                        text: await Utils.convertAmPEPTableHeader(item),
+                        value: item,
+                    });
+                }
             }
         },
         async downloadResult() {
