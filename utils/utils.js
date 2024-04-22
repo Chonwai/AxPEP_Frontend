@@ -23,6 +23,12 @@ class Utils {
             case 'product_of_probability':
                 newHeader = 'Product of probability';
                 break;
+            case 'ec_predicted_pmic':
+                newHeader = 'EC_MIC (uM)';
+                break;
+            case 'sa_predicted_pmic':
+                newHeader = 'SA_MIC (uM)';
+                break;
             default:
                 break;
         }

@@ -136,6 +136,9 @@ export default {
                         value: item,
                     });
                 }
+                for (const item of this.data.amp_activity_prediction) {
+                    item.id = item.id.replace('>', '');
+                }
             }
         },
         async downloadResult() {
