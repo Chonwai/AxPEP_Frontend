@@ -26,7 +26,13 @@ class Utils {
             case 'ec_predicted_pmic':
                 newHeader = 'EC_MIC (uM)';
                 break;
+            case 'ec_predicted_MIC_μM':
+                newHeader = 'EC_MIC (uM)';
+                break;
             case 'sa_predicted_pmic':
+                newHeader = 'SA_MIC (uM)';
+                break;
+            case 'sa_predicted_MIC_μM':
                 newHeader = 'SA_MIC (uM)';
                 break;
             default:
