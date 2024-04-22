@@ -18,8 +18,13 @@
                     short sequence <=30 residues
                 </li>
                 <li>
-                    <a href="#AcPEP">RF-AmPEP30:</a>: Random forest model for short sequence <=30
+                    <a href="#AcPEP">RF-AmPEP30</a>: Random forest model for short sequence <=30
                     residues
+                </li>
+                <li>
+                    <a href="#ProtBERT-Finetuned-AMP-Regressors">BERT-AmPEP60</a>: Peptide minimum
+                    inhibitory concentration (MIC) prediction against E. coli and S. aureas for
+                    sequences between 5 and 60 residues.
                 </li>
             </ul>
             <p>
@@ -112,10 +117,10 @@
                 ProtBERT finetuned AMP regressors: BERT based regression models to predict MIC
                 values against Escherichia coli (EC) and Staphylococcus aureus (SA)
             </h2>
-            <h3 class="text-2xl">
+            <p>
                 ProtBERT finetuned AMP regressors: Antimicrobial Peptide Activity Prediction for
                 sequences with 5 to 60 residues
-            </h3>
+            </p>
             <p>
                 We proposed a deep learning model based on the fine-tuned Bidirectional Encoder
                 Representations from Transformers (BERT) architecture to extract embedding features
