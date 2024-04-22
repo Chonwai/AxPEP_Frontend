@@ -107,6 +107,33 @@
                 link="https://www.nature.com/articles/s41598-018-19752-w"
             />
         </section>
+        <section id="ProtBERT-Finetuned-AMP-Regressors" class="mb-8">
+            <h2 class="text-4xl">
+                ProtBERT finetuned AMP regressors: BERT based regression models to predict MIC
+                values against Escherichia coli (EC) and Staphylococcus aureus (SA)
+            </h2>
+            <h3 class="text-2xl">
+                ProtBERT finetuned AMP regressors: Antimicrobial Peptide Activity Prediction for
+                sequences with 5 to 60 residues
+            </h3>
+            <p>
+                We proposed a deep learning model based on the fine-tuned Bidirectional Encoder
+                Representations from Transformers (BERT) architecture to extract embedding features
+                from input sequences and predict minimum inhibitory concentrations (MICs) for target
+                bacterial species. Using the transfer learning strategy, we built regression models
+                for Escherichia coli (EC) and Staphylococcus aureus (SA) using data curated from
+                DBAASP. In five independent experiments with 10% leave-out sequences as test sets,
+                the optimal EC and SA models achieved an average mean squared error of 0.2664 and
+                0.7530 (log µM), respectively. They also showed a Pearson’s correlation coefficient
+                of 0.7955 and 0.7530, and a Kendall’s tau coefficient of 0.5797 and 0.5222,
+                respectively.
+            </p>
+            <ImageCard
+                src="/images/protBERT-finetune-AMP-regressor.png"
+                caption="Figure 5: Overview of the proposed model. Each amino acid sequence is first tokenized for data representation, and the BERT encoder layers derived from the pre-trained ProtBERT model are fine-tuned for the downstream AMP regression task."
+                direction="vertical"
+            />
+        </section>
     </div>
 </template>
 
