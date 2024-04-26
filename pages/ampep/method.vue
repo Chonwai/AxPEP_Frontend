@@ -24,7 +24,7 @@
                 <li>
                     <a href="#ProtBERT-Finetuned-AMP-Regressors">BERT-AmPEP60</a>: Peptide minimum
 
-                    inhibitory concentration (MIC) prediction against <i>E. coli</i> and S. aureas for
+                    inhibitory concentration (MIC) prediction against <i>E. coli</i> and <i>S. aureas</i> for
                     sequences between 5 and 60 residues.
                 </li>
             </ul>
