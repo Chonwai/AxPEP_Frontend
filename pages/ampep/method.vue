@@ -23,7 +23,8 @@
                 </li>
                 <li>
                     <a href="#ProtBERT-Finetuned-AMP-Regressors">BERT-AmPEP60</a>: Peptide minimum
-                    inhibitory concentration (MIC) prediction against E. coli and S. aureas for
+
+                    inhibitory concentration (MIC) prediction against <i>E. coli</i> and S. aureas for
                     sequences between 5 and 60 residues.
                 </li>
             </ul>
@@ -115,7 +116,7 @@
         <section id="ProtBERT-Finetuned-AMP-Regressors" class="mb-8">
             <h2 class="text-4xl">
                 ProtBERT finetuned AMP regressors: BERT based regression models to predict MIC
-                values against Escherichia coli (EC) and Staphylococcus aureus (SA)
+                values against <i>Escherichia coli</i> (EC) and <i>Staphylococcus aureus</i> (SA)
             </h2>
             <p>
                 ProtBERT finetuned AMP regressors: Antimicrobial Peptide Activity Prediction for
@@ -126,7 +127,7 @@
                 Representations from Transformers (BERT) architecture to extract embedding features
                 from input sequences and predict minimum inhibitory concentrations (MICs) for target
                 bacterial species. Using the transfer learning strategy, we built regression models
-                for Escherichia coli (EC) and Staphylococcus aureus (SA) using data curated from
+                for <i>Escherichia coli</i> (EC) and <i>Staphylococcus aureus</i> (SA) using data curated from
                 DBAASP. In five independent experiments with 10% leave-out sequences as test sets,
                 the optimal EC and SA models achieved an average mean squared error of 0.2664 and
                 0.7530 (log µM), respectively. They also showed a Pearson’s correlation coefficient
