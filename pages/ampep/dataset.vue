@@ -68,6 +68,37 @@
                 link="https://www.sciencedirect.com/science/article/pii/S2162253120301323"
             />
         </section>
+        <section id="ProtBERT-finetuned-AMP-Regressors" class="mb-8">
+            <h2 class="text-4xl">ProtBERT-finetuned-AMP-Regressors</h2>
+            <p>
+                Antimicrobial peptides: Data is curated from DBAASP, it includes sequences only with
+                5-60 AA in length. The activity values of the peptides were converted to pMIC (),
+                where the unit of MIC is µM. This dataset was used to construct regression models
+                for Escherichia coli and Staphylococcus aureus.
+                <br />
+                <br />
+                Dataset for Escherichia coli has a median MIC value of 13.49 µM (corresponding to a
+                pMIC of −1.13): 4042 sequences. EC.csv
+                <br />
+                Train dataset for Escherichia coli: 3638 sequences. train-EC.csv
+                <br />
+                Test dataset for Escherichia coli: 404 sequences. test-EC.csv
+                <br />
+                <br />
+                Dataset for Staphylococcus aureus has a median MIC value of 16.22 µM (corresponding
+                to a pMIC of −1.21): 3275 sequences. SA.csv
+                <br />
+                Train dataset for Staphylococcus aureus: 2947 sequences. train-SA.csv
+                <br />
+                Test dataset for Staphylococcus aureus: 328 sequences. test-SA.csv
+            </p>
+            <DownloadCard
+                class="flex-1"
+                title="ProtBERT-finetuned-AMP-Regressors"
+                text="Data is curated from DBAASP, it includes sequences only with 5-60 AA in length"
+                downloadLink="https://github.com/janecai0714/AMP_regression_EC_SA/tree/master/data"
+            />
+        </section>
     </div>
 </template>
 

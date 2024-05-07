@@ -23,9 +23,8 @@
                 </li>
                 <li>
                     <a href="#ProtBERT-Finetuned-AMP-Regressors">BERT-AmPEP60</a>: Peptide minimum
-
-                    inhibitory concentration (MIC) prediction against <i>E. coli</i> and <i>S. aureas</i> for
-                    sequences between 5 and 60 residues.
+                    inhibitory concentration (MIC) prediction against <i>E. coli</i> and
+                    <i>S. aureas</i> for sequences between 5 and 60 residues.
                 </li>
             </ul>
             <p>
@@ -127,12 +126,12 @@
                 Representations from Transformers (BERT) architecture to extract embedding features
                 from input sequences and predict minimum inhibitory concentrations (MICs) for target
                 bacterial species. Using the transfer learning strategy, we built regression models
-                for <i>Escherichia coli</i> (EC) and <i>Staphylococcus aureus</i> (SA) using data curated from
-                DBAASP. In five independent experiments with 10% leave-out sequences as test sets,
-                the optimal EC and SA models achieved an average mean squared error of 0.2664 and
-                0.7530 (log µM), respectively. They also showed a Pearson’s correlation coefficient
-                of 0.7955 and 0.7530, and a Kendall’s tau coefficient of 0.5797 and 0.5222,
-                respectively.
+                for <i>Escherichia coli</i> (EC) and <i>Staphylococcus aureus</i> (SA) using data
+                curated from DBAASP. In five independent experiments with 10% leave-out sequences as
+                test sets, the optimal EC and SA models achieved an average mean squared error of
+                0.2664 and 0.7530 (log µM), respectively. They also showed a Pearson’s correlation
+                coefficient of 0.7955 and 0.7530, and a Kendall’s tau coefficient of 0.5797 and
+                0.5222, respectively.
             </p>
             <ImageCard
                 src="/images/protBERT-finetune-AMP-regressor.png"
