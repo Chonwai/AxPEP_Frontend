@@ -72,30 +72,41 @@
             <h2 class="text-4xl">ProtBERT-finetuned-AMP-Regressors</h2>
             <p>
                 Antimicrobial peptides: Data is curated from DBAASP, it includes sequences only with
-                5-60 AA in length. The activity values of the peptides were converted to pMIC (),
-                where the unit of MIC is µM. This dataset was used to construct regression models
-                for Escherichia coli and Staphylococcus aureus.
+                5-60 AA in length. The activity values of the peptides were converted to pMIC, where
+                the unit of MIC is µM. This dataset was used to construct regression models for
+                Escherichia coli and Staphylococcus aureus.
                 <br />
                 <br />
                 Dataset for Escherichia coli has a median MIC value of 13.49 µM (corresponding to a
-                pMIC of −1.13): 4042 sequences. EC.csv
-                <br />
-                Train dataset for Escherichia coli: 3638 sequences. train-EC.csv
-                <br />
-                Test dataset for Escherichia coli: 404 sequences. test-EC.csv
-                <br />
+                pMIC of −1.13):
+                <v-data-table
+                    :headers="ampRegressorsEscherichiaColiTableHeader"
+                    :items="formattedAmpRegressorsEscherichiaColiTableItems"
+                    hide-default-footer
+                    class="elevation-1 mt-8"
+                >
+                    <template v-slot:item.download="{ item }">
+                        <a :href="item.downloadUrl">{{ item.downloadText }}</a>
+                    </template>
+                </v-data-table>
                 <br />
                 Dataset for Staphylococcus aureus has a median MIC value of 16.22 µM (corresponding
-                to a pMIC of −1.21): 3275 sequences. SA.csv
-                <br />
-                Train dataset for Staphylococcus aureus: 2947 sequences. train-SA.csv
-                <br />
-                Test dataset for Staphylococcus aureus: 328 sequences. test-SA.csv
+                to a pMIC of −1.21): sequences.
+                <v-data-table
+                    :headers="ampRegressorsStaphylococcusAureusTableHeader"
+                    :items="formattedAmpRegressorsStaphylococcusAureusTableItems"
+                    hide-default-footer
+                    class="elevation-1 mt-8"
+                >
+                    <template v-slot:item.download="{ item }">
+                        <a :href="item.downloadUrl">{{ item.downloadText }}</a>
+                    </template>
+                </v-data-table>
             </p>
             <DownloadCard
                 class="flex-1"
-                title="ProtBERT-finetuned-AMP-Regressors"
-                text="Data is curated from DBAASP, it includes sequences only with 5-60 AA in length"
+                title="BERT-AmPEP60 Regressors"
+                text="Download All datasets for Escherichia coli and Staphylococcus aureus"
                 downloadLink="https://github.com/janecai0714/AMP_regression_EC_SA/tree/master/data"
             />
         </section>
@@ -113,6 +124,86 @@ export default {
         DownloadCard,
         ReferenceCard,
         ImageCard,
+    },
+    data() {
+        return {
+            ampRegressorsEscherichiaColiTableHeader: [
+                { text: 'Escherichia coli', value: 'escherichia_coli' },
+                { text: 'No. of Sequences', value: 'no_of_sequences' },
+                { text: 'Download', value: 'download' },
+            ],
+            ampRegressorsEscherichiaColiTableItems: [
+                {
+                    escherichia_coli: 'All',
+                    no_of_sequences: '4042',
+                    download:
+                        '<a href="https://github.com/janecai0714/AMP_regression_EC_SA/blob/master/data/EC.csv">EC.csv</a>',
+                },
+                {
+                    escherichia_coli: 'Train dataset',
+                    no_of_sequences: '3638',
+                    download:
+                        '<a href="https://github.com/janecai0714/AMP_regression_EC_SA/blob/master/data/train-EC.csv">train-EC.csv</a>',
+                },
+                {
+                    escherichia_coli: 'Test dataset',
+                    no_of_sequences: '404',
+                    download:
+                        '<a href="https://github.com/janecai0714/AMP_regression_EC_SA/blob/master/data/train-SA.csv">test-EC.csv</a>',
+                },
+            ],
+            ampRegressorsStaphylococcusAureusTableHeader: [
+                { text: 'Staphylococcus aureus', value: 'staphylococcus_aureus' },
+                { text: 'No. of Sequences', value: 'no_of_sequences' },
+                { text: 'Download', value: 'download' },
+            ],
+            ampRegressorsStaphylococcusAureusTableItems: [
+                {
+                    staphylococcus_aureus: 'All',
+                    no_of_sequences: '3275',
+                    download:
+                        '<a href="https://github.com/janecai0714/AMP_regression_EC_SA/blob/master/data/SA.csv">SA.csv</a>',
+                },
+                {
+                    staphylococcus_aureus: 'Train dataset',
+                    no_of_sequences: '2947',
+                    download:
+                        '<a href="https://github.com/janecai0714/AMP_regression_EC_SA/blob/master/data/train-SA.csv">train-SA.csv</a>',
+                },
+                {
+                    staphylococcus_aureus: 'Test dataset',
+                    no_of_sequences: '328',
+                    download:
+                        '<a href="https://github.com/janecai0714/AMP_regression_EC_SA/blob/master/data/test-SA.csv">test-SA.csv</a>',
+                },
+            ],
+        };
+    },
+    computed: {
+        formattedAmpRegressorsEscherichiaColiTableItems() {
+            return this.ampRegressorsEscherichiaColiTableItems.map(item => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(item.download, 'text/html');
+                const anchor = doc.querySelector('a');
+                return {
+                    ...item,
+                    downloadUrl: anchor ? anchor.href : '',
+                    downloadText: anchor ? anchor.textContent : '',
+                };
+            });
+        },
+        formattedAmpRegressorsStaphylococcusAureusTableItems() {
+            return this.ampRegressorsStaphylococcusAureusTableItems.map(item => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(item.download, 'text/html');
+                const anchor = doc.querySelector('a');
+                return {
+                    ...item,
+                    downloadUrl: anchor ? anchor.href : '',
+                    downloadText: anchor ? anchor.textContent : '',
+                };
+            });
+        },
     },
 };
 </script>

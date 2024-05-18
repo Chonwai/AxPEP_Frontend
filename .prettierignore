@@ -1,1 +1,4 @@
 .nuxt
+dist
+static/js/ChemDoodleWeb.js
+static/uis/ChemDoodleWeb-uis.js
