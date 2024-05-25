@@ -68,36 +68,42 @@
                 link="https://www.sciencedirect.com/science/article/pii/S2162253120301323"
             />
         </section>
-        <section id="ProtBERT-finetuned-AMP-Regressors" class="mb-8">
-            <h2 class="text-4xl">ProtBERT-finetuned-AMP-Regressors</h2>
+        <section id="BERT-AmPEP60" class="mb-8">
+            <h2 class="text-4xl">BERT-AmPEP60</h2>
             <p>
-                Antimicrobial peptides: Data is curated from DBAASP, it includes sequences only with
-                5-60 AA in length. The activity values of the peptides were converted to pMIC, where
-                the unit of MIC is µM. This dataset was used to construct regression models for
-                Escherichia coli and Staphylococcus aureus.
+                The antimicrobial peptide data were curated from DBAASP and include only sequences
+                with a length of 5-60 AA. The activity values of the peptides were converted to
+                pMIC, where the unit of MIC is µM. These datasets were used to create regression
+                models for <i>Escherichia coli</i> and <i>Staphylococcus aureus</i>.
                 <br />
                 <br />
-                Dataset for Escherichia coli has a median MIC value of 13.49 µM (corresponding to a
-                pMIC of −1.13):
+                Dataset for <i>Escherichia coli</i> has a median MIC value of 13.49 µM
+                (corresponding to a pMIC of −1.13):
                 <v-data-table
                     :headers="ampRegressorsEscherichiaColiTableHeader"
                     :items="formattedAmpRegressorsEscherichiaColiTableItems"
                     hide-default-footer
                     class="elevation-1 mt-8"
                 >
+                    <template v-slot:header.escherichia_coli="{ header }">
+                        <span v-html="header.text"></span>
+                    </template>
                     <template v-slot:item.download="{ item }">
                         <a :href="item.downloadUrl">{{ item.downloadText }}</a>
                     </template>
                 </v-data-table>
                 <br />
-                Dataset for Staphylococcus aureus has a median MIC value of 16.22 µM (corresponding
-                to a pMIC of −1.21): sequences.
+                Dataset for <i><i>Staphylococcus aureus</i></i> has a median MIC value of 16.22 µM
+                (corresponding to a pMIC of −1.21):
                 <v-data-table
                     :headers="ampRegressorsStaphylococcusAureusTableHeader"
                     :items="formattedAmpRegressorsStaphylococcusAureusTableItems"
                     hide-default-footer
                     class="elevation-1 mt-8"
                 >
+                    <template v-slot:header.staphylococcus_aureus="{ header }">
+                        <span v-html="header.text"></span>
+                    </template>
                     <template v-slot:item.download="{ item }">
                         <a :href="item.downloadUrl">{{ item.downloadText }}</a>
                     </template>
@@ -106,7 +112,7 @@
             <DownloadCard
                 class="flex-1"
                 title="BERT-AmPEP60 Regressors"
-                text="Download All datasets for Escherichia coli and Staphylococcus aureus"
+                text="Download All datasets for <i>Escherichia coli</i> and <i>Staphylococcus aureus</i>"
                 downloadLink="https://github.com/janecai0714/AMP_regression_EC_SA/tree/master/data"
             />
         </section>
@@ -128,9 +134,9 @@ export default {
     data() {
         return {
             ampRegressorsEscherichiaColiTableHeader: [
-                { text: 'Escherichia coli', value: 'escherichia_coli' },
-                { text: 'No. of Sequences', value: 'no_of_sequences' },
-                { text: 'Download', value: 'download' },
+                { text: '<i>Escherichia coli</i>', value: 'escherichia_coli', width: '34%' },
+                { text: 'No. of Sequences', value: 'no_of_sequences', width: '33%' },
+                { text: 'Download', value: 'download', width: '33%' },
             ],
             ampRegressorsEscherichiaColiTableItems: [
                 {
@@ -153,9 +159,13 @@ export default {
                 },
             ],
             ampRegressorsStaphylococcusAureusTableHeader: [
-                { text: 'Staphylococcus aureus', value: 'staphylococcus_aureus' },
-                { text: 'No. of Sequences', value: 'no_of_sequences' },
-                { text: 'Download', value: 'download' },
+                {
+                    text: '<i>Staphylococcus aureus</i>',
+                    value: 'staphylococcus_aureus',
+                    width: '34%',
+                },
+                { text: 'No. of Sequences', value: 'no_of_sequences', width: '33%' },
+                { text: 'Download', value: 'download', width: '33%' },
             ],
             ampRegressorsStaphylococcusAureusTableItems: [
                 {

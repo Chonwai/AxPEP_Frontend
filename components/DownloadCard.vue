@@ -5,9 +5,7 @@
                 <v-icon large left> mdi-star </v-icon>
                 <span class="title font-weight-light">{{ title }}</span>
             </v-card-title>
-            <v-card-text class="headline font-weight-bold">
-                {{ text }}
-            </v-card-text>
+            <v-card-text v-html="text" class="headline font-weight-bold"> </v-card-text>
             <v-card-actions>
                 <v-list-item class="grow">
                     <v-row align="center" justify="end">
