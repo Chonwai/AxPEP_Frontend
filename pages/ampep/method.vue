@@ -114,8 +114,8 @@
         </section>
         <section id="ProtBERT-Finetuned-AMP-Regressors" class="mb-8">
             <h2 class="text-4xl">
-                ProtBERT finetuned AMP regressors: BERT based regression models to predict MIC
-                values against <i>Escherichia coli</i> (EC) and <i>Staphylococcus aureus</i> (SA)
+                BERT-AmPEP60 - ProtBERT fine-tuned IC50 AMP prediction models for
+                <i>Escherichia coli</i> and <i>Staphylococcus aureus</i>
             </h2>
             <p>
                 ProtBERT finetuned AMP regressors: Antimicrobial Peptide Activity Prediction for
