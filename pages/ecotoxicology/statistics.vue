@@ -10,7 +10,7 @@
 import StatisticsPage from '@/components/StatisticsPage';
 import Utils from '@/utils/utils.js';
 export default {
-    layout: 'toxicty',
+    layout: 'ecotoxicology',
     name: 'SSLBESToxStatisticsPageIndex',
     data() {
         return {

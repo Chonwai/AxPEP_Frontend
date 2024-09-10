@@ -26,7 +26,7 @@
             skin.
         </v-alert>
         <v-alert v-else-if="page === 'bestox'" border="left" colored-border elevation="2">
-            BESTox is a convolutional neural network regression model for acute oral toxicity
+            BESTox is a convolutional neural network regression model for acute oral ecotoxicology
             prediction. The model was trained and evaluated on the Oral Rat LD<sub>50</sub> data
             set. In a benchmark dataset, this model achieved 0.619, 0.603, 0.433 for R<sup>2</sup>
             (squared Pearson correlation coefficient), RMSE and MAE respectively.

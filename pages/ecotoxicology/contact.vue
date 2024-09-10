@@ -36,7 +36,7 @@
 <script>
 import ContactCard from '../../components/ContactCard';
 export default {
-    layout: 'toxicty',
+    layout: 'ecotoxicology',
     name: 'ContactPageIndex',
     components: {
         ContactCard,

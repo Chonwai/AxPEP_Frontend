@@ -71,8 +71,8 @@ export default {
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/toxicty/home',
-                    title: 'Biotoxicology',
+                    to: '/ecotoxicology/home',
+                    title: 'Ecotoxicology',
                     icon: 'mdi-home',
                 },
             ],

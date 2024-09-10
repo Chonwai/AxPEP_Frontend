@@ -135,7 +135,7 @@
 
 <script>
 export default {
-    layout: 'toxicty',
+    layout: 'ecotoxicology',
     name: 'HelpPageIndex',
 };
 </script>

@@ -10,13 +10,13 @@
                 <v-toolbar-title>
                     <img
                         class="h-16 cursor-pointer"
-                        src="/images/toxicty-logo.png"
-                        alt="toxicty-logo"
+                        src="/images/ecotoxicology-logo.png"
+                        alt="ecotoxicology-logo"
                         @click="goToIndex"
                     />
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
-                <ToxictyNavItems :navList="navList" class="d-none d-md-block" />
+                <EcotoxicologyNavItems :navList="navList" class="d-none d-md-block" />
             </v-container>
         </v-app-bar>
         <v-navigation-drawer v-model="drawer" absolute temporary color="#78e4ff">
@@ -39,11 +39,11 @@
 </template>
 
 <script>
-import ToxictyNavItems from './ToxictyNavItems';
+import EcotoxicologyNavItems from './EcotoxicologyNavItems';
 export default {
-    name: 'ToxictyHeader',
+    name: 'EcotoxicologyHeader',
     components: {
-        ToxictyNavItems,
+        EcotoxicologyNavItems,
     },
     data() {
         return {
@@ -53,27 +53,27 @@ export default {
             text: 'center',
             navList: [
                 {
-                    to: '/toxicty/home',
+                    to: '/ecotoxicology/home',
                     title: 'Home',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/toxicty/method',
+                    to: '/ecotoxicology/method',
                     title: 'Method',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/toxicty/statistics',
+                    to: '/ecotoxicology/statistics',
                     title: 'Statistics',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/toxicty/help',
+                    to: '/ecotoxicology/help',
                     title: 'Help',
                     icon: 'mdi-home',
                 },
                 {
-                    to: '/toxicty/contact',
+                    to: '/ecotoxicology/contact',
                     title: 'Contact',
                     icon: 'mdi-home',
                 },

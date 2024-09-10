@@ -1,7 +1,7 @@
 <template>
     <v-app dark>
         <notifications group="foo" />
-        <ToxictyHeader />
+        <EcotoxicologyHeader />
         <v-main>
             <v-container>
                 <nuxt />
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ToxictyHeader from './components/ToxictyHeader';
+import EcotoxicologyHeader from './components/EcotoxicologyHeader';
 import AppFooter from './components/AppFooter';
 import ThemesUtils from '../utils/theme';
 export default {
@@ -28,11 +28,11 @@ export default {
         };
     },
     components: {
-        ToxictyHeader,
+        EcotoxicologyHeader,
         AppFooter,
     },
     mounted() {
-        const theme = ThemesUtils.toxicty;
+        const theme = ThemesUtils.ecotoxicology;
         Object.keys(theme.light).forEach(i => {
             this.$vuetify.theme.themes.light[i] = theme.light[i];
         });

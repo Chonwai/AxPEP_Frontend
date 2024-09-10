@@ -4,17 +4,17 @@
             <section id="SSL-ToxGCN-Server" class="mb-8">
                 <h2 class="text-4xl">SSL-ToxGCN</h2>
                 <p>
-                    A Chemical Toxicity Prediction Model Based on Semi-supervised Learning and Graph
-                    Convolutional Neural Network.
+                    A Chemical Ecotoxicology Prediction Model Based on Semi-supervised Learning and
+                    Graph Convolutional Neural Network.
                 </p>
             </section>
             <section id="Overview" class="mb-8">
                 <h2 class="text-4xl">Overview</h2>
                 <p>
-                    Currently, the limited availability of annotated toxicity data is the major
+                    Currently, the limited availability of annotated ecotoxicology data is the major
                     hurdle for further improving machine learning model performance. In this study,
                     inspired by the success of semi-supervised learning (SSL) algorithms, we propose
-                    a Graph Convolution Neural Network (GCN) to predict chemical toxicity and
+                    a Graph Convolution Neural Network (GCN) to predict chemical ecotoxicology and
                     trained the network by the Mean Teacher (MT) SSL algorithm.
                 </p>
                 <v-card class="mx-auto w-4/5 mb-8">
@@ -96,7 +96,7 @@
                     <v-card-subtitle class="pb-0 flex justify-center items-center"
                         >Figure 2. Comparison of AUC scores between SL-GCN, SSL-GCN and CM models
                         Comparison of the best models from conventional methods (CM), supervised GCN
-                        (SL-GCN), and the semi-supervised GCN (SSL-GCN) on twelve toxicity
+                        (SL-GCN), and the semi-supervised GCN (SSL-GCN) on twelve ecotoxicology
                         prediction tasks. The mean and standard deviation are obtained from the
                         5-repeat experiments.</v-card-subtitle
                     >
@@ -104,9 +104,9 @@
                 <p>
                     Figure 2 compares the best CM, SL-GCN and SSL-GCN models. As can be clearly
                     seen, SSL-GCN can produce models with greater predictive potential than CM and
-                    SL-GCN in all toxicity prediction tasks. SSL-GCN models consistently outperform
-                    their SL-GCN and CM counterparts, the ROC-AUC scores improving between 1% and
-                    13%.
+                    SL-GCN in all ecotoxicology prediction tasks. SSL-GCN models consistently
+                    outperform their SL-GCN and CM counterparts, the ROC-AUC scores improving
+                    between 1% and 13%.
                 </p>
                 <p>
                     Overall, the optimal SSL-GCN models achieve average ROC-AUC score of 0.7571 with
@@ -120,7 +120,7 @@
 
 <script>
 export default {
-    layout: 'toxicty',
+    layout: 'ecotoxicology',
     name: 'MethodPageIndex',
     data() {
         return {};

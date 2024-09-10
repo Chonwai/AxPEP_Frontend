@@ -72,7 +72,7 @@
 <script>
 import TaskAPI from '../../../apis/task';
 export default {
-    layout: 'toxicty',
+    layout: 'ecotoxicology',
     name: 'RetrievePageIndex',
     data() {
         return {
@@ -110,7 +110,7 @@ export default {
             let res = await TaskAPI.getSpecifyTasksByEmail(
                 this.email,
                 this.current_page,
-                'ssl-gcn'
+                'ecotoxicology'
             );
             this.data = res.message.data;
             this.total = res.message.total;
@@ -133,8 +133,8 @@ export default {
         },
         retrieve(id) {
             this.$router.push({
-                name: 'ssl-gcn-jobs-id',
-                params: { id: id, application: 'bestox' },
+                name: 'ecotoxicology-jobs-id',
+                params: { id: id, application: 'ecotoxicology' },
             });
         },
     },

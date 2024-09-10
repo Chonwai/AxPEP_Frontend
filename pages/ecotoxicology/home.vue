@@ -1,6 +1,6 @@
 <template>
     <div class="p-0 md:p-8">
-        <IndexPageHelper page="toxicty" />
+        <IndexPageHelper page="ecotoxicology" />
         <v-stepper class="stepper-container" v-model="e6" vertical>
             <v-stepper-step class="flex items-center" :complete="e6 > 1" step="1">
                 <div class="flex items-center">
@@ -39,85 +39,22 @@
                 <div class="flex flex-wrap">
                     <v-checkbox
                         class="flex-1 w-1/2"
-                        v-model="methods['NR-AR']"
-                        label="NR-AR"
+                        v-model="methods['A2A']"
+                        label="A2A"
                         :falseValue="0"
                         :trueValue="1"
                     ></v-checkbox>
                     <v-checkbox
                         class="flex-1 w-1/2"
-                        v-model="methods['NR-AR-LBD']"
-                        label="NR-AR-LBD"
+                        v-model="methods['F2F']"
+                        label="F2F"
                         :falseValue="0"
                         :trueValue="1"
                     ></v-checkbox>
                     <v-checkbox
                         class="flex-1 w-1/2"
-                        v-model="methods['NR-AhR']"
-                        label="NR-AhR"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['NR-Aromatase']"
-                        label="NR-Aromatase"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['NR-ER']"
-                        label="NR-ER"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['NR-ER-LBD']"
-                        label="NR-ER-LBD"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['NR-PPAR-gamma']"
-                        label="NR-PPAR-gamma"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['SR-ARE']"
-                        label="SR-ARE"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['SR-ATAD5']"
-                        label="SR-ATAD5"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['SR-HSE']"
-                        label="SR-HSE"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['SR-MMP']"
-                        label="SR-MMP"
-                        :falseValue="0"
-                        :trueValue="1"
-                    ></v-checkbox>
-                    <v-checkbox
-                        class="flex-1 w-1/2"
-                        v-model="methods['SR-p53']"
-                        label="SR-p53"
+                        v-model="methods['C2C']"
+                        label="C2C"
                         :falseValue="0"
                         :trueValue="1"
                     ></v-checkbox>
@@ -167,7 +104,7 @@ import TaskAPI from '@/apis/task';
 import rules from '../../utils/rules';
 
 export default {
-    layout: 'toxicty',
+    layout: 'ecotoxicology',
     name: 'HomePageIndex',
     components: {
         IndexPageHelper,
@@ -182,18 +119,9 @@ export default {
             email: '',
             source: '',
             methods: {
-                'NR-AR': 1,
-                'NR-AR-LBD': 1,
-                'NR-AhR': 1,
-                'NR-Aromatase': 1,
-                'NR-ER': 1,
-                'NR-ER-LBD': 1,
-                'NR-PPAR-gamma': 1,
-                'SR-ARE': 1,
-                'SR-ATAD5': 1,
-                'SR-HSE': 1,
-                'SR-MMP': 1,
-                'SR-p53': 1,
+                A2A: 1,
+                F2F: 1,
+                C2C: 1,
             },
             rules,
             showExample: false,
@@ -214,7 +142,7 @@ export default {
             form.append('description', this.description);
             form.append('email', this.email);
             form.append('source', this.source);
-            form.append('application', 'ssl-gcn');
+            form.append('application', 'ecotoxicology');
             for (const key in this.methods) {
                 if (this.methods.hasOwnProperty(key)) {
                     const element = this.methods[key];
@@ -233,14 +161,14 @@ export default {
                 let form = this.prepareFormData();
                 if (this.source == 'file') {
                     form.append('file', this.file);
-                    res = await TaskAPI.newSSLBESToxTaskByFile(form);
+                    res = await TaskAPI.newEcotoxicologyTaskByFile(form);
                 } else if (this.source == 'textarea') {
                     form.append('fasta', this.file);
-                    res = await TaskAPI.newSSLBESToxTaskByTextarea(form);
+                    res = await TaskAPI.newEcotoxicologyTaskByTextarea(form);
                 }
                 if (res.status == true) {
                     this.$router.push({
-                        name: 'ssl-gcn-retrieve-email',
+                        name: 'ecotoxicology-retrieve-email',
                         params: { email: this.email },
                     });
                 }

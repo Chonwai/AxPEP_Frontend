@@ -115,7 +115,7 @@ export default {
                     src: '/images/BESToxCard.png',
                     title: 'BESTox',
                     subtitle:
-                        'Convolutional neural network regression model for acute oral toxicity prediction',
+                        'Convolutional neural network regression model for acute oral ecotoxicology prediction',
                     to: '/bestox/home',
                 },
                 {
@@ -123,7 +123,7 @@ export default {
                     src: '/images/ssl-toxgcn-transparent-logo.png',
                     title: 'SSL-GCN',
                     subtitle:
-                        'Compound Toxicity Prediction Based onSemi-supervised Learning and GraphConvolutional Neural Network',
+                        'Compound Ecotoxicology Prediction Based onSemi-supervised Learning and GraphConvolutional Neural Network',
                     to: '/ssl-gcn/home',
                 },
                 {

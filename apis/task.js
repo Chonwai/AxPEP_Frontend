@@ -38,6 +38,14 @@ function newSSLBESToxTaskByTextarea(data) {
     return window.$nuxt.$api.$post(`ssl-gcn/tasks/textarea`, data);
 }
 
+function newEcotoxicologyTaskByFile(data) {
+    return window.$nuxt.$api.$post(`ecotoxicology/tasks/file`, data);
+}
+
+function newEcotoxicologyTaskByTextarea(data) {
+    return window.$nuxt.$api.$post(`ecotoxicology/tasks/textarea`, data);
+}
+
 function getSpecifyTask(id, application) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}?application=${application}`);
 }
@@ -71,6 +79,8 @@ export default {
     newBESToxTaskByTextarea,
     newSSLBESToxTaskByFile,
     newSSLBESToxTaskByTextarea,
+    newEcotoxicologyTaskByFile,
+    newEcotoxicologyTaskByTextarea,
     getSpecifyTask,
     getSpecifyTasksByEmail,
     downloadSpecifyClassificationFile,

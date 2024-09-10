@@ -74,9 +74,9 @@ class ThemesUtils {
         };
     }
 
-    static get toxicty() {
+    static get ecotoxicology() {
         return {
-            name: 'toxicty',
+            name: 'ecotoxicology',
             light: {
                 primary: '#78e4ff', // 原始 '#1C2833'
                 accent: '#80e5ff', // 原始 '#b6babf'

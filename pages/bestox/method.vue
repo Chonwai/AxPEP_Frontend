@@ -5,7 +5,7 @@
                 <h2 class="text-4xl">BESTox Server</h2>
                 <p>
                     BESTox is a novel convolutional neural network regression model, to predict the
-                    acute oral toxicity (LD50) of chemical compounds. In a benchmark experiment
+                    acute oral ecotoxicology (LD50) of chemical compounds. In a benchmark experiment
                     using a dataset (Oral Rat LD50 set) of 7413 observations (train/test,
                     5931/1482), BESTox achieved a squared Pearson correlation coefficient (R2) of
                     0.619, root-mean-squared error (RMSE) of 0.603, and mean absolute error (MAE) of
@@ -56,8 +56,8 @@
                     normalization layer (BN). Then, a max pooling layer is used before the learned
                     features fed into the fully connected layers (FC). Four FCs containing 2048,
                     1024, 512, and 256 hidden nodes were found to be the optimal combination for
-                    toxicity prediction and the ReLU function is used to generate the prediction
-                    output (-log10(LD50 mol/kg)).
+                    ecotoxicology prediction and the ReLU function is used to generate the
+                    prediction output (-log10(LD50 mol/kg)).
                 </p>
                 <v-card class="mx-auto w-4/5 mb-8">
                     <v-img
@@ -69,7 +69,7 @@
                         </template>
                     </v-img>
                     <v-card-subtitle class="pb-0 flex justify-center items-center"
-                        >Figure 3. Proposed CNN architecture for oral toxicity prediction.
+                        >Figure 3. Proposed CNN architecture for oral ecotoxicology prediction.
                     </v-card-subtitle>
                 </v-card>
             </section>
@@ -77,17 +77,17 @@
                 <h2 class="text-4xl">Acknowledgement</h2>
                 <p>
                     The Oral Rrat LD50 dataset used in this study was kindly provided by the author
-                    of TopTox. (Wu, K., Wei, G.W.: Quantitative toxicity prediction using topology
-                    based multitask deep neural networks. Journal of chemical information and
-                    modeling 58(2), 520–531 (2018))
+                    of TopTox. (Wu, K., Wei, G.W.: Quantitative ecotoxicology prediction using
+                    topology based multitask deep neural networks. Journal of chemical information
+                    and modeling 58(2), 520–531 (2018))
                 </p>
                 <v-card class="mx-auto w-4/5 mb-8">
                     <v-card-text>
                         <div>Reference</div>
                         <p class="text-base font-bold text--primary">
                             BESTox: A Convolutional Neural Network Regression Model Based on
-                            Binary-Encoded SMILES for Acute Oral Toxicity Prediction of Chemical
-                            Compounds.
+                            Binary-Encoded SMILES for Acute Oral Ecotoxicology Prediction of
+                            Chemical Compounds.
                         </p>
                         <p>
                             International Conference on Algorithms for Computational Biology.

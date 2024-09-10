@@ -4,12 +4,12 @@
             <h2 class="text-4xl">AxPEP Server</h2>
             <p>
                 Antimicrobial peptides (AMPs) are promising candidates in the fight against
-                multidrug-resistant pathogens due to its broad range of activities and low toxicity.
-                Some AMPs also display antitumor and antivirus functions making them alternative
-                drug candidates for these important diseases. To facilitate the discovery of AMPs
-                and their functions, we provide this one-stop server for antimicrobial peptide and
-                other activity prediction for unknown sequences. Three methods are currently
-                available:
+                multidrug-resistant pathogens due to its broad range of activities and low
+                ecotoxicology. Some AMPs also display antitumor and antivirus functions making them
+                alternative drug candidates for these important diseases. To facilitate the
+                discovery of AMPs and their functions, we provide this one-stop server for
+                antimicrobial peptide and other activity prediction for unknown sequences. Three
+                methods are currently available:
             </p>
             <ul>
                 <li><a href="#AxPEP-Server">AmPEP</a>: Predict antimicrobial activity</li>
