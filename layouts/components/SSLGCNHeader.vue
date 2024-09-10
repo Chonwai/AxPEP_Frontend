@@ -7,42 +7,25 @@
                     color="#FFFFFF"
                     @click="drawer = true"
                 ></v-app-bar-nav-icon>
-                <v-toolbar-title
-                    ><img
+                <v-toolbar-title>
+                    <img
                         class="h-16 cursor-pointer"
                         src="/images/ssl-toxgcn-transparent-logo.png"
                         alt="ssl-gcn-logo"
                         @click="goToIndex"
-                /></v-toolbar-title>
+                    />
+                </v-toolbar-title>
                 <v-spacer></v-spacer>
                 <SSLGCNNavItems :navList="navList" class="d-none d-md-block" />
             </v-container>
         </v-app-bar>
-        <v-navigation-drawer v-model="drawer" absolute temporary>
+        <v-navigation-drawer v-model="drawer" absolute temporary color="#1C2833" dark>
             <v-list nav>
-                <v-list-item link nuxt to="/ssl-gcn/home">
+                <v-list-item v-for="(item, i) in navList" :key="i" link nuxt :to="item.to">
                     <v-list-item-icon>
-                        <v-icon>mdi-home</v-icon>
+                        <v-icon>{{ item.icon }}</v-icon>
                     </v-list-item-icon>
-                    <v-list-item-title>Home</v-list-item-title>
-                </v-list-item>
-                <v-list-item link nuxt to="/ssl-gcn/method">
-                    <v-list-item-icon>
-                        <v-icon>mdi-home</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-title>Method</v-list-item-title>
-                </v-list-item>
-                <v-list-item link nuxt to="/ssl-gcn/statistics">
-                    <v-list-item-icon>
-                        <v-icon>mdi-home</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-title>Statistics</v-list-item-title>
-                </v-list-item>
-                <v-list-item link nuxt to="/ssl-gcn/help">
-                    <v-list-item-icon>
-                        <v-icon>mdi-home</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-title>Help</v-list-item-title>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
                 </v-list-item>
                 <v-list-item link href="https://app.cbbio.online/">
                     <v-list-item-icon>

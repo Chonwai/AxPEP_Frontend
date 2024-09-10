@@ -1,17 +1,25 @@
 <template>
-    <div class="z-50 w-full">
-        <v-app-bar style="box-shadow: none !important" :color="color" height="96px">
-            <v-app-bar-nav-icon
-                class="d-md-none"
-                color="#FFFFFF"
-                @click="drawer = true"
-            ></v-app-bar-nav-icon>
+    <div class="z-50">
+        <v-app-bar color="#78e4ff" height="96px">
             <v-container d-flex align-center>
+                <v-app-bar-nav-icon
+                    class="d-md-none"
+                    color="#FFFFFF"
+                    @click="drawer = true"
+                ></v-app-bar-nav-icon>
+                <v-toolbar-title>
+                    <img
+                        class="h-16 cursor-pointer"
+                        src="/images/toxicty-logo.png"
+                        alt="toxicty-logo"
+                        @click="goToIndex"
+                    />
+                </v-toolbar-title>
                 <v-spacer></v-spacer>
-                <AppNavItems :navList="navList" class="d-none d-md-block" />
+                <ToxictyNavItems :navList="navList" class="d-none d-md-block" />
             </v-container>
         </v-app-bar>
-        <v-navigation-drawer v-model="drawer" absolute temporary>
+        <v-navigation-drawer v-model="drawer" absolute temporary color="#78e4ff">
             <v-list nav>
                 <v-list-item v-for="(item, i) in navList" :key="i" link nuxt :to="item.to">
                     <v-list-item-icon>
@@ -31,17 +39,11 @@
 </template>
 
 <script>
-import AppNavItems from './AppNavItems';
+import ToxictyNavItems from './ToxictyNavItems';
 export default {
-    name: 'AppHeader',
+    name: 'ToxictyHeader',
     components: {
-        AppNavItems,
-    },
-    props: {
-        color: {
-            type: String,
-            default: 'transparent',
-        },
+        ToxictyNavItems,
     },
     data() {
         return {
@@ -51,32 +53,37 @@ export default {
             text: 'center',
             navList: [
                 {
-                    to: '/ampep/home',
-                    title: 'AmPEP',
-                    icon: 'mdi-home',
-                },
-                {
-                    to: '/acpep/home',
-                    title: 'AcPEP',
-                    icon: 'mdi-home',
-                },
-                {
-                    to: '/bestox/home',
-                    title: 'BESTox',
-                    icon: 'mdi-home',
-                },
-                {
-                    to: '/ssl-gcn/home',
-                    title: 'SSL-GCN',
-                    icon: 'mdi-home',
-                },
-                {
                     to: '/toxicty/home',
-                    title: 'Biotoxicology',
+                    title: 'Home',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/toxicty/method',
+                    title: 'Method',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/toxicty/statistics',
+                    title: 'Statistics',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/toxicty/help',
+                    title: 'Help',
+                    icon: 'mdi-home',
+                },
+                {
+                    to: '/toxicty/contact',
+                    title: 'Contact',
                     icon: 'mdi-home',
                 },
             ],
         };
+    },
+    methods: {
+        goToIndex() {
+            this.$router.push({ path: '/' });
+        },
     },
 };
 </script>

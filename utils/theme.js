@@ -73,6 +73,21 @@ class ThemesUtils {
             },
         };
     }
+
+    static get toxicty() {
+        return {
+            name: 'toxicty',
+            light: {
+                primary: '#78e4ff', // 原始 '#1C2833'
+                accent: '#80e5ff', // 原始 '#b6babf'
+                secondary: '#70e2ff', // 原始 '#0f5d82'
+                success: '#68e0ff', // 原始 '#0d445f'
+                info: '#99eaff', // 原始 '#87a8b7'
+                warning: '#88e7ff', // 原始 '#FB8C00'
+                error: '#90e9ff', // 原始 '#FF5252'
+            },
+        };
+    }
 }
 
 export default ThemesUtils;
