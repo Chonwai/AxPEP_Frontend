@@ -163,7 +163,9 @@ export default {
                     form.append('file', this.file);
                     res = await TaskAPI.newEcotoxicologyTaskByFile(form);
                 } else if (this.source == 'textarea') {
-                    form.append('fasta', this.file);
+                    // 替換所有換行符號為 \n
+                    const fastaContent = this.file.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+                    form.append('fasta', fastaContent);
                     res = await TaskAPI.newEcotoxicologyTaskByTextarea(form);
                 }
                 if (res.status == true) {
