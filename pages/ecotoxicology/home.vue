@@ -26,7 +26,7 @@
                     class="py-2"
                     v-on:file="uploadFile"
                     v-on:source="fileSource"
-                    application="ssl-gcn"
+                    application="ecotoxicology"
                 />
                 <v-btn color="primary" @click="e6 = 2">Continue</v-btn>
             </v-stepper-content>

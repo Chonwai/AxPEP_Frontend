@@ -16,6 +16,14 @@
             value=""
             v-model="textarea"
         ></v-textarea>
+        <v-textarea
+            v-if="application === 'ecotoxicology'"
+            v-show="source === 'textarea'"
+            outlined
+            label="Input your Sequences"
+            value=""
+            v-model="textarea"
+        ></v-textarea>
         <div v-show="source === 'draw'">
             <center>
                 <div>
@@ -56,6 +64,22 @@
                 </v-chip>
             </template>
         </v-file-input>
+        <v-file-input
+            v-if="application === 'ecotoxicology'"
+            v-show="source === 'file'"
+            show-size
+            v-model="file"
+            accept=".fasta"
+            placeholder="Upload a FASTA document:"
+            label="File input"
+            prepend-icon="mdi-paperclip"
+        >
+            <template v-slot:selection="{ text }">
+                <v-chip small label color="primary">
+                    {{ text }}
+                </v-chip>
+            </template>
+        </v-file-input>
         <div>
             <v-radio-group v-model="source" row>
                 <v-radio label="Type manually" value="textarea"></v-radio>
@@ -66,6 +90,11 @@
                 ></v-radio>
                 <v-radio
                     v-if="application === 'ssl-gcn'"
+                    label="Upload SMILES strings in a FASTA-like file (.fasta)"
+                    value="file"
+                ></v-radio>
+                <v-radio
+                    v-if="application === 'ecotoxicology'"
                     label="Upload SMILES strings in a FASTA-like file (.fasta)"
                     value="file"
                 ></v-radio>
