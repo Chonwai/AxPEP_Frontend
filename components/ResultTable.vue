@@ -10,7 +10,12 @@
             show-expand
         >
             <template v-slot:expanded-item="{ headers, item }">
-                <td v-if="item.hasOwnProperty('sequence')" :colspan="headers.length">
+                <td
+                    class="cursor-pointer"
+                    v-if="item.hasOwnProperty('sequence')"
+                    :colspan="headers.length"
+                    @click="openSequencePage(item.sequence)"
+                >
                     Sequence: {{ chopSequence(item.sequence) }}
                 </td>
                 <td v-if="item.hasOwnProperty('smiles')" :colspan="headers.length">
@@ -42,6 +47,10 @@ export default {
     methods: {
         chopSequence(sequence) {
             return Utils.chopSequence(sequence);
+        },
+        openSequencePage(sequence) {
+            const url = `/sequence-info?sequence=${sequence}`;
+            window.open(url, '_blank');
         },
     },
 };
