@@ -58,7 +58,7 @@
                             v-if="data.amp_activity_prediction"
                             v-show="item.tab == 'Activity Prediction'"
                             :header.sync="ampActivityPredictionHeader"
-                            :items.sync="data.amp_activity_prediction"
+                            :items.sync="computedAmpActivityPredictionItems"
                         />
                     </v-tab-item>
                 </v-tabs-items>
@@ -93,6 +93,19 @@ export default {
                 { tab: 'Activity Prediction' },
             ],
         };
+    },
+    computed: {
+        computedAmpActivityPredictionItems() {
+            return this.data.amp_activity_prediction.map(item => {
+                if (item.sa_predicted_MIC_μM && item.ec_predicted_MIC_μM) {
+                    return {
+                        ...item,
+                        sa_ec: (item.sa_predicted_MIC_μM / item.ec_predicted_MIC_μM).toFixed(8),
+                    };
+                }
+                return item;
+            });
+        },
     },
     async created() {
         await this.init();
@@ -136,6 +149,10 @@ export default {
                         value: item,
                     });
                 }
+                this.ampActivityPredictionHeader.push({
+                    text: 'SA_MIC (uM) / EC_MIC (uM)',
+                    value: 'sa_ec',
+                });
                 for (const item of this.data.amp_activity_prediction) {
                     item.id = item.id.replace('>', '');
                 }
