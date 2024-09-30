@@ -57,11 +57,11 @@
                     :trueValue="1"
                 ></v-checkbox>
                 <v-checkbox
-                    v-model="methods.bertampep60"
                     label="BERT-AmPEP60: ProtBERT fine-tuned IC50 AMP prediction models for Escherichia coli and Staphylococcus aureus"
                     :falseValue="0"
                     :trueValue="1"
                     disabled
+                    indeterminate
                 ></v-checkbox>
                 <v-btn color="primary" @click="e6 = 3">Continue</v-btn>
                 <v-btn text @click="e6 = 1">Cancel</v-btn>
@@ -126,8 +126,7 @@ export default {
             methods: {
                 ampep: 1,
                 deepampep30: 0,
-                rfampep30: 1,
-                bertampep60: 1,
+                rfampep30: 1
             },
             rules,
             showExample: false,
