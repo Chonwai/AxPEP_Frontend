@@ -40,21 +40,21 @@
                     <v-checkbox
                         class="flex-1 w-1/2"
                         v-model="methods['A2A']"
-                        label="A2A"
+                        label="Algae (A2A)"
                         :falseValue="0"
                         :trueValue="1"
                     ></v-checkbox>
                     <v-checkbox
                         class="flex-1 w-1/2"
                         v-model="methods['F2F']"
-                        label="F2F"
+                        label="Fish (F2F)"
                         :falseValue="0"
                         :trueValue="1"
                     ></v-checkbox>
                     <v-checkbox
                         class="flex-1 w-1/2"
                         v-model="methods['C2C']"
-                        label="C2C"
+                        label="Crustaceans (C2C)"
                         :falseValue="0"
                         :trueValue="1"
                     ></v-checkbox>

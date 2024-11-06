@@ -126,7 +126,7 @@ export default {
             methods: {
                 ampep: 1,
                 deepampep30: 0,
-                rfampep30: 1
+                rfampep30: 1,
             },
             rules,
             showExample: false,

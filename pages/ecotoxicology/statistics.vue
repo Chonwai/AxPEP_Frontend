@@ -1,6 +1,6 @@
 <template>
     <StatisticsPage
-        application="ssl-gcn"
+        application="ecotoxicology"
         :lineChartColor="lineChartColor"
         :doughnutChartColor="doughnutChartColor"
     ></StatisticsPage>
@@ -15,32 +15,14 @@ export default {
     data() {
         return {
             lineChartColor: Utils.randomItem([
-                '#E74C3C',
-                '#9B59B6',
-                '#8E44AD',
-                '#2980B9',
-                '#3498DB',
-                '#1ABC9C',
-                '#16A085',
-                '#27AE60',
-                '#2ECC71',
-                '#F1C40F',
-                '#F39C12',
-                '#E67E22',
+                '#1ABC9C', // 綠色 - 代表 Algae
+                '#3498DB', // 藍色 - 代表 Fish
+                '#E67E22', // 橙色 - 代表 Crustaceans
             ]),
             doughnutChartColor: [
-                '#E74C3C',
-                '#9B59B6',
-                '#8E44AD',
-                '#2980B9',
-                '#3498DB',
-                '#1ABC9C',
-                '#16A085',
-                '#27AE60',
-                '#2ECC71',
-                '#F1C40F',
-                '#F39C12',
-                '#E67E22',
+                '#1ABC9C', // 綠色 - 代表 Algae
+                '#3498DB', // 藍色 - 代表 Fish
+                '#E67E22', // 橙色 - 代表 Crustaceans
             ],
         };
     },

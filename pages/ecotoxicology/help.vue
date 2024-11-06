@@ -5,7 +5,10 @@
                 <h2 class="text-4xl">Help</h2>
                 <div>
                     <h3 class="text-2xl">Input – Sequences</h3>
-                    <ImageCard class="mt-2" src="/images/ssl-toxgcn-help-sequences.png" />
+                    <ImageCard
+                        class="mt-2"
+                        src="/images/ssl-ecotoxicology-gcn-help-sequences.png"
+                    />
                     <p>Paste your SMILES strings using the FASTA format such as:</p>
                     <code class="bg-gray-500"
                         >>TEST0<br />O=C1Cc2cc(CCN3CCN(c4nsc5ccccc45)CC3)c(Cl)cc2N1<br />>TEST1<br />CN(C)CCOC1=Cc2ccccc2Sc2ccc(Cl)cc21</code
@@ -22,7 +25,7 @@
                     </h3>
                     <ImageCard
                         class="mt-2"
-                        src="/images/ssl-toxgcn-help-prediction-for-toxicological-endpoints.png"
+                        src="/images/ssl-ecotoxicology-gcn-help-prediction-for-toxicological-endpoints.png"
                     />
                     <p>
                         Select the prediction for types of toxicological endpoint that you are
@@ -30,46 +33,22 @@
                     </p>
                     <ul>
                         <li>
-                            <code>NR-AR</code>
+                            <code>Algae (A2A)</code>
                         </li>
                         <li>
-                            <code>NR-AhR</code>
+                            <code>Fish (F2F)</code>
                         </li>
                         <li>
-                            <code>NR-ER</code>
-                        </li>
-                        <li>
-                            <code>NR-PPAR-gamma</code>
-                        </li>
-                        <li>
-                            <code>SR-ATAD5</code>
-                        </li>
-                        <li>
-                            <code>SR-MMP</code>
-                        </li>
-                        <li>
-                            <code>NR-AR-LBD</code>
-                        </li>
-                        <li>
-                            <code>NR-Aromatase</code>
-                        </li>
-                        <li>
-                            <code>NR-ER-LBD</code>
-                        </li>
-                        <li>
-                            <code>SR-ARE</code>
-                        </li>
-                        <li>
-                            <code>SR-HSE</code>
-                        </li>
-                        <li>
-                            <code>SR-p53</code>
+                            <code>Crustaceans (C2C)</code>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-2xl">Input – Job Description (Optional)</h3>
-                    <ImageCard class="mt-2" src="/images/ssl-toxgcn-help-description.png" />
+                    <ImageCard
+                        class="mt-2"
+                        src="/images/ssl-ecotoxicology-gcn-help-description.png"
+                    />
                     <p>
                         A short description can be supplied together with a job submission. The
                         description will be displayed in your job list.
@@ -77,7 +56,7 @@
                 </div>
                 <div>
                     <h3 class="text-2xl">Input – Create Account (Necessary)</h3>
-                    <ImageCard class="mt-2" src="/images/ssl-toxgcn-help-email.png" />
+                    <ImageCard class="mt-2" src="/images/ssl-ecotoxicology-gcn-help-email.png" />
                     <p>
                         If you provide an email to your submitted job, you can easily retrieve all
                         your past job results by giving your email. Note that we will not send you
@@ -86,7 +65,7 @@
                 </div>
                 <div>
                     <h3 class="text-2xl">Input – Submit</h3>
-                    <ImageCard class="mt-2" src="/images/ssl-toxgcn-help-email.png" />
+                    <ImageCard class="mt-2" src="/images/ssl-ecotoxicology-gcn-help-email.png" />
                     <p>
                         Click the submit button when ready. A job ID will be given to your submitted
                         job; a status page will be displayed with automatically refreshing function
@@ -104,7 +83,7 @@
                         single page. All columns can be sorted as user’s need, and all results are
                         downloadable in a CSV file.
                     </p>
-                    <ImageCard class="mt-2" src="/images/ssl-tocgnc-classification.png" />
+                    <ImageCard class="mt-2" src="/images/ssl-ecotoxicology-gcn-help-result.png" />
                 </div>
             </section>
             <section id="Contact" class="mb-8">
@@ -113,8 +92,8 @@
                 <h3 class="text-2xl">Developer:</h3>
                 <ul>
                     <li>
-                        <span class="font-bold">Jiarui Chen</span>
-                        <code>chen709847237@gmail.com</code>
+                        <span class="font-bold">Xinpo Lou</span>
+                        <code>louxinpo@qq.com</code>
                     </li>
                     <li>
                         <span class="font-bold">Edison Un (web developer)</span>

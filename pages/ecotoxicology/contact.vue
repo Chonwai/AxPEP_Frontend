@@ -9,8 +9,8 @@
                     <ContactCard
                         class="w-1/2"
                         title="Developer"
-                        name="Ray Chen"
-                        email="chen709847237@gmail.com"
+                        name="Xinpo Lou"
+                        email="louxinpo@qq.com"
                     />
                     <ContactCard
                         class="w-1/2"
@@ -25,7 +25,7 @@
                         class="w-1/2"
                         title="PI"
                         name="Shirley W. I. Siu"
-                        email="shirleysiu@umac.mo"
+                        email="shirleysiu@mpu.edu.mo"
                     />
                 </div>
             </section>
