@@ -36,7 +36,12 @@
                     <v-tab-item v-for="item in items" :key="item.tab">
                         <ResultTable
                             v-show="item.tab == 'Classification'"
-                            :header.sync="resultHeader"
+                            :header.sync="classificationHeader"
+                            :items.sync="computedClassifications"
+                        />
+                        <ResultTable
+                            v-show="item.tab == 'Probability'"
+                            :header.sync="probabilityHeader"
                             :items.sync="data.classifications"
                         />
                     </v-tab-item>
@@ -61,11 +66,28 @@ export default {
             id: this.$route.params.id,
             application: 'ecotoxicology',
             loading: true,
-            data: [],
-            resultHeader: [],
+            data: {},
+            classificationHeader: [],
+            probabilityHeader: [],
             tab: null,
-            items: [{ tab: 'Classification' }],
+            items: [
+                { tab: 'Classification' },
+                { tab: 'Probability' },
+            ],
         };
+    },
+    computed: {
+        computedClassifications() {
+            if (!this.data.classifications) return [];
+            return this.data.classifications.map(item => {
+                return {
+                    ...item,
+                    A2A: item.A2A > 0.5 ? 1 : 0,
+                    F2F: item.F2F > 0.5 ? 1 : 0,
+                    C2C: item.C2C > 0.5 ? 1 : 0,
+                };
+            });
+        },
     },
     async created() {
         await this.init();
@@ -81,14 +103,28 @@ export default {
                 .toISOString()
                 .slice(0, 19)
                 .replace('T', ' ');
-            for (const item of Object.keys(this.data.classifications[0])) {
-                if (item == 'smiles') {
-                    continue;
+
+            // Prepare headers for classification and probability
+            if (this.data.classifications && this.data.classifications.length > 0) {
+                for (const item of Object.keys(this.data.classifications[0])) {
+                    if (item == 'smiles') {
+                        continue;
+                    }
+                    const headerText = {
+                        A2A: 'Algae',
+                        F2F: 'Fish',
+                        C2C: 'Crustaceans',
+                    }[item] || item.charAt(0).toUpperCase() + item.slice(1);
+
+                    this.classificationHeader.push({
+                        text: headerText,
+                        value: item,
+                    });
+                    this.probabilityHeader.push({
+                        text: headerText,
+                        value: item,
+                    });
                 }
-                this.resultHeader.push({
-                    text: item.charAt(0).toUpperCase() + item.slice(1),
-                    value: item,
-                });
             }
         },
         async downloadResult() {
