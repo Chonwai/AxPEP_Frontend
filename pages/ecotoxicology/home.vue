@@ -14,9 +14,20 @@
                 >
                     <div>
                         <p>
-                            >TEST0<br />O=C1Cc2cc(CCN3CCN(c4nsc5ccccc45)CC3)c(Cl)cc2N1<br />>TEST1<br />CN(C)CCOC1=Cc2ccccc2Sc2ccc(Cl)cc21
+                            >Dodecyltrimethylammonium chloride (algae positive)<br />
+                            Nc1ccc(S(=O)(=O)Nc2ncccn2)cc1<br />
+                            >2,4,6-Trichlorophenol (algae negative)<br />
+                            Oc1c(Cl)cc(Cl)cc1Cl<br />
+                            >Sodium pentachlorophenate (fish positive)<br />
+                            [Na+].[O-]c1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl<br />
+                            >Methyl methacrylate (fish negative)<br />
+                            C=C(C)C(=O)OC<br />
+                            >Diphenyl Ether (crustaceans positive)<br />
+                            c1ccc(Oc2ccccc2)cc1<br />
+                            >Sodium lauryl sulfate (crustaceans negative)<br />
+                            CCCCCCCCCCCOS(=O)(=O)[O-].[Na+]<br />
                         </p>
-                        <b>Note: TEST0 is the ID you give for the serial.</b>
+                        <b>Note: >XXX is the ID you give for the serial.</b>
                     </div>
                 </ExampleDialog>
             </v-stepper-step>

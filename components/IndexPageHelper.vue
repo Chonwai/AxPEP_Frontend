@@ -31,6 +31,12 @@
             set. In a benchmark dataset, this model achieved 0.619, 0.603, 0.433 for R<sup>2</sup>
             (squared Pearson correlation coefficient), RMSE and MAE respectively.
         </v-alert>
+        <v-alert v-else-if="page === 'ecotoxicology'" border="left" colored-border elevation="2">
+            EcoTox-GCN - The web server of Graph Convolutional Neural Network models for predicting
+            chemical ecotoxicology for three types of aquatic organisms - Algae, Crustaceans, and
+            Fish. This server accepts multiple chemicals in SMILES notation organized in the FASTA
+            format.
+        </v-alert>
     </div>
 </template>
 
