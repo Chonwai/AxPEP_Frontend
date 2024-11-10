@@ -2,10 +2,9 @@
     <div id="method-page-index">
         <div class="p-8">
             <section id="SSL-EcotoxicologyGCN-Server" class="mb-8">
-                <h2 class="text-4xl">SSL-EcotoxicologyGCN</h2>
+                <h2 class="text-4xl">EcoTox-GCN</h2>
                 <p>
-                    A Chemical Ecotoxicology Prediction Model Based on Semi-supervised Learning and
-                    Graph Convolutional Neural Network.
+                    Graph Convolutional Neural network models for chemical ecotoxicology prediction.
                 </p>
             </section>
             <section id="Overview" class="mb-8">
@@ -68,6 +67,15 @@
                     molecular embeddings. Consequently, using molecular graph-based models allows
                     for more effective capturing of complex relationships and features within
                     chemical structures, leading to improved predictive performance.
+                </p>
+            </section>
+            <section id="Prediction-Models" class="mb-8">
+                <h2 class="text-4xl">Prediction Models</h2>
+                <p>
+                    This web server offers three ecotoxicological prediction models, namely A2A for
+                    Algae, C2C for Crustaceans, and F2F for Fish. According to our evaluations, the
+                    accuracy of these models in terms of AUCROC is 0.989 for Algae, 0.984 for
+                    Crustaceans, and 0.982-0.992 for Fish.
                 </p>
             </section>
         </div>
