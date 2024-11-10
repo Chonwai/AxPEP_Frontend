@@ -22,7 +22,7 @@
                         >
                     </p>
                 </div>
-                <v-btn class="w-auto" large color="primary" dark @click="downloadResult"
+                <v-btn class="w-auto" large color="primary" dark @click="downloadResults"
                     >Export to CSV</v-btn
                 >
             </div>
@@ -55,6 +55,8 @@
 import TaskAPI from '../../../apis/task';
 import ResultTable from '../../../components/ResultTable';
 import Utils from '../../../utils/utils';
+import { Parser } from 'json2csv';
+
 export default {
     layout: 'ecotoxicology',
     name: 'GetJobByIDPageIndex',
@@ -70,10 +72,7 @@ export default {
             classificationHeader: [],
             probabilityHeader: [],
             tab: null,
-            items: [
-                { tab: 'Classification' },
-                { tab: 'Probability' },
-            ],
+            items: [{ tab: 'Classification' }, { tab: 'Probability' }],
         };
     },
     computed: {
@@ -110,11 +109,12 @@ export default {
                     if (item == 'smiles') {
                         continue;
                     }
-                    const headerText = {
-                        A2A: 'Algae',
-                        F2F: 'Fish',
-                        C2C: 'Crustaceans',
-                    }[item] || item.charAt(0).toUpperCase() + item.slice(1);
+                    const headerText =
+                        {
+                            A2A: 'Algae',
+                            F2F: 'Fish',
+                            C2C: 'Crustaceans',
+                        }[item] || item.charAt(0).toUpperCase() + item.slice(1);
 
                     this.classificationHeader.push({
                         text: headerText,
@@ -127,9 +127,37 @@ export default {
                 }
             }
         },
-        async downloadResult() {
-            let data = await TaskAPI.downloadSpecifyClassificationFile(this.id);
-            await Utils.downloadResult(data, `${this.id}-classification.csv`);
+        async downloadResults() {
+            // Prepare classification data for CSV
+            const classificationData = this.computedClassifications.map(item => ({
+                id: item.id,
+                Algae: item.A2A,
+                Fish: item.F2F,
+                Crustaceans: item.C2C,
+                smiles: item.smiles,
+            }));
+
+            // Prepare probability data for CSV
+            const probabilityData = this.data.classifications.map(item => ({
+                id: item.id,
+                Algae: item.A2A,
+                Fish: item.F2F,
+                Crustaceans: item.C2C,
+                smiles: item.smiles,
+            }));
+
+            try {
+                // Convert to CSV
+                const json2csvParser = new Parser();
+                const classificationCsv = json2csvParser.parse(classificationData);
+                const probabilityCsv = json2csvParser.parse(probabilityData);
+
+                // Download CSV files
+                await Utils.downloadResult(classificationCsv, `${this.id}-classification.csv`);
+                await Utils.downloadResult(probabilityCsv, `${this.id}-probability.csv`);
+            } catch (error) {
+                console.error('Error converting JSON to CSV:', error);
+            }
         },
     },
 };
