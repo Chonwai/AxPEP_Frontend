@@ -71,6 +71,8 @@
 import TaskAPI from '../../../apis/task';
 import ResultTable from '../../../components/ResultTable';
 import Utils from '../../../utils/utils';
+import { Parser } from 'json2csv';
+
 export default {
     layout: 'ampep',
     name: 'GetJobByIDPageIndex',
@@ -159,10 +161,38 @@ export default {
             }
         },
         async downloadResult() {
-            let data = await TaskAPI.downloadSpecifyClassificationFile(this.id);
-            await Utils.downloadResult(data, `${this.id}-classification.csv`);
-            data = await TaskAPI.downloadSpecifyScoreFile(this.id);
-            await Utils.downloadResult(data, `${this.id}-score.csv`);
+            // Prepare classification data for CSV
+            const classificationData = this.data.classifications.map(item => ({
+                ...item,
+            }));
+
+            // Prepare score data for CSV
+            const scoreData = this.data.scores.map(item => ({
+                ...item,
+            }));
+
+            // Prepare activity prediction data for CSV
+            const activityPredictionData = this.computedAmpActivityPredictionItems.map(item => ({
+                ...item,
+            }));
+
+            try {
+                // Convert to CSV
+                const json2csvParser = new Parser();
+                const classificationCsv = json2csvParser.parse(classificationData);
+                const scoreCsv = json2csvParser.parse(scoreData);
+                const activityPredictionCsv = json2csvParser.parse(activityPredictionData);
+
+                // Download CSV files
+                await Utils.downloadResult(classificationCsv, `${this.id}-classification.csv`);
+                await Utils.downloadResult(scoreCsv, `${this.id}-score.csv`);
+                await Utils.downloadResult(
+                    activityPredictionCsv,
+                    `${this.id}-activity-prediction.csv`
+                );
+            } catch (error) {
+                console.error('Error converting JSON to CSV:', error);
+            }
         },
     },
 };
