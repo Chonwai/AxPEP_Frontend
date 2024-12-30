@@ -14,18 +14,18 @@
                 >
                     <div>
                         <p>
-                            >Dodecyltrimethylammonium chloride (algae positive)<br />
-                            Nc1ccc(S(=O)(=O)Nc2ncccn2)cc1<br />
-                            >2,4,6-Trichlorophenol (algae negative)<br />
+                            >Dodecyltrimethylammonium chloride (Apos)<br />
+                            CCCCCCCCCCCC[N+](C)(C)C.[Cl-]<br />
+                            >2,4,6-Trichlorophenol (Aneg)<br />
                             Oc1c(Cl)cc(Cl)cc1Cl<br />
-                            >Sodium pentachlorophenate (fish positive)<br />
+                            >Sodium pentachlorophenate (Fpos)<br />
                             [Na+].[O-]c1c(Cl)c(Cl)c(Cl)c(Cl)c1Cl<br />
-                            >Methyl methacrylate (fish negative)<br />
+                            >Methyl methacrylate (Fneg)<br />
                             C=C(C)C(=O)OC<br />
-                            >Diphenyl Ether (crustaceans positive)<br />
+                            >Diphenyl Ether (Cpos)<br />
                             c1ccc(Oc2ccccc2)cc1<br />
-                            >Sodium lauryl sulfate (crustaceans negative)<br />
-                            CCCCCCCCCCCOS(=O)(=O)[O-].[Na+]<br />
+                            >Sodium lauryl sulfate (Cneg)<br />
+                            CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+]<br />
                         </p>
                         <b>Note: >XXX is the ID you give for the serial.</b>
                     </div>
