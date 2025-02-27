@@ -13,9 +13,9 @@
                     where AC_1 and AC_2 are sequence IDs. Each sequence should be at least 5 a.a.
                     long and maximally 250 a.a. or an error will be reported. Only 1-letter code for
                     20 standard amino acids is acceptable. If the number of sequences is large, you
-                    can upload them in a file (in FASTA format) by selecting the “Upload FASTA
-                    sequences” checkbox. If you want to screen a genome sequence to identify AMPs
-                    from that, use the “Upload Genome sequences” checkbox. In this case, only
+                    can upload them in a file (in FASTA format) by selecting the "Upload FASTA
+                    sequences" checkbox. If you want to screen a genome sequence to identify AMPs
+                    from that, use the "Upload Genome sequences" checkbox. In this case, only
                     1-letter code for nucleotides (ATCG) is acceptable. Genome sequences will be
                     processed to extract the open reading frames (ORF) in all six-frame translation
                     using the the user-selected codon table (standard by default). ORF sequences
@@ -79,7 +79,7 @@
                 <h3 class="text-2xl">Result</h3>
                 <p>
                     The prediction result of all submitted sequences will be displayed in a single
-                    page. All columns can be sorted as user’s need, and all results are downloadable
+                    page. All columns can be sorted as user's need, and all results are downloadable
                     in a CSV file.
                 </p>
                 <ImageCard class="mt-2" src="/images/help-classification.png" />
@@ -111,13 +111,20 @@
             <h3 class="text-2xl">Developer:</h3>
             <ul>
                 <li>
-                    <span class="font-bold">Pratiti Bhadra</span>
+                    <span class="font-bold">Edison Un (System Developer)</span>
+                    <code>chonwaiun@gmail.com</code>
+                </li>
+                <li>
+                    <span class="font-bold">Pratiti Bhadra (AmPEP)</span>
                     <code>pratiti.bhadra@gmail.com</code>
                 </li>
-                <li><span class="font-bold">Jielu Yan</span> <code>oyanjielu@gmail.com</code></li>
                 <li>
-                    <span class="font-bold">Edison Un (web developer)</span>
-                    <code>chonwaiun@gmail.com</code>
+                    <span class="font-bold">Jielu Yan (Deep-AmPEP30)</span>
+                    <code>oyanjielu@gmail.com</code>
+                </li>
+                <li>
+                    <span class="font-bold">Jianxiu Cai (BERT-AmPEP60)</span>
+                    <code>janecai0714@gmail.com</code>
                 </li>
             </ul>
             <h3 class="text-2xl">PI:</h3>
