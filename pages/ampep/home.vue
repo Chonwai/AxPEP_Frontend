@@ -57,7 +57,7 @@
                     :trueValue="1"
                 ></v-checkbox>
                 <v-checkbox
-                    label="BERT-AmPEP60: ProtBERT fine-tuned IC50 AMP prediction models for Escherichia coli and Staphylococcus aureus"
+                    label="✅ (default) BERT-AmPEP60: ProtBERT fine-tuned IC50 AMP prediction models for Escherichia coli and Staphylococcus aureus"
                     :falseValue="0"
                     :trueValue="1"
                     disabled
@@ -99,7 +99,7 @@
         </v-stepper>
         <v-alert border="left" colored-border elevation="2">
             <b>Funding:</b><br />
-            This project is supported by the Government of Canada’s New Frontiers in Research Fund
+            This project is supported by the Government of Canada's New Frontiers in Research Fund
             (NFRF) (NFRFE-2021-00913) (2022.04-2025.03)
         </v-alert>
     </div>
