@@ -153,15 +153,26 @@
                 </li>
             </ul>
         </section>
+        <section id="References" class="mb-8">
+            <h2 class="text-4xl">References</h2>
+            <ReferenceCard
+                authors="Cai, Jianxiu; Yan, Jielu; Un, Chonwai; Wang, Yapeng*; Campbell-Valoise, FX*; Siu, Shirley W. I.*"
+                title="BERT-AmPEP60: A BERT-based Transfer Learning Approach to Predict the Minimum Inhibitory Concentrations of Antimicrobial Peptides for Escherichia coli and Staphylococcus aureus."
+                subtitle="Journal of Chemical Information and Modeling. (in press)"
+            />
+        </section>
     </div>
 </template>
 
 <script>
+import ReferenceCard from '@/components/ReferenceCard';
 import ImageCard from '@/components/ImageCard';
+
 export default {
     layout: 'ampep',
     name: 'HelpPageIndex',
-    component: {
+    components: {
+        ReferenceCard,
         ImageCard,
     },
 };
