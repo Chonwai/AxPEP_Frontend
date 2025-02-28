@@ -104,6 +104,17 @@
                     Prediction result of all valid sequences is available in the CSV file.
                 </p>
             </div>
+            <div>
+                <h3 class="text-2xl">Result – Activity Prediction</h3>
+                <p>
+                    The Activity Prediction tag shows the predicted values of minimum inhibitory
+                    concentration (MIC in the unit of micromolar, uM) of the peptide against
+                    <i>Escherichia coli</i> and <i>Staphylococcus aureus</i>. The last column shows
+                    the ratio of the two MIC values. The lower values indicate a stronger inhibitory
+                    function of the peptide.
+                </p>
+                <ImageCard class="mt-2" src="/images/help-activity-prediction.png" />
+            </div>
         </section>
         <section id="Contact" class="mb-8">
             <h2 class="text-4xl">Contact</h2>
