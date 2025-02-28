@@ -43,6 +43,13 @@
                         <span class="text-gray-500 font-bold">AcPEP (trial version)</span> for
                         anticancer prediction, still under development.
                     </li>
+                    <li>
+                        <span class="text-blue-900 font-bold">BERT-AmPEP60</span> for short AMP
+                        prediction of 5-60 AA sequences. It returns the predicted MIC values for E.
+                        coli and S. auerus in the
+                        <a href="#Activity Prediction">ACTIVITY PREDICTION</a> tag in the Result
+                        page.
+                    </li>
                 </ul>
             </div>
             <div>
@@ -104,8 +111,8 @@
                     Prediction result of all valid sequences is available in the CSV file.
                 </p>
             </div>
-            <div>
-                <h3 class="text-2xl">Result – Activity Prediction</h3>
+            <section id="Activity Prediction">
+                <h3 class="text-2xl">ACTIVITY PREDICTION</h3>
                 <p>
                     The Activity Prediction tag shows the predicted values of minimum inhibitory
                     concentration (MIC in the unit of micromolar, uM) of the peptide against
@@ -114,17 +121,13 @@
                     function of the peptide.
                 </p>
                 <ImageCard class="mt-2" src="/images/help-activity-prediction.png" />
-            </div>
+            </section>
         </section>
         <section id="Contact" class="mb-8">
             <h2 class="text-4xl">Contact</h2>
             <p>If you have further questions, please contact:</p>
             <h3 class="text-2xl">Developer:</h3>
             <ul>
-                <li>
-                    <span class="font-bold">Edison Un (System Developer)</span>
-                    <code>chonwaiun@gmail.com</code>
-                </li>
                 <li>
                     <span class="font-bold">Pratiti Bhadra (AmPEP)</span>
                     <code>pratiti.bhadra@gmail.com</code>
@@ -136,6 +139,10 @@
                 <li>
                     <span class="font-bold">Jianxiu Cai (BERT-AmPEP60)</span>
                     <code>janecai0714@gmail.com</code>
+                </li>
+                <li>
+                    <span class="font-bold">Edison Un (System Developer)</span>
+                    <code>chonwaiun@gmail.com</code>
                 </li>
             </ul>
             <h3 class="text-2xl">PI:</h3>

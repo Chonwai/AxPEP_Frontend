@@ -105,7 +105,7 @@
                     <span class="font-bold">Carter Cheong </span> <code>carter96121@gmail.com</code>
                 </li>
                 <li>
-                    <span class="font-bold">Edison Un (web developer)</span>
+                    <span class="font-bold">Edison Un (System Developer)</span>
                     <code>chonwaiun@gmail.com</code>
                 </li>
             </ul>

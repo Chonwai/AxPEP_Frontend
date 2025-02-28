@@ -192,7 +192,7 @@
                     <code>marcus.ckng@gmail.com</code>
                 </li>
                 <li>
-                    <span class="font-bold">Edison Un (Web Developer)</span>
+                    <span class="font-bold">Edison Un (System Developer)</span>
                     <code>chonwaiun@gmail.com</code>
                 </li>
             </ul>
