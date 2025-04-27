@@ -1,0 +1,84 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# AxPEP Frontend Development Guide
+
+## Getting Started For New Engineers
+
+This guide will help new engineers understand the AxPEP project structure and development patterns.
+
+## Project Setup
+
+```bash
+# Install dependencies
+yarn install
+
+# Start development server
+yarn dev
+
+# Build for production
+yarn build
+```
+
+See [package.json](mdc:package.json) for all available scripts.
+
+## Project Structure
+
+### Core Directories:
+
+- **pages/**: Route components organized by applications
+  - [pages/index.vue](mdc:pages/index.vue) - Main entry page
+  - [pages/ampep/](mdc:pages/ampep) - AmPEP application
+  - [pages/acpep/](mdc:pages/acpep) - AcPEP application
+
+- **components/**: Reusable UI components
+  - [components/InputFastaArea.vue](mdc:components/InputFastaArea.vue) - Key input component for sequence data
+  - [components/ResultTable.vue](mdc:components/ResultTable.vue) - Component for displaying results
+
+- **apis/**: API client modules
+  - [apis/task.js](mdc:apis/task.js) - Task management API
+  - [apis/analysis.js](mdc:apis/analysis.js) - Analysis API
+
+- **layouts/**: Page layouts
+  - Default layout and application-specific layouts
+
+- **store/**: Vuex state management
+  - [store/index.js](mdc:store/index.js) - Global state store
+
+## Development Patterns
+
+### Component Development:
+- Study [components/InputFastaArea.vue](mdc:components/InputFastaArea.vue) as a reference
+- Components use Props for input and Events for output
+- Follow consistent naming conventions
+
+### API Integration:
+- Use API functions in [apis/task.js](mdc:apis/task.js) for backend communication
+- Implement API calls in Vue components following established patterns
+
+### Page Construction:
+- Pages typically use a step-based approach (v-stepper)
+- Reference [pages/ampep/home.vue](mdc:pages/ampep/home.vue) for standard layout
+- Configuration in [nuxt.config.js](mdc:nuxt.config.js)
+
+## Extending The Platform
+
+1. **Adding a new bioinformatics tool:**
+   - Create a new directory in `pages/`
+   - Add necessary API endpoints in `apis/`
+   - Update entry in [pages/index.vue](mdc:pages/index.vue)
+
+2. **Creating new components:**
+   - Study similar components
+   - Maintain consistent props and events naming
+   - Follow UI patterns from Vuetify and Tailwind
+
+## Common Issues & Solutions
+
+- **API connection issues**: Check [plugins/axios.js](mdc:plugins/axios.js)
+- **Component rendering**: Verify props and data flow
+- **Route problems**: Check page file locations and naming
+
+Use Vue DevTools for debugging component state and data flow.

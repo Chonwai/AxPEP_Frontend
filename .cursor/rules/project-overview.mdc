@@ -1,0 +1,63 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# AxPEP Frontend Project Overview
+
+## Introduction
+
+AxPEP Frontend is a bioinformatics platform developed by the Centre for Artificial Intelligence Driven Drug Discovery at Macao Polytechnic University. This platform provides unified interfaces for various tools focused on protein sequence analysis, antimicrobial peptide prediction, and ecotoxicology assessment.
+
+## Core Technology Stack
+
+- **Framework**: Nuxt.js 2.x (Vue.js-based SSR framework) - see [nuxt.config.js](mdc:nuxt.config.js)
+- **UI Libraries**:
+  - Vuetify - configured in [nuxt.config.js](mdc:nuxt.config.js)
+  - Tailwind CSS - see [tailwind.config.js](mdc:tailwind.config.js)
+- **API Communication**: Axios - configured in [plugins/axios.js](mdc:plugins/axios.js)
+- **State Management**: Vuex - see [store/index.js](mdc:store/index.js)
+
+## Project Structure
+
+- **Pages**: Route components organized by applications in [pages/](mdc:pages)
+  - [pages/ampep/](mdc:pages/ampep) - AmPEP application pages
+  - [pages/acpep/](mdc:pages/acpep) - AcPEP application pages
+  - [pages/bestox/](mdc:pages/bestox) - BESTox application pages
+  - [pages/index.vue](mdc:pages/index.vue) - Main entry page
+
+- **Components**: Reusable UI components in [components/](mdc:components)
+  - [components/InputFastaArea.vue](mdc:components/InputFastaArea.vue) - FASTA sequence input component
+  - [components/ResultTable.vue](mdc:components/ResultTable.vue) - Results display component
+  - [components/LineChart.vue](mdc:components/LineChart.vue) - Data visualization
+
+- **API Integration**: API client modules in [apis/](mdc:apis)
+  - [apis/task.js](mdc:apis/task.js) - Task management API
+  - [apis/analysis.js](mdc:apis/analysis.js) - Analysis functions API
+
+## Applications Overview
+
+The platform contains several bioinformatics tools:
+
+1. **AmPEP** - Antimicrobial peptide prediction ([pages/ampep/home.vue](mdc:pages/ampep/home.vue))
+2. **AcPEP** - Another peptide analysis tool
+3. **BESTox** - CNN for ecotoxicology prediction
+4. **SSL-GCN** - Compound prediction using Graph Convolutional Networks
+5. **PSOVina** - Protein-ligand docking tool
+6. **GWOVina** - Another docking tool variant
+7. **Ecotoxicology** - Tools for ecotoxicology analysis
+
+## Workflow
+
+1. Users submit sequence data through specialized input components
+2. Data is sent to the backend API using functions in [apis/task.js](mdc:apis/task.js)
+3. Results are retrieved and displayed using visualization components
+
+## Development Guidelines
+
+- Follow the existing component and API patterns
+- Use the same styling approach with Vuetify and Tailwind
+- When adding new features, check for reusable components first
+- Ensure new pages follow the same layout structure
+
+For configuration details, check [package.json](mdc:package.json) for dependencies and scripts.
