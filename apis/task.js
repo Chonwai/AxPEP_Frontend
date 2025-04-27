@@ -50,9 +50,9 @@ function getSpecifyTask(id, application) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}?application=${application}`);
 }
 
-function getSpecifyTasksByEmail(data, page = 1, application) {
+function getSpecifyTasksByEmail(email, page, limit, application) {
     return window.$nuxt.$api.$get(
-        `axpep/emails/${data}/tasks?page=${page}&application=${application}`
+        `axpep/emails/${email}/tasks?page=${page}&limit=${limit}&application=${application}`
     );
 }
 
@@ -66,6 +66,14 @@ function downloadSpecifyScoreFile(id) {
 
 function downloadSpecifyResultFile(id) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}/result/download`);
+}
+
+function newHemoPepTaskByFile(data) {
+    return window.$nuxt.$api.$post(`hemopep/tasks/file`, data);
+}
+
+function newHemoPepTaskByTextarea(data) {
+    return window.$nuxt.$api.$post(`hemopep/tasks/textarea`, data);
 }
 
 export default {
@@ -86,4 +94,6 @@ export default {
     downloadSpecifyClassificationFile,
     downloadSpecifyScoreFile,
     downloadSpecifyResultFile,
+    newHemoPepTaskByFile,
+    newHemoPepTaskByTextarea,
 };

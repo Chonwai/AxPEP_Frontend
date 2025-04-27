@@ -75,6 +75,11 @@ export default {
                     title: 'Ecotoxicology',
                     icon: 'mdi-home',
                 },
+                {
+                    to: '/hemopep/home',
+                    title: 'BERT-HemoPep60',
+                    icon: 'mdi-home',
+                },
             ],
         };
     },

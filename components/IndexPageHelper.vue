@@ -37,6 +37,13 @@
             Fish. This server accepts multiple chemicals in SMILES notation organized in the FASTA
             format.
         </v-alert>
+        <v-alert v-else-if="page === 'hemopep'" border="left" colored-border elevation="2">
+            BERT-HemoPep60 is a deep learning method based on transformer architecture and Domain
+            Adaptive Pre-Training (DAPT) for quantitative prediction of peptide hemolytic activity
+            against human red blood cells. The model employs an innovative prefix prompting approach
+            that integrates experimental hemolysis data from multiple mammalian species and
+            hemolysis indicators for peptide toxicity prediction.
+        </v-alert>
     </div>
 </template>
 

@@ -88,6 +88,21 @@ class ThemesUtils {
             },
         };
     }
+
+    static get hemopep() {
+        return {
+            name: 'hemopep',
+            light: {
+                primary: '#8b0000', // 深紅色，代表溶血性
+                accent: '#ff6b6b',
+                secondary: '#d32f2f',
+                success: '#4CAF50',
+                info: '#b71c1c',
+                warning: '#FB8C00',
+                error: '#FF5252',
+            },
+        };
+    }
 }
 
 export default ThemesUtils;

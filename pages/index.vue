@@ -147,6 +147,14 @@ export default {
                     subtitle: 'Fast Protein-Ligand Docking Tool based on GWO and AutoDock Vina',
                     to: '/gwovina/home',
                 },
+                {
+                    color: '#8b0000',
+                    src: '/images/hemopep-logo.png',
+                    title: 'BERT-HemoPep60',
+                    subtitle:
+                        'Predicting Hemolytic Activity of Peptides against Human Red Blood Cells',
+                    to: '/hemopep/home',
+                },
             ],
         };
     },
