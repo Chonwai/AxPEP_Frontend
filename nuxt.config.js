@@ -34,7 +34,12 @@ export default {
     css: ['static/css/ChemDoodleWeb.css', 'static/uis/jquery-ui-1.11.4.css'],
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-    plugins: ['~/plugins/axios', '~/plugins/api', { src: '~/plugins/notification', ssr: false }],
+    plugins: [
+        '~/plugins/axios',
+        '~/plugins/api',
+        { src: '~/plugins/notification', ssr: false },
+        { src: '~/plugins/analytics', ssr: false },
+    ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
     components: true,
