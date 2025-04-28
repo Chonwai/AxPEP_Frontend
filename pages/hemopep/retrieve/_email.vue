@@ -9,7 +9,7 @@
             :items="data"
             :loading="loading"
             :server-items-length="total"
-            :itemsPerPage="itemsPerPage"
+            :items-per-page="itemsPerPage"
             hide-default-footer
         >
             <template v-slot:item.id="{ item }">
@@ -28,18 +28,38 @@
                 >
             </template>
             <template v-slot:item.action="{ item }">
-                <v-chip v-show="item.action == 'finished'" color="green" text-color="white" small>{{
-                    item.action
-                }}</v-chip>
-                <v-chip v-show="item.action == 'running'" color="blue" text-color="white" small>{{
-                    item.action
-                }}</v-chip>
-                <v-chip v-show="item.action == 'failed'" color="red" text-color="white" small>{{
-                    item.action
-                }}</v-chip>
+                <v-chip
+                    class="w-full flex justify-center"
+                    v-show="item.action == 'finished'"
+                    color="green"
+                    text-color="white"
+                    label
+                    >{{ item.action }}</v-chip
+                >
+                <v-chip
+                    class="w-full flex justify-center"
+                    v-show="item.action == 'running'"
+                    color="blue"
+                    text-color="white"
+                    label
+                    >{{ item.action }}</v-chip
+                >
+                <v-chip
+                    class="w-full flex justify-center"
+                    v-show="item.action == 'failed'"
+                    color="red"
+                    text-color="white"
+                    label
+                    >{{ item.action }}</v-chip
+                >
             </template>
             <template v-slot:no-data>
                 <div class="text-center">No data available</div>
+            </template>
+            <template v-slot:item.created_at="{ item }">
+                <v-chip label>
+                    {{ new Date(item.created_at).toISOString().slice(0, 19).replace('T', ' ') }}
+                </v-chip>
             </template>
         </v-data-table>
         <div class="text-center">
@@ -72,16 +92,16 @@ export default {
                     value: 'description',
                 },
                 {
-                    text: 'Created at',
-                    align: 'start',
-                    sortable: false,
-                    value: 'created_at',
-                },
-                {
                     text: 'Status',
                     align: 'start',
                     sortable: false,
                     value: 'action',
+                },
+                {
+                    text: 'Created At',
+                    align: 'start',
+                    sortable: false,
+                    value: 'created_at',
                 },
             ],
             page: 1,
