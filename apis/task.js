@@ -50,9 +50,9 @@ function getSpecifyTask(id, application) {
     return window.$nuxt.$api.$get(`axpep/tasks/${id}?application=${application}`);
 }
 
-function getSpecifyTasksByEmail(email, page, limit, application) {
+function getSpecifyTasksByEmail(data, page = 1, application) {
     return window.$nuxt.$api.$get(
-        `axpep/emails/${email}/tasks?page=${page}&limit=${limit}&application=${application}`
+        `axpep/emails/${data}/tasks?page=${page}&application=${application}`
     );
 }
 

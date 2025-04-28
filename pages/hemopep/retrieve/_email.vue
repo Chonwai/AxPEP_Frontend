@@ -101,12 +101,7 @@ export default {
         async fetch() {
             this.loading = true;
             try {
-                let res = await TaskAPI.getSpecifyTasksByEmail(
-                    this.email,
-                    this.page,
-                    this.itemsPerPage,
-                    'hemopep'
-                );
+                let res = await TaskAPI.getSpecifyTasksByEmail(this.email, this.page, 'hemopep');
 
                 if (res.status && res.message && res.message.data) {
                     this.data = res.message.data;
