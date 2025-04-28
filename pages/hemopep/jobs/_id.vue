@@ -35,9 +35,9 @@
                 <v-tabs-items v-model="tab">
                     <v-tab-item v-for="item in items" :key="item.tab">
                         <ResultTable
-                            v-show="item.tab == 'Result'"
+                            v-show="item.tab == 'RESULT'"
                             :header.sync="resultHeader"
-                            :items.sync="data.detailed_predictions"
+                            :items.sync="processedPredictions"
                         />
                     </v-tab-item>
                 </v-tabs-items>
@@ -68,7 +68,7 @@ export default {
             tab: null,
             items: [
                 {
-                    tab: 'Result',
+                    tab: 'RESULT',
                 },
             ],
             resultHeader: [
@@ -77,12 +77,6 @@ export default {
                     align: 'start',
                     sortable: true,
                     value: 'Sequence ID',
-                },
-                {
-                    text: 'Sequence',
-                    align: 'start',
-                    sortable: true,
-                    value: 'Sequence',
                 },
                 {
                     text: 'HC5 (μM)',
@@ -105,6 +99,21 @@ export default {
             ],
         };
     },
+    computed: {
+        processedPredictions() {
+            // 確保每個預測項目有正確的結構和唯一ID
+            return this.data.detailed_predictions.map((item, index) => {
+                return {
+                    id: item['Sequence ID'] || `peptide-${index}`, // 確保有唯一ID
+                    'Sequence ID': item['Sequence ID'],
+                    HC5: item['HC5'],
+                    HC10: item['HC10'],
+                    HC50: item['HC50'],
+                    sequence: item['Sequence'], // 用於展開顯示
+                };
+            });
+        },
+    },
     mounted() {
         this.getTaskDetail();
     },
@@ -117,7 +126,7 @@ export default {
                         id: res.message[0].id,
                         description: res.message[0].description,
                         created_at: res.message[0].created_at,
-                        detailed_predictions: res.message[0].detailed_predictions,
+                        detailed_predictions: res.message[0].detailed_predictions || [],
                     };
                 }
             } catch (error) {
@@ -137,3 +146,12 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.v-data-table >>> tbody tr.v-data-table__expanded__content {
+    box-shadow: none;
+}
+.v-tabs >>> .v-tabs-bar {
+    border-radius: 4px 4px 0 0;
+}
+</style>
