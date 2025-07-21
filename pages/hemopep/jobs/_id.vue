@@ -50,6 +50,7 @@
 import TaskAPI from '../../../apis/task';
 import ResultTable from '../../../components/ResultTable';
 import Utils from '../../../utils/utils';
+import { Parser } from 'json2csv';
 export default {
     layout: 'hemopep',
     name: 'HemoPepJobsPageIndex',
@@ -135,12 +136,13 @@ export default {
         },
         async downloadResult() {
             try {
-                await Utils.downloadResult(
-                    this.data.detailed_predictions,
-                    `hemopep-${this.data.id}.csv`
-                );
+                // Convert JSON data to CSV string using json2csv
+                const json2csvParser = new Parser();
+                const csvData = json2csvParser.parse(this.data.detailed_predictions);
+
+                await Utils.downloadResult(csvData, `hemopep-${this.data.id}.csv`);
             } catch (error) {
-                console.error(error);
+                console.error('Error converting JSON to CSV:', error);
             }
         },
     },
