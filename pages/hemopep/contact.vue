@@ -9,8 +9,8 @@
                     <ContactCard
                         class="w-1/2"
                         title="Developer"
-                        name="Xinpo Lou"
-                        email="louxinpo@qq.com"
+                        name="Jianxiu Cai"
+                        email="caijianxiu0@gmail.com"
                     />
                     <ContactCard
                         class="w-1/2"

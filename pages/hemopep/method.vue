@@ -23,7 +23,7 @@
                 <v-card class="mx-auto w-4/5 mb-8">
                     <v-img
                         class="white--text align-end w-2/3 m-auto"
-                        src="/images/hemopep-overview.png"
+                        src="/images/bert-hemopep-60-overview.jpg"
                     >
                         <template v-slot:placeholder>
                             <v-skeleton-loader class="mx-auto" type="image"></v-skeleton-loader>
