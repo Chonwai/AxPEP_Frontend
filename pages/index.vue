@@ -149,7 +149,7 @@ export default {
                 },
                 {
                     color: '#8b0000',
-                    src: '/images/hemopep-logo.png',
+                    src: '/images/bert-hemopep-60-overview-logo.png',
                     title: 'BERT-HemoPep60',
                     subtitle:
                         'Predicting Hemolytic Activity of Peptides against Human Red Blood Cells',

@@ -10,8 +10,8 @@
                 <v-toolbar-title>
                     <img
                         class="h-16 cursor-pointer"
-                        src="/images/hemopep-logo.png"
-                        alt="hemopep-logo"
+                        src="/images/bert-hemopep-60-overview-logo.png"
+                        alt="bert-hemopep-60-overview-logo"
                         @click="goToIndex"
                     />
                 </v-toolbar-title>
