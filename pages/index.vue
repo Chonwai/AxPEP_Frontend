@@ -148,6 +148,14 @@ export default {
                     to: '/gwovina/home',
                 },
                 {
+                    color: '#78e4ff',
+                    src: '/images/ecotoxicology-logo.png',
+                    title: 'Ecotoxicology',
+                    subtitle:
+                        'Graph Convolutional Neural network models for chemical ecotoxicology prediction.',
+                    to: '/ecotoxicology/home',
+                },
+                {
                     color: '#8b0000',
                     src: '/images/bert-hemopep-60-overview-logo.png',
                     title: 'BERT-HemoPep60',
